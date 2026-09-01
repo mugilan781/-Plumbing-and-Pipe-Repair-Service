@@ -734,9 +734,14 @@ select.form-control {
 /* ── EMERGENCY FLOATING ── */
 .emergency-float {
   position: fixed;
-  bottom: calc(var(--space-8) + 48px + 12px);
+  bottom: var(--space-8);
   right: var(--space-6);
-  z-index: var(--z-raised);
+  z-index: calc(var(--z-raised) + 1);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.emergency-float.shifted {
+  transform: translateY(-60px);
 }
 
 .emergency-float-btn {
@@ -755,8 +760,12 @@ select.form-control {
   text-decoration: none;
 }
 
-.emergency-float-btn:hover {
-  color: var(--color-white);
+.emergency-float:not(.shifted) .emergency-float-btn:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 8px 28px rgba(192,57,43,0.6);
+}
+
+.emergency-float.shifted .emergency-float-btn:hover {
   transform: translateY(-4px) scale(1.06);
   box-shadow: 0 8px 28px rgba(192,57,43,0.6);
 }

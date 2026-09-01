@@ -86,20 +86,27 @@ function initNavbar() {
 }
 
 /* ─────────────────────────────────────────────
-   BACK TO TOP
+   BACK TO TOP & FLOATING ACTIONS
 ───────────────────────────────────────────── */
 function initBackToTop() {
   const btn = $('.back-to-top');
-  if (!btn) return;
+  const emergencyBtn = $('.emergency-float');
+  if (!btn && !emergencyBtn) return;
 
-  const toggle = throttle(() => {
-    btn.classList.toggle('visible', window.scrollY > 400);
-  }, 100);
+  const toggle = () => {
+    const isScrolled = (window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0) > 350;
+    if (btn) btn.classList.toggle('visible', isScrolled);
+    if (emergencyBtn) emergencyBtn.classList.toggle('shifted', isScrolled);
+  };
 
-  window.addEventListener('scroll', toggle, { passive: true });
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  window.addEventListener('scroll', throttle(toggle, 40), { passive: true });
+  toggle(); // initialize on load
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }
 
 /* ─────────────────────────────────────────────

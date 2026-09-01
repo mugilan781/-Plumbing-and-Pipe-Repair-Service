@@ -162,8 +162,12 @@
   .stat-card { padding: var(--space-6) var(--space-4); }
 
   .emergency-float {
-    bottom: calc(var(--space-5) + 44px + 10px);
+    bottom: var(--space-5);
     right: var(--space-4);
+  }
+
+  .emergency-float.shifted {
+    transform: translateY(-54px);
   }
 
   .emergency-float-btn {
