@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore FlowMaster's alternative home — featuring a cinematic dark hero, horizontal service cards, step-by-step process, service area map, blog highlights, and trust badges.">
+  <meta name="theme-color" content="#FAFAF7">
+  <title>FlowMaster Plumbing — Home 2 | Alternative Layout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/extra.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <style>
+    /* HOME 2 SPECIFIC */
+    .horizontal-scroll-wrap {
+      overflow-x: auto;
+      padding-bottom: var(--space-4);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .horizontal-scroll-wrap::-webkit-scrollbar { display: none; }
+    .horizontal-scroll-track {
+      display: flex;
+      gap: var(--space-6);
+      width: max-content;
+    }
+    .h-service-card {
+      width: 300px;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+      transition: transform var(--dur-slow) var(--ease-bounce),
+                  box-shadow var(--dur-slow) var(--ease-swift);
+    }
+    .h-service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+    .process-number-large {
+      font-family: var(--font-serif);
+      font-size: clamp(4rem, 8vw, 8rem);
+      color: var(--color-cobalt);
+      opacity: 0.08;
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      line-height: 1;
+      pointer-events: none;
+    }
+    [data-theme="dark"] .process-number-large {
+      color: var(--color-copper);
+      opacity: 0.12;
+    }
+    .area-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      font-size: var(--size-sm);
+      color: var(--text-secondary);
+      transition: background var(--dur-base) var(--ease-swift),
+                  border-color var(--dur-base) var(--ease-swift),
+                  color var(--dur-base) var(--ease-swift);
+    }
+    .area-tag:hover {
+      background: var(--color-cobalt);
+      border-color: var(--color-cobalt);
+      color: var(--color-white);
+    }
+  </style>
+</head>
+<body>
+<div id="svg-sprites" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;"><svg xmlns="http://www.w3.org/2000/svg"><use href="icons.svg"></use></svg></div>
+
+<div class="page-loader" aria-hidden="true">
+  <div class="loader-logo"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-droplet"></use></svg></div>
+  <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+</div>
+<div class="page-transition" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <span><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-phone"></use></svg> <a href="tel:+18005556789">+1 800 555 6789</a></span>
+    <div class="top-bar-divider"></div>
+    <span><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-mail"></use></svg> <a href="mailto:hello@flowmaster.com">hello@flowmaster.com</a></span>
+  </div>
+  <div class="top-bar-right"><span>24/7 Emergency · Licensed & Insured · 15+ Years</span></div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="navbar-logo-icon"><svg class="icon icon-lg" aria-hidden="true" style="color:var(--color-copper)"><use href="icons.svg#ic-wrench"></use></svg></div>
+      <div class="navbar-logo-text">
+        <span class="navbar-logo-name">FlowMaster</span>
+        <span class="navbar-logo-tagline">Plumbing & Pipe Repair</span>
+      </div>
+    </a>
+    <ul class="navbar-menu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item">
+        <a href="services.html" class="nav-link">Services <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="services.html#pipe-repair"   class="nav-dropdown-link"><div class="nav-dropdown-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-pipe"></use></svg></div> Pipe Repair</a>
+          <a href="services.html#drain"         class="nav-dropdown-link"><div class="nav-dropdown-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-drain"></use></svg></div> Drain Unblocking</a>
+          <a href="services.html#bathroom"      class="nav-dropdown-link"><div class="nav-dropdown-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-shower"></use></svg></div> Bathroom Fitting</a>
+          <a href="services.html#water-heater"  class="nav-dropdown-link"><div class="nav-dropdown-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-flame"></use></svg></div> Water Heater</a>
+          <a href="services.html#tap"           class="nav-dropdown-link"><div class="nav-dropdown-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-tap"></use></svg></div> Tap Replacement</a>
+          <a href="services.html#tank"          class="nav-dropdown-link"><div class="nav-dropdown-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-droplet"></use></svg></div> Tank Cleaning</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <div class="theme-controls">
+        <button class="theme-btn icon-moon" data-theme-toggle aria-label="Dark mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-moon"></use></svg></button>
+        <button class="theme-btn icon-sun"  data-theme-toggle aria-label="Light mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-sun"></use></svg></button>
+        <button class="theme-btn icon-ltr"  data-dir-toggle   aria-label="RTL"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-ltr-rtl"></use></svg></button>
+        <button class="theme-btn icon-rtl"  data-dir-toggle   aria-label="LTR"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-ltr-rtl"></use></svg></button>
+      </div>
+      <a href="emergency.html" class="navbar-cta"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> Emergency</a>
+    </div>
+    <button class="navbar-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+  <a href="blog.html" class="mobile-nav-link">Blog</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <div class="mobile-menu-footer">
+    <a href="tel:+18005556789" class="mobile-phone-link"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg> +1 800 555 6789</a>
+    <a href="emergency.html" class="btn btn-emergency btn-lg"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> Emergency</a>
+  </div>
+</div>
+
+<main id="main-content">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 1 — CINEMATIC DARK HERO
+═══════════════════════════════════════════ -->
+<section class="hero-v2" aria-label="Hero">
+  <div class="hero-v2-shapes" aria-hidden="true">
+    <div class="hero-v2-shape hero-v2-shape-1"></div>
+    <div class="hero-v2-shape hero-v2-shape-2"></div>
+  </div>
+  <!-- Background image with dark overlay -->
+  <div style="position:absolute; inset:0; z-index:0;">
+    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80&fit=crop" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;opacity:0.2;">
+  </div>
+
+  <div class="container hero-v2-content" style="position:relative;z-index:2;">
+    <div style="max-width:760px;">
+      <!-- Animated badge -->
+      <div style="display:inline-flex; align-items:center; gap:var(--space-3); padding:var(--space-2) var(--space-5); background:rgba(184,115,51,0.12); border:1px solid rgba(184,115,51,0.3); border-radius:var(--radius-full); margin-bottom:var(--space-6); backdrop-filter:blur(8px);" data-reveal="fade-up">
+        <div style="width:8px;height:8px;background:var(--color-copper);border-radius:50%;animation:blink 1.5s infinite;"></div>
+        <span style="font-size:var(--size-xs);font-weight:var(--weight-bold);letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-copper-light);">The #1 Rated Plumbing Service</span>
+      </div>
+
+      <h1 style="font-family:var(--font-serif); font-size:clamp(2.8rem,6vw,5.5rem); color:var(--color-white); line-height:var(--leading-tight); letter-spacing:-0.02em; margin-bottom:var(--space-5);" data-reveal="fade-up" data-delay="100">
+        We Fix It Right.<br>
+        <span style="color:var(--color-copper-light);font-style:italic;">The First Time.</span>
+      </h1>
+
+      <p style="font-size:clamp(var(--size-base),2vw,var(--size-md)); color:rgba(255,255,255,0.75); line-height:var(--leading-relaxed); max-width:560px; margin-bottom:var(--space-8);" data-reveal="fade-up" data-delay="200">
+        From a dripping tap to a full bathroom overhaul — FlowMaster delivers expert plumbing solutions with guaranteed results, transparent pricing, and same-day availability.
+      </p>
+
+      <div style="display:flex; gap:var(--space-4); flex-wrap:wrap; margin-bottom:var(--space-10);" data-reveal="fade-up" data-delay="300">
+        <a href="contact.html" class="btn btn-copper btn-xl">Book a Plumber</a>
+        <a href="services.html" class="btn btn-outline-white btn-lg">Browse Services</a>
+      </div>
+
+      <!-- Trust row -->
+      <div style="display:flex; gap:var(--space-5); flex-wrap:wrap;" data-reveal="fade-up" data-delay="400">
+        <div style="display:flex; align-items:center; gap:var(--space-2); color:rgba(255,255,255,0.7); font-size:var(--size-sm);">
+          <span style="color:var(--color-warning);"><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg></span> 4.9 Rating
+        </div>
+        <div style="width:1px; background:rgba(255,255,255,0.2);"></div>
+        <div style="color:rgba(255,255,255,0.7); font-size:var(--size-sm);">4,800+ Jobs Completed</div>
+        <div style="width:1px; background:rgba(255,255,255,0.2);"></div>
+        <div style="color:rgba(255,255,255,0.7); font-size:var(--size-sm);">15+ Years Experience</div>
+      </div>
+    </div>
+
+    <!-- Right card -->
+    <div style="position:absolute; right:0; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:var(--radius-2xl); padding:var(--space-8); backdrop-filter:blur(16px); min-width:280px; max-width:320px;" data-reveal="fade-left" class="hide-mobile">
+      <div style="font-size:var(--size-sm); font-weight:var(--weight-bold); color:var(--color-white); margin-bottom:var(--space-5); text-transform:uppercase; letter-spacing:var(--tracking-wide);">Quick Booking</div>
+      <form style="display:flex; flex-direction:column; gap:var(--space-3);" data-form>
+        <input type="text" placeholder="Your Name" class="form-control" data-validate="required" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:white;">
+        <input type="tel" placeholder="Phone Number" class="form-control" data-validate="required phone" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:white;">
+        <select class="form-control" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);">
+          <option value="">Select Service</option>
+          <option>Pipe Repair</option>
+          <option>Drain Unblocking</option>
+          <option>Bathroom Fitting</option>
+          <option>Water Heater</option>
+          <option>Tap Replacement</option>
+          <option>Emergency</option>
+        </select>
+        <button type="submit" class="btn btn-copper" style="width:100%;">Request Callback</button>
+      </form>
+      <p style="font-size:var(--size-xs); color:rgba(255,255,255,0.5); text-align:center; margin-top:var(--space-3);">We'll call back within 15 minutes</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
+</style>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2 — HORIZONTAL SCROLL SERVICES
+═══════════════════════════════════════════ -->
+<section class="section" aria-labelledby="h-services-heading">
+  <div class="container">
+    <div class="section-header" data-reveal="fade-up">
+      <div class="section-label">Our Expertise</div>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:var(--space-4);">
+        <h2 class="section-title" id="h-services-heading">Premium Services,<br>Superior Results</h2>
+        <a href="services.html" class="btn btn-outline">All Services →</a>
+      </div>
+    </div>
+
+    <div class="horizontal-scroll-wrap" data-reveal="fade-up" data-delay="200">
+      <div class="horizontal-scroll-track">
+        <article class="h-service-card">
+          <div class="img-zoom" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&q=75&fit=crop" alt="Pipe repair" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:var(--space-5);">
+            <div style="font-size:1.5rem; margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-pipe"></use></svg></div>
+            <h3 style="font-family:var(--font-serif);font-size:var(--size-lg);color:var(--text-primary);margin-bottom:var(--space-2);">Pipe Repair</h3>
+            <p style="font-size:var(--size-sm);color:var(--text-secondary);margin-bottom:var(--space-4);">Burst, leaking, or corroded — all pipe issues resolved with expert precision.</p>
+            <div style="font-size:var(--size-sm);font-weight:var(--weight-bold);color:var(--color-copper);">From £95 →</div>
+          </div>
+        </article>
+
+        <article class="h-service-card">
+          <div class="img-zoom" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1580901368919-7738efb0f87e?w=400&q=75&fit=crop" alt="Drain unblocking" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:var(--space-5);">
+            <div style="font-size:1.5rem; margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-drain"></use></svg></div>
+            <h3 style="font-family:var(--font-serif);font-size:var(--size-lg);color:var(--text-primary);margin-bottom:var(--space-2);">Drain Unblocking</h3>
+            <p style="font-size:var(--size-sm);color:var(--text-secondary);margin-bottom:var(--space-4);">High-pressure jetting and CCTV surveys for guaranteed clear drains.</p>
+            <div style="font-size:var(--size-sm);font-weight:var(--weight-bold);color:var(--color-copper);">From £75 →</div>
+          </div>
+        </article>
+
+        <article class="h-service-card">
+          <div class="img-zoom" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=75&fit=crop" alt="Bathroom fitting" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:var(--space-5);">
+            <div style="font-size:1.5rem; margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-shower"></use></svg></div>
+            <h3 style="font-family:var(--font-serif);font-size:var(--size-lg);color:var(--text-primary);margin-bottom:var(--space-2);">Bathroom Fitting</h3>
+            <p style="font-size:var(--size-sm);color:var(--text-secondary);margin-bottom:var(--space-4);">Complete bathroom installation from design to final fixture.</p>
+            <div style="font-size:var(--size-sm);font-weight:var(--weight-bold);color:var(--color-copper);">From £1,200 →</div>
+          </div>
+        </article>
+
+        <article class="h-service-card">
+          <div class="img-zoom" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400&q=75&fit=crop" alt="Water heater" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:var(--space-5);">
+            <div style="font-size:1.5rem; margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-flame"></use></svg></div>
+            <h3 style="font-family:var(--font-serif);font-size:var(--size-lg);color:var(--text-primary);margin-bottom:var(--space-2);">Water Heater</h3>
+            <p style="font-size:var(--size-sm);color:var(--text-secondary);margin-bottom:var(--space-4);">Supply and install all types including tankless and solar systems.</p>
+            <div style="font-size:var(--size-sm);font-weight:var(--weight-bold);color:var(--color-copper);">From £350 →</div>
+          </div>
+        </article>
+
+        <article class="h-service-card">
+          <div class="img-zoom" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1617727553252-65be88a976c3?w=400&q=75&fit=crop" alt="Tap replacement" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:var(--space-5);">
+            <div style="font-size:1.5rem; margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-tap"></use></svg></div>
+            <h3 style="font-family:var(--font-serif);font-size:var(--size-lg);color:var(--text-primary);margin-bottom:var(--space-2);">Tap Replacement</h3>
+            <p style="font-size:var(--size-sm);color:var(--text-secondary);margin-bottom:var(--space-4);">Modern tap fitting from our designer range or your own choice.</p>
+            <div style="font-size:var(--size-sm);font-weight:var(--weight-bold);color:var(--color-copper);">From £65 →</div>
+          </div>
+        </article>
+
+        <article class="h-service-card">
+          <div class="img-zoom" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75&fit=crop" alt="Tank cleaning" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:var(--space-5);">
+            <div style="font-size:1.5rem; margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-droplet"></use></svg></div>
+            <h3 style="font-family:var(--font-serif);font-size:var(--size-lg);color:var(--text-primary);margin-bottom:var(--space-2);">Tank Cleaning</h3>
+            <p style="font-size:var(--size-sm);color:var(--text-secondary);margin-bottom:var(--space-4);">Complete tank disinfection and maintenance for clean water supply.</p>
+            <div style="font-size:var(--size-sm);font-weight:var(--weight-bold);color:var(--color-copper);">From £120 →</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3 — HOW IT WORKS (Process Steps)
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg-accent);" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header center" data-reveal="fade-up">
+      <div class="section-label">Our Process</div>
+      <h2 class="section-title" id="process-heading">Simple Steps to a Perfect Fix</h2>
+      <div class="accent-line center"></div>
+      <p class="section-subtitle">We've refined our process over 15 years to make getting your plumbing fixed as easy and stress-free as possible.</p>
+    </div>
+
+    <div class="grid grid-4 stagger-children" style="margin-top:var(--space-12);">
+      <div style="position:relative; padding:var(--space-6); background:var(--bg-secondary); border-radius:var(--radius-2xl); border:1px solid var(--border-color); overflow:hidden; text-align:center;">
+        <div class="process-number-large" aria-hidden="true">01</div>
+        <div style="width:64px;height:64px;background:var(--grad-cobalt);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg></div>
+        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:var(--text-primary);margin-bottom:var(--space-2);">1. Contact Us</h3>
+        <p style="font-size:var(--size-sm);color:var(--text-secondary);">Call, email, or use our online form. Describe your problem and we'll guide you.</p>
+      </div>
+
+      <div style="position:relative; padding:var(--space-6); background:var(--bg-secondary); border-radius:var(--radius-2xl); border:1px solid var(--border-color); overflow:hidden; text-align:center;">
+        <div class="process-number-large" aria-hidden="true">02</div>
+        <div style="width:64px;height:64px;background:var(--grad-copper);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-file"></use></svg></div>
+        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:var(--text-primary);margin-bottom:var(--space-2);">2. Get a Quote</h3>
+        <p style="font-size:var(--size-sm);color:var(--text-secondary);">We provide a transparent, fixed quote before any work begins. No surprises.</p>
+      </div>
+
+      <div style="position:relative; padding:var(--space-6); background:var(--bg-secondary); border-radius:var(--radius-2xl); border:1px solid var(--border-color); overflow:hidden; text-align:center;">
+        <div class="process-number-large" aria-hidden="true">03</div>
+        <div style="width:64px;height:64px;background:var(--grad-cobalt);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-wrench"></use></svg></div>
+        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:var(--text-primary);margin-bottom:var(--space-2);">3. Expert Repair</h3>
+        <p style="font-size:var(--size-sm);color:var(--text-secondary);">Our certified plumber arrives on time and completes the work to the highest standard.</p>
+      </div>
+
+      <div style="position:relative; padding:var(--space-6); background:var(--bg-secondary); border-radius:var(--radius-2xl); border:1px solid var(--border-color); overflow:hidden; text-align:center;">
+        <div class="process-number-large" aria-hidden="true">04</div>
+        <div style="width:64px;height:64px;background:var(--grad-copper);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
+        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:var(--text-primary);margin-bottom:var(--space-2);">4. Guaranteed</h3>
+        <p style="font-size:var(--size-sm);color:var(--text-secondary);">All work is backed by our workmanship guarantee. Your satisfaction is assured.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 4 — SERVICE AREAS MAP
+═══════════════════════════════════════════ -->
+<section class="section" aria-labelledby="areas-heading">
+  <div class="container">
+    <div class="split-50-50">
+      <div data-reveal="fade-right">
+        <div class="section-label">Coverage</div>
+        <h2 class="section-title" id="areas-heading">We Serve Across the Greater London Region</h2>
+        <div class="accent-line"></div>
+        <p style="color:var(--text-secondary);margin-bottom:var(--space-6);line-height:var(--leading-relaxed);">Our teams are strategically positioned to reach any address within the M25 and surrounding counties within 60 minutes or less.</p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2); margin-bottom:var(--space-8);">
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Central London</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> North London</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> South London</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> East London</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> West London</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Surrey</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Essex</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Kent</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Hertfordshire</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Berkshire</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Buckinghamshire</span>
+          <span class="area-tag"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Middlesex</span>
+        </div>
+
+        <div style="display:flex; gap:var(--space-6); flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-serif);font-size:var(--size-4xl);color:var(--color-cobalt);" data-counter="32" data-duration="2000">0</div>
+            <div style="font-size:var(--size-sm);color:var(--text-secondary);">Districts Covered</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-serif);font-size:var(--size-4xl);color:var(--color-copper);" data-counter="60" data-duration="2000">0</div>
+            <div style="font-size:var(--size-sm);color:var(--text-secondary);">Min Max Response</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-serif);font-size:var(--size-4xl);color:var(--color-cobalt);" data-counter="45" data-duration="2000">0</div>
+            <div style="font-size:var(--size-sm);color:var(--text-secondary);">Active Plumbers</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Illustration -->
+      <div data-reveal="fade-left">
+        <div style="background:var(--bg-accent);border-radius:var(--radius-3xl);overflow:hidden;height:480px;position:relative;">
+          <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=700&q=80&fit=crop" alt="London service area map" style="width:100%;height:100%;object-fit:cover;opacity:0.6;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom, transparent 40%, rgba(22,58,95,0.6) 100%);display:flex;align-items:flex-end;padding:var(--space-8);">
+            <div style="color:white;">
+              <div style="font-size:var(--size-sm);font-weight:var(--weight-bold);margin-bottom:4px;"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Greater London & Beyond</div>
+              <div style="font-size:var(--size-xs);opacity:0.8;">Click to check if we cover your area →</div>
+            </div>
+          </div>
+          <!-- Animated ping dots -->
+          <div style="position:absolute;top:30%;left:40%;width:16px;height:16px;background:var(--color-copper);border-radius:50%;animation:pulse-ring 2s infinite;"></div>
+          <div style="position:absolute;top:55%;left:60%;width:12px;height:12px;background:var(--color-copper);border-radius:50%;animation:pulse-ring 2s 0.5s infinite;"></div>
+          <div style="position:absolute;top:40%;left:25%;width:10px;height:10px;background:var(--color-copper);border-radius:50%;animation:pulse-ring 2s 1s infinite;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 5 — RECENT BLOG POSTS
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg-accent);" aria-labelledby="blog-heading">
+  <div class="container">
+    <div class="section-header center" data-reveal="fade-up">
+      <div class="section-label">Knowledge Hub</div>
+      <h2 class="section-title" id="blog-heading">Expert Tips & Plumbing Insights</h2>
+      <div class="accent-line center"></div>
+    </div>
+
+    <div class="grid grid-auto-3 stagger-children" style="margin-top:var(--space-12);">
+      <article class="blog-card">
+        <div class="blog-card-img-wrap">
+          <img class="blog-card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=75&fit=crop" alt="Preventing frozen pipes">
+          <span class="blog-card-category">Maintenance</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>Jan 15, 2026</span><div class="blog-card-meta-dot"></div><span>5 min read</span>
+          </div>
+          <a href="blog-details.html"><h3 class="blog-card-title">7 Ways to Prevent Frozen Pipes This Winter</h3></a>
+          <p class="blog-card-excerpt">Cold weather is the #1 cause of burst pipes. Here's how to protect your home before temperatures drop.</p>
+          <a href="blog-details.html" class="service-card-link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-img-wrap">
+          <img class="blog-card-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=75&fit=crop" alt="Boiler maintenance">
+          <span class="blog-card-category">Water Heating</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>Jan 8, 2026</span><div class="blog-card-meta-dot"></div><span>4 min read</span>
+          </div>
+          <a href="blog-details.html"><h3 class="blog-card-title">Signs Your Water Heater Needs Replacing</h3></a>
+          <p class="blog-card-excerpt">Rusty water, strange noises, and high bills — know when it's time to upgrade your water heater.</p>
+          <a href="blog-details.html" class="service-card-link">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-img-wrap">
+          <img class="blog-card-img" src="https://images.unsplash.com/photo-1617727553252-65be88a976c3?w=600&q=75&fit=crop" alt="Drain care">
+          <span class="blog-card-category">Drains</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>Dec 28, 2025</span><div class="blog-card-meta-dot"></div><span>3 min read</span>
+          </div>
+          <a href="blog-details.html"><h3 class="blog-card-title">How to Keep Your Drains Clear Year-Round</h3></a>
+          <p class="blog-card-excerpt">Simple habits and monthly maintenance routines to stop blockages before they start.</p>
+          <a href="blog-details.html" class="service-card-link">Read Article →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="text-center" style="margin-top:var(--space-10);" data-reveal="fade-up">
+      <a href="blog.html" class="btn btn-primary">View All Articles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 6 — PARTNERS / TRUST MARQUEE
+═══════════════════════════════════════════ -->
+<section class="section section-sm" aria-label="Trust and partners">
+  <div class="container">
+    <div class="section-header center" data-reveal="fade-up">
+      <div class="section-label">Trusted By</div>
+      <h2 class="section-title" style="font-size:var(--size-3xl);">Certified, Accredited & Trusted</h2>
+    </div>
+
+    <div class="marquee-wrap" data-reveal="fade-up" data-delay="200">
+      <div class="marquee-track">
+        <!-- Duplicated for seamless loop -->
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-award"></use></svg> Gas Safe Registered</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-shield"></use></svg> CIPHE Member</div>
+        <div class="marquee-item">⭐ Which? Trusted Trader</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-award"></use></svg> BPEC Certified</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-check-circle"></use></svg> Checkatrade Approved</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-lock"></use></svg> TrustMark Registered</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-check"></use></svg> Green Plumbers UK</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-shield-check"></use></svg> WRAS Approved</div>
+        <!-- Duplicate -->
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-award"></use></svg> Gas Safe Registered</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-shield"></use></svg> CIPHE Member</div>
+        <div class="marquee-item">⭐ Which? Trusted Trader</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-award"></use></svg> BPEC Certified</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-check-circle"></use></svg> Checkatrade Approved</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-lock"></use></svg> TrustMark Registered</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-check"></use></svg> Green Plumbers UK</div>
+        <div class="marquee-item"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-shield-check"></use></svg> WRAS Approved</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-text">FlowMaster</div>
+        <div class="footer-logo-tag">Plumbing & Pipe Repair</div>
+        <p class="footer-desc">Trusted plumbing services across Greater London since 2009. Licensed, insured, and award-winning.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-facebook"></use></svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-instagram"></use></svg></a>
+          <a href="#" class="social-link" aria-label="Twitter"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-twitter"></use></svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html#pipe-repair" class="footer-link">Pipe Repair</a></li>
+          <li><a href="services.html#drain" class="footer-link">Drain Unblocking</a></li>
+          <li><a href="services.html#bathroom" class="footer-link">Bathroom Fitting</a></li>
+          <li><a href="services.html#water-heater" class="footer-link">Water Heater</a></li>
+          <li><a href="services.html#tap" class="footer-link">Tap Replacement</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing Guide</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="emergency.html" class="footer-link">Emergency</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg></div>
+          <div class="footer-contact-text"><strong>Emergency</strong><a href="tel:+18005556789" style="color:var(--color-copper-light);">+1 800 555 6789</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-mail"></use></svg></div>
+          <div class="footer-contact-text"><strong>Email</strong><a href="mailto:hello@flowmaster.com" style="color:var(--color-copper-light);">hello@flowmaster.com</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-pin"></use></svg></div>
+          <div class="footer-contact-text"><strong>Office</strong>42 Copper Lane, London EC1A 1BB</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 FlowMaster Plumbing. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy</a>
+        <a href="terms.html" class="footer-bottom-link">Terms</a>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top"><svg class="icon icon-md" aria-hidden="true"><use href="icons.svg#ic-chevron-up"></use></svg></button>
+<div class="emergency-float">
+  <a href="tel:+18005556789" class="emergency-float-btn" aria-label="Emergency call">
+    <span class="emergency-float-dot"></span><span>Emergency</span><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg>
+  </a>
+</div>
+<div class="toast-container" aria-live="polite"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

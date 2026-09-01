@@ -1,0 +1,192 @@
+/* ============================================================
+   ICONS — SVG Icon System
+   Usage: <svg class="icon icon-md"><use href="icons.svg#ic-phone"></use></svg>
+   ============================================================ */
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+/* ── SIZES ── */
+.icon-xs  { width: 14px; height: 14px; }
+.icon-sm  { width: 16px; height: 16px; }
+.icon-md  { width: 20px; height: 20px; }
+.icon-lg  { width: 24px; height: 24px; }
+.icon-xl  { width: 32px; height: 32px; }
+.icon-2xl { width: 40px; height: 40px; }
+.icon-3xl { width: 48px; height: 48px; }
+.icon-4xl { width: 64px; height: 64px; }
+
+/* ── FILLED ICONS (social, star, etc.) ── */
+.icon-filled {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* ── COLORS ── */
+.icon-cobalt  { color: var(--color-cobalt); }
+.icon-copper  { color: var(--color-copper); }
+.icon-white   { color: #fff; }
+.icon-slate   { color: var(--color-slate); }
+.icon-success { color: var(--color-success); }
+.icon-error   { color: var(--color-error); }
+.icon-muted   { color: var(--text-light); }
+
+/* ── ICON WRAPPERS ── */
+.icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  flex-shrink: 0;
+}
+
+.icon-wrap-sm  { width: 36px;  height: 36px; }
+.icon-wrap-md  { width: 48px;  height: 48px; }
+.icon-wrap-lg  { width: 60px;  height: 60px; }
+.icon-wrap-xl  { width: 72px;  height: 72px; }
+.icon-wrap-2xl { width: 88px;  height: 88px; }
+
+.icon-wrap-cobalt { background: rgba(22,58,95,0.10); color: var(--color-cobalt); }
+.icon-wrap-copper { background: rgba(184,115,51,0.12); color: var(--color-copper); }
+.icon-wrap-white  { background: rgba(255,255,255,0.10); color: #fff; }
+.icon-wrap-success{ background: rgba(16,185,129,0.10); color: var(--color-success); }
+.icon-wrap-error  { background: rgba(192,57,43,0.12); color: #E74C3C; }
+.icon-wrap-slate  { background: var(--bg-accent); color: var(--text-secondary); }
+.icon-wrap-round  { border-radius: 50%; }
+
+/* ── LOGO ICON ── */
+.navbar-logo-icon .icon,
+.loader-logo .icon {
+  width: 26px;
+  height: 26px;
+  color: var(--color-copper);
+}
+
+/* ── TOP BAR ICONS ── */
+.top-bar-icon { width: 14px; height: 14px; vertical-align: middle; }
+
+/* ── NAVBAR DROPDOWN ICONS ── */
+.nav-dropdown-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: rgba(22,58,95,0.07);
+  color: var(--color-cobalt);
+  flex-shrink: 0;
+}
+
+.nav-dropdown-icon .icon { width: 16px; height: 16px; }
+
+/* ── THEME CONTROL BUTTONS ── */
+.theme-btn .icon { width: 16px; height: 16px; }
+
+/* ── NAVBAR CTA ICON ── */
+.navbar-cta .icon { width: 16px; height: 16px; }
+
+/* ── SERVICE CARD ICON ── */
+.service-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(22,58,95,0.08);
+  color: var(--color-cobalt);
+  transition: background var(--dur-base) var(--ease-swift), transform var(--dur-base) var(--ease-bounce);
+  flex-shrink: 0;
+}
+
+.service-icon-wrap .icon { width: 28px; height: 28px; }
+
+.service-card:hover .service-icon-wrap {
+  background: var(--grad-cobalt);
+  color: #fff;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* ── STATS ICON ── */
+.stat-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184,115,51,0.15);
+  color: var(--color-copper);
+}
+
+.stat-icon-wrap .icon { width: 24px; height: 24px; }
+
+/* ── FEATURE ICON ── */
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-xl);
+  flex-shrink: 0;
+}
+
+/* ── SOCIAL ICON ── */
+.social-link .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── BACK TO TOP ICON ── */
+.back-to-top .icon { width: 18px; height: 18px; }
+
+/* ── EMERGENCY FLOAT ICON ── */
+.emergency-float-btn .icon { width: 18px; height: 18px; }
+
+/* ── FOOTER CONTACT ICON ── */
+.footer-contact-icon .icon { width: 16px; height: 16px; }
+
+/* ── FAQ ICON ── */
+.faq-icon-svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform var(--dur-base) var(--ease-swift);
+  color: var(--color-cobalt);
+}
+
+.faq-item.open .faq-icon-svg {
+  transform: rotate(45deg);
+}
+
+/* ── LOADER LOGO ── */
+.loader-logo {
+  font-size: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-logo .icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-copper);
+}
+
+/* ── BLOG CARD READ LINK ── */
+.service-card-link .icon { width: 16px; height: 16px; }
+
+/* ── PRICING CHECK / CROSS ── */
+.pricing-feature .check .icon { width: 14px; height: 14px; color: var(--color-success); }
+.pricing-feature .cross .icon { width: 14px; height: 14px; color: var(--text-light); }

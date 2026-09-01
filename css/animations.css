@@ -1,0 +1,257 @@
+/* ============================================================
+   ANIMATIONS — Scroll Reveal, Counters, Micro-interactions
+   ============================================================ */
+
+/* ── SCROLL REVEAL BASE ── */
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+
+[data-reveal="fade-up"]    { transform: translateY(40px); }
+[data-reveal="fade-down"]  { transform: translateY(-40px); }
+[data-reveal="fade-left"]  { transform: translateX(40px); }
+[data-reveal="fade-right"] { transform: translateX(-40px); }
+[data-reveal="zoom-in"]    { transform: scale(0.9); }
+[data-reveal="zoom-out"]   { transform: scale(1.1); }
+[data-reveal="flip"]       { transform: rotateX(30deg); }
+[data-reveal="slide-up"]   { transform: translateY(60px); }
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays */
+[data-delay="100"] { transition-delay: 100ms !important; }
+[data-delay="200"] { transition-delay: 200ms !important; }
+[data-delay="300"] { transition-delay: 300ms !important; }
+[data-delay="400"] { transition-delay: 400ms !important; }
+[data-delay="500"] { transition-delay: 500ms !important; }
+[data-delay="600"] { transition-delay: 600ms !important; }
+[data-delay="700"] { transition-delay: 700ms !important; }
+[data-delay="800"] { transition-delay: 800ms !important; }
+
+/* ── FLOATING ANIMATION ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ── SPIN ── */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+/* ── SHIMMER ── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ── PULSE RING ── */
+@keyframes pulse-ring {
+  0%   { transform: scale(1);    opacity: 0.6; }
+  100% { transform: scale(1.8);  opacity: 0; }
+}
+
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--color-copper);
+  animation: pulse-ring 2s var(--ease-out) infinite;
+}
+
+/* ── GRADIENT TEXT ANIMATION ── */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-copper-light), var(--color-cobalt-light), var(--color-copper));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* ── NUMBER TICKER ── */
+.counter-value {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+/* ── UNDERLINE DRAW ── */
+.underline-draw {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-draw::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0;
+  background: var(--grad-copper);
+  border-radius: var(--radius-full);
+  transition: width 0.6s var(--ease-swift) 0.3s;
+}
+
+.underline-draw.revealed::after {
+  width: 100%;
+}
+
+/* ── SLIDING UNDERLINE HOVER ── */
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--color-copper);
+  transition: width var(--dur-base) var(--ease-swift);
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* ── CARD HOVER TILT ── */
+.tilt-card {
+  transition: transform var(--dur-slow) var(--ease-swift);
+  transform-style: preserve-3d;
+}
+
+/* ── IMAGE PARALLAX ── */
+.parallax-img {
+  will-change: transform;
+}
+
+/* ── STAGGER CHILDREN ── */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.stagger-children.revealed > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+.stagger-children.revealed > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.1s; }
+.stagger-children.revealed > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.2s; }
+.stagger-children.revealed > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.3s; }
+.stagger-children.revealed > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.4s; }
+.stagger-children.revealed > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.5s; }
+.stagger-children.revealed > *:nth-child(7) { opacity: 1; transform: none; transition-delay: 0.6s; }
+.stagger-children.revealed > *:nth-child(8) { opacity: 1; transform: none; transition-delay: 0.7s; }
+
+/* ── PAGE LOADER ── */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: var(--color-charcoal);
+  z-index: var(--z-top);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-6);
+  transition: opacity 0.6s var(--ease-swift);
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-logo {
+  font-family: var(--font-serif);
+  font-size: var(--size-3xl);
+  color: var(--color-white);
+  animation: float 1.5s ease-in-out infinite;
+}
+
+.loader-bar-track {
+  width: 200px;
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: var(--grad-copper);
+  border-radius: var(--radius-full);
+  animation: loader-fill 1.2s var(--ease-swift) forwards;
+}
+
+@keyframes loader-fill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ── PROGRESS RING (for certifications etc.) ── */
+.progress-ring {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring svg {
+  transform: rotate(-90deg);
+}
+
+.progress-ring circle {
+  fill: none;
+  stroke-width: 4;
+}
+
+.progress-ring .track {
+  stroke: var(--border-color);
+}
+
+.progress-ring .fill {
+  stroke: var(--color-copper);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s var(--ease-out);
+}
+
+.progress-ring-label {
+  position: absolute;
+  font-weight: var(--weight-extrabold);
+  font-size: var(--size-lg);
+  color: var(--text-primary);
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oops! The page you're looking for doesn't exist. Return to FlowMaster Plumbing's homepage or find the service you need.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FAFAF7">
+  <title>404 — Page Not Found | FlowMaster Plumbing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/extra.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px var(--space-6) var(--space-16);
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
+    .error-page-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(22,58,95,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(184,115,51,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .error-number {
+      font-family: var(--font-serif);
+      font-size: clamp(8rem, 20vw, 18rem);
+      font-weight: bold;
+      background: var(--grad-cobalt);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      opacity: 0.15;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .error-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 640px;
+    }
+    .error-icon {
+      font-size: 5rem;
+      margin-bottom: var(--space-5);
+      animation: bounce 2s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+    .error-quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      justify-content: center;
+      margin-top: var(--space-6);
+    }
+    .error-quick-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      font-size: var(--size-sm);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all var(--dur-base) var(--ease-swift);
+    }
+    .error-quick-link:hover {
+      background: var(--color-cobalt);
+      border-color: var(--color-cobalt);
+      color: white;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+<div id="svg-sprites" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;"><svg xmlns="http://www.w3.org/2000/svg"><use href="icons.svg"></use></svg></div>
+
+<div class="page-loader" aria-hidden="true">
+  <div class="loader-logo"><svg class="icon" aria-hidden="true" style="width:40px;height:40px;color:var(--color-copper)"><use href="icons.svg#ic-x-circle"></use></svg></div>
+  <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+</div>
+<div class="page-transition" aria-hidden="true"></div>
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <span><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-phone"></use></svg> <a href="tel:+18005556789">+1 800 555 6789</a></span>
+    <div class="top-bar-divider"></div>
+    <span><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-mail"></use></svg> <a href="mailto:hello@flowmaster.com">hello@flowmaster.com</a></span>
+  </div>
+  <div class="top-bar-right"><span>Emergency 24/7</span></div>
+</div>
+
+<nav class="navbar" role="navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="navbar-logo-icon"><svg class="icon icon-lg" aria-hidden="true" style="color:var(--color-copper)"><use href="icons.svg#ic-wrench"></use></svg></div>
+      <div class="navbar-logo-text">
+        <span class="navbar-logo-name">FlowMaster</span>
+        <span class="navbar-logo-tagline">Plumbing & Pipe Repair</span>
+      </div>
+    </a>
+    <ul class="navbar-menu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <div class="theme-controls">
+        <button class="theme-btn icon-moon" data-theme-toggle aria-label="Dark mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-moon"></use></svg></button>
+        <button class="theme-btn icon-sun"  data-theme-toggle aria-label="Light mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-sun"></use></svg></button>
+      </div>
+      <a href="emergency.html" class="navbar-cta"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> Emergency</a>
+    </div>
+    <button class="navbar-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main-content">
+<div class="error-page">
+  <div class="error-page-bg" aria-hidden="true"></div>
+  <div class="error-number" aria-hidden="true">404</div>
+
+  <div class="error-content" data-reveal="fade-up">
+    <div class="error-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-wrench"></use></svg></div>
+    <div class="section-label" style="justify-content:center;">404 Error</div>
+    <h1 style="font-family:var(--font-serif);font-size:clamp(var(--size-3xl),5vw,var(--size-5xl));margin-bottom:var(--space-4);">Page Not Found</h1>
+    <div class="accent-line center"></div>
+    <p style="color:var(--text-secondary);font-size:var(--size-md);margin-bottom:var(--space-8);line-height:var(--leading-relaxed);">
+      The page you're looking for seems to have a leak and gone missing! Don't worry — our team can help you find what you need.
+    </p>
+
+    <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-8);">
+      <a href="index.html" class="btn btn-primary btn-lg"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-home"></use></svg> Go to Homepage</a>
+      <a href="contact.html" class="btn btn-outline btn-lg"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg> Contact Us</a>
+    </div>
+
+    <!-- Popular Links -->
+    <div style="margin-top:var(--space-6);">
+      <p style="font-size:var(--size-sm);color:var(--text-light);margin-bottom:var(--space-4);">Or try one of these popular pages:</p>
+      <div class="error-quick-links">
+        <a href="services.html" class="error-quick-link"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:5px"><use href="icons.svg#ic-wrench"></use></svg> Services</a>
+        <a href="pricing.html"  class="error-quick-link"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:5px"><use href="icons.svg#ic-dollar"></use></svg> Pricing</a>
+        <a href="blog.html"     class="error-quick-link"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:5px"><use href="icons.svg#ic-newspaper"></use></svg> Blog</a>
+        <a href="about.html"    class="error-quick-link"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:5px"><use href="icons.svg#ic-info"></use></svg> About</a>
+        <a href="emergency.html" class="error-quick-link" style="background:rgba(192,57,43,0.08);border-color:rgba(192,57,43,0.3);color:var(--color-error);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px"><use href="icons.svg#ic-zap"></use></svg> Emergency</a>
+        <a href="sitemap.html"  class="error-quick-link"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:5px"><use href="icons.svg#ic-map"></use></svg> Sitemap</a>
+      </div>
+    </div>
+
+    <!-- Emergency prompt -->
+    <div style="margin-top:var(--space-10);padding:var(--space-5) var(--space-6);background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.2);border-radius:var(--radius-xl);">
+      <p style="font-size:var(--size-sm);color:var(--text-secondary);margin-bottom:var(--space-3);"><svg class="icon icon-sm" aria-hidden="true" style="color:#E74C3C;margin-right:4px"><use href="icons.svg#ic-zap"></use></svg> Have a plumbing emergency? Don't look for pages — call us directly:</p>
+      <a href="tel:+18005556789" style="font-family:var(--font-serif);font-size:var(--size-2xl);color:var(--color-cobalt);font-weight:bold;text-decoration:none;">+1 800 555 6789</a>
+      <div style="font-size:var(--size-xs);color:var(--text-light);margin-top:4px;">Available 24 hours, 7 days</div>
+    </div>
+
+    <!-- Auto redirect countdown -->
+    <p style="font-size:var(--size-xs);color:var(--text-light);margin-top:var(--space-8);">
+      Redirecting to homepage in <strong id="countdown">15</strong> seconds...
+      <a href="index.html" style="color:var(--color-cobalt);">Go now</a>
+    </p>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;">
+      <p class="footer-copy">© 2026 FlowMaster Plumbing. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="index.html"   class="footer-bottom-link">Home</a>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+        <a href="privacy.html" class="footer-bottom-link">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-container" aria-live="polite"></div>
+<script type="module" src="js/main.js"></script>
+<script>
+// Countdown redirect
+let count = 15;
+const el = document.getElementById('countdown');
+const timer = setInterval(() => {
+  count--;
+  if (el) el.textContent = count;
+  if (count <= 0) {
+    clearInterval(timer);
+    window.location.href = 'index.html';
+  }
+}, 1000);
+</script>
+</body>
+</html>

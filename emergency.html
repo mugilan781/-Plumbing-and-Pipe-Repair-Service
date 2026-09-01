@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FlowMaster 24/7 Emergency Plumbing Service — burst pipes, flooding, blocked drains. We respond within 60 minutes across Greater London, day and night.">
+  <meta name="theme-color" content="#0D1929">
+  <title>24/7 Emergency Plumbing Service — FlowMaster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/extra.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <style>
+    .emergency-countdown {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .countdown-unit {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5) var(--space-6);
+      text-align: center;
+      min-width: 80px;
+      backdrop-filter: blur(8px);
+    }
+    .countdown-num {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem,5vw,3.5rem);
+      color: white;
+      line-height: 1;
+    }
+    .countdown-label {
+      font-size: var(--size-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wider);
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+    .emergency-service-item {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+      padding: var(--space-5);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      transition: border-color var(--dur-base) var(--ease-swift),
+                  background var(--dur-base) var(--ease-swift);
+    }
+    .emergency-service-item:hover {
+      border-color: rgba(192,57,43,0.5);
+      background: rgba(192,57,43,0.08);
+    }
+    @keyframes radar {
+      0%   { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(3); opacity: 0; }
+    }
+    .radar-dot {
+      position: relative;
+      width: 16px;
+      height: 16px;
+    }
+    .radar-dot::before,
+    .radar-dot::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #FF6B6B;
+      border-radius: 50%;
+      animation: radar 2s ease-out infinite;
+    }
+    .radar-dot::after {
+      animation-delay: 1s;
+    }
+    .radar-core {
+      position: absolute;
+      inset: 4px;
+      background: #FF6B6B;
+      border-radius: 50%;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+<div id="svg-sprites" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;"><svg xmlns="http://www.w3.org/2000/svg"><use href="icons.svg"></use></svg></div>
+
+<div class="page-loader" aria-hidden="true">
+  <div class="loader-logo"><svg class="icon" aria-hidden="true" style="width:40px;height:40px;color:#E74C3C"><use href="icons.svg#ic-zap"></use></svg></div>
+  <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+</div>
+<div class="page-transition" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<div class="top-bar" style="background:#1A0000;">
+  <div class="top-bar-left">
+    <span><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px;color:#FF6B6B"><use href="icons.svg#ic-zap"></use></svg> EMERGENCY LINE: <a href="tel:+18005556789" style="color:#FF6B6B;font-weight:bold;">+1 800 555 6789</a></span>
+    <div class="top-bar-divider"></div>
+    <span><svg class="icon icon-xs" aria-hidden="true" style="margin-right:4px"><use href="icons.svg#ic-zap"></use></svg> 24/7 · 365 Days · 60-Min Response</span>
+  </div>
+  <div class="top-bar-right"><span>No call-out charge during business hours</span></div>
+</div>
+
+<nav class="navbar" role="navigation" style="background:rgba(13,25,41,0.95);">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="navbar-logo-icon"><svg class="icon icon-lg" aria-hidden="true" style="color:var(--color-copper)"><use href="icons.svg#ic-wrench"></use></svg></div>
+      <div class="navbar-logo-text">
+        <span class="navbar-logo-name">FlowMaster</span>
+        <span class="navbar-logo-tagline">Plumbing & Pipe Repair</span>
+      </div>
+    </a>
+    <ul class="navbar-menu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <div class="theme-controls">
+        <button class="theme-btn icon-moon" data-theme-toggle aria-label="Dark mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-moon"></use></svg></button>
+        <button class="theme-btn icon-sun"  data-theme-toggle aria-label="Light mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-sun"></use></svg></button>
+      </div>
+      <a href="tel:+18005556789" class="btn btn-emergency"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg> Emergency Call</a>
+    </div>
+    <button class="navbar-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu">
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <div class="mobile-menu-footer">
+    <a href="tel:+18005556789" class="mobile-phone-link" style="color:#FF6B6B;"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg> +1 800 555 6789</a>
+  </div>
+</div>
+
+<main id="main-content">
+
+<!-- ═══ SECTION 1 — EMERGENCY HERO ═══ -->
+<section class="emergency-hero" aria-label="Emergency hero" style="min-height:100vh;">
+  <div class="container" style="position:relative;z-index:2;padding-top:var(--space-10);">
+    <div style="max-width:800px;margin:0 auto;text-align:center;">
+      <div class="emergency-badge-pulse" style="margin:0 auto var(--space-5);">
+        <div class="radar-dot"><div class="radar-core"></div></div>
+        <span>EMERGENCY SERVICE ACTIVE — 24/7</span>
+      </div>
+
+      <h1 style="font-family:var(--font-serif);font-size:clamp(2.5rem,7vw,6rem);color:white;line-height:var(--leading-tight);margin-bottom:var(--space-5);" data-reveal="fade-up">
+        Plumbing Emergency?<br>
+        <span style="color:#FF6B6B;font-style:italic;">We're On Our Way.</span>
+      </h1>
+
+      <p style="color:rgba(255,255,255,0.75);font-size:var(--size-md);max-width:580px;margin:0 auto var(--space-8);" data-reveal="fade-up" data-delay="100">
+        Burst pipe, flooding, blocked drain, no hot water — call our emergency line now. Certified plumbers reach you within 60 minutes, day or night, 365 days a year.
+      </p>
+
+      <!-- BIG PHONE NUMBER -->
+      <a href="tel:+18005556789" style="display:block;font-family:var(--font-serif);font-size:clamp(2.5rem,8vw,5rem);color:white;font-weight:bold;text-decoration:none;margin-bottom:var(--space-6);transition:color var(--dur-base) var(--ease-swift);" data-reveal="fade-up" data-delay="200" onmouseover="this.style.color='#FF6B6B'" onmouseout="this.style.color='white'">
+        <svg class="icon icon-md" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-phone"></use></svg>+1 800 555 6789
+      </a>
+
+      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-12);" data-reveal="fade-up" data-delay="300">
+        <a href="tel:+18005556789" class="btn btn-emergency btn-xl">Call Emergency Line Now</a>
+        <a href="#emergency-form" class="btn btn-outline-white btn-lg"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-file"></use></svg> Request Online</a>
+      </div>
+
+      <!-- Promise badges -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);" data-reveal="fade-up" data-delay="400">
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-xl);padding:var(--space-5);text-align:center;">
+          <div style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
+          <div style="font-family:var(--font-serif);font-size:var(--size-2xl);color:white;">60 min</div>
+          <div style="font-size:var(--size-xs);color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:var(--tracking-wide);">Max Response Time</div>
+        </div>
+        <div style="background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.3);border-radius:var(--radius-xl);padding:var(--space-5);text-align:center;">
+          <div style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-clock"></use></svg></div>
+          <div style="font-family:var(--font-serif);font-size:var(--size-2xl);color:white;">24/7</div>
+          <div style="font-size:var(--size-xs);color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:var(--tracking-wide);">Always Available</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-xl);padding:var(--space-5);text-align:center;">
+          <div style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
+          <div style="font-family:var(--font-serif);font-size:var(--size-2xl);color:white;">Fixed</div>
+          <div style="font-size:var(--size-xs);color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:var(--tracking-wide);">Before We Start</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2 — 24/7 HOTLINE CTA ═══ -->
+<section style="background:linear-gradient(135deg,#C0392B,#8B1A1A);padding-block:var(--space-12);" aria-label="Emergency hotline CTA">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6);" data-reveal="fade-up">
+      <div>
+        <div style="font-size:var(--size-xs);font-weight:var(--weight-bold);text-transform:uppercase;letter-spacing:var(--tracking-wider);color:rgba(255,255,255,0.7);margin-bottom:var(--space-2);">24/7 Emergency Hotline</div>
+        <div style="font-family:var(--font-serif);font-size:clamp(var(--size-3xl),4vw,var(--size-5xl));color:white;line-height:1;">+1 800 555 6789</div>
+        <div style="font-size:var(--size-sm);color:rgba(255,255,255,0.75);margin-top:var(--space-2);">For burst pipes, flooding, gas leaks, and all plumbing emergencies</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+        <a href="tel:+18005556789" class="btn btn-xl" style="background:white;color:#C0392B;font-weight:var(--weight-bold);"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg> Call Now — We Answer Immediately</a>
+        <div style="display:flex;gap:var(--space-4);justify-content:center;">
+          <span style="color:rgba(255,255,255,0.75);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="margin-right:4px;color:#6EE7B7"><use href="icons.svg#ic-check"></use></svg> No voicemail</span>
+          <span style="color:rgba(255,255,255,0.75);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="margin-right:4px;color:#6EE7B7"><use href="icons.svg#ic-check"></use></svg> Real plumber answers</span>
+          <span style="color:rgba(255,255,255,0.75);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="margin-right:4px;color:#6EE7B7"><use href="icons.svg#ic-check"></use></svg> Dispatched immediately</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — RESPONSE TIME PROMISE ═══ -->
+<section class="section" style="background:var(--color-charcoal);" aria-labelledby="promise-heading">
+  <div class="container">
+    <div class="section-header center" data-reveal="fade-up">
+      <div class="section-label" style="color:var(--color-copper-light);">Our Guarantee</div>
+      <h2 class="section-title" id="promise-heading" style="color:white;">The FlowMaster Emergency Promise</h2>
+      <div class="accent-line center"></div>
+    </div>
+
+    <div class="grid grid-auto-3 stagger-children" style="margin-top:var(--space-12);">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
+        <div style="width:72px;height:72px;background:rgba(192,57,43,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
+        <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);color:white;margin-bottom:var(--space-3);">60-Minute Arrival</h3>
+        <p style="color:rgba(255,255,255,0.65);font-size:var(--size-sm);line-height:var(--leading-relaxed);">We guarantee to reach your address within 60 minutes of your call. Our team is strategically positioned for maximum coverage.</p>
+      </div>
+      <div style="background:rgba(184,115,51,0.08);border:1px solid rgba(184,115,51,0.25);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
+        <div style="width:72px;height:72px;background:rgba(184,115,51,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-shield-check"></use></svg></div>
+        <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);color:white;margin-bottom:var(--space-3);">Fixed Before We Start</h3>
+        <p style="color:rgba(255,255,255,0.65);font-size:var(--size-sm);line-height:var(--leading-relaxed);">Even in an emergency, we provide a clear, agreed price before starting. No surprise charges — even at 3am on a bank holiday.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
+        <div style="width:72px;height:72px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
+        <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);color:white;margin-bottom:var(--space-3);">Fixed Before We Leave</h3>
+        <p style="color:rgba(255,255,255,0.65);font-size:var(--size-sm);line-height:var(--leading-relaxed);">We don't leave until the problem is fully resolved. Every emergency job is backed by our workmanship guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — EMERGENCY SERVICES LIST ═══ -->
+<section class="section" style="background:#0D1929;" aria-labelledby="emergency-services-heading">
+  <div class="container">
+    <div class="section-header center" data-reveal="fade-up">
+      <div class="section-label" style="color:var(--color-copper-light);">What We Handle</div>
+      <h2 class="section-title" id="emergency-services-heading" style="color:white;">Emergency Services We Cover</h2>
+      <div class="accent-line center"></div>
+    </div>
+
+    <div class="grid grid-auto-3 stagger-children" style="margin-top:var(--space-10);">
+      <div class="emergency-service-item">
+        <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
+        <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Burst & Broken Pipes</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Emergency isolation and repair of burst pipes to stop flooding immediately.</p></div>
+      </div>
+      <div class="emergency-service-item">
+        <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-drain"></use></svg></div>
+        <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Severe Blockages</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Rapid unblocking of drains, toilets, and sewer lines causing overflow.</p></div>
+      </div>
+      <div class="emergency-service-item">
+        <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-shower"></use></svg></div>
+        <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Toilet Overflow</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Overflowing or non-functioning toilets — fixed fast and hygienically.</p></div>
+      </div>
+      <div class="emergency-service-item">
+        <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-flame"></use></svg></div>
+        <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">No Hot Water</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Emergency diagnosis and repair of boiler failures and hot water outages.</p></div>
+      </div>
+      <div class="emergency-service-item">
+        <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-droplet"></use></svg></div>
+        <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Water Leaks</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Detection and repair of internal leaks threatening property structure.</p></div>
+      </div>
+      <div class="emergency-service-item">
+        <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-snowflake"></use></svg></div>
+        <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Frozen Pipes</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Safe thawing and repair of frozen pipes before they burst.</p></div>
+      </div>
+      <div class="emergency-service-item">
+        <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-alert"></use></svg></div>
+        <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Gas Safety Issues</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Suspected gas leaks — Gas Safe engineers on call for immediate response.</p></div>
+      </div>
+      <div class="emergency-service-item">
+        <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-home"></use></svg></div>
+        <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Flood Damage</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Post-flood pipe assessment, repair, and decontamination advice.</p></div>
+      </div>
+      <div class="emergency-service-item">
+        <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-wrench"></use></svg></div>
+        <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Any Urgent Issue</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">If you're not sure if it counts as an emergency — call us. We'll advise instantly.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5 — COVERAGE AREA ═══ -->
+<section class="section" style="background:var(--color-charcoal);" aria-labelledby="coverage-heading">
+  <div class="container">
+    <div class="split-50-50">
+      <div data-reveal="fade-right">
+        <div class="section-label" style="color:var(--color-copper-light);">Where We Operate</div>
+        <h2 class="section-title" id="coverage-heading" style="color:white;">Emergency Coverage Area</h2>
+        <div class="accent-line"></div>
+        <p style="color:rgba(255,255,255,0.7);margin-bottom:var(--space-6);line-height:var(--leading-relaxed);">We maintain emergency crews positioned strategically across Greater London and surrounding counties to guarantee our 60-minute response promise.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-6);">
+          <span style="padding:6px 14px;background:rgba(192,57,43,0.2);border:1px solid rgba(192,57,43,0.4);border-radius:var(--radius-full);font-size:var(--size-xs);color:rgba(255,255,255,0.8);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> All London Boroughs</span>
+          <span style="padding:6px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-full);font-size:var(--size-xs);color:rgba(255,255,255,0.8);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Surrey</span>
+          <span style="padding:6px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-full);font-size:var(--size-xs);color:rgba(255,255,255,0.8);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Essex</span>
+          <span style="padding:6px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-full);font-size:var(--size-xs);color:rgba(255,255,255,0.8);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Kent</span>
+          <span style="padding:6px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-full);font-size:var(--size-xs);color:rgba(255,255,255,0.8);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Hertfordshire</span>
+          <span style="padding:6px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-full);font-size:var(--size-xs);color:rgba(255,255,255,0.8);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Berkshire</span>
+        </div>
+        <div style="display:flex;gap:var(--space-5);">
+          <div>
+            <div style="font-family:var(--font-serif);font-size:var(--size-4xl);color:#FF6B6B;" data-counter="45" data-duration="2000">0</div>
+            <div style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Emergency Plumbers</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-serif);font-size:var(--size-4xl);color:var(--color-copper-light);" data-counter="60" data-duration="2000">0</div>
+            <div style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Min Response</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="fade-left">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-3xl);overflow:hidden;height:420px;position:relative;">
+          <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=600&q=80&fit=crop" alt="Emergency coverage map" style="width:100%;height:100%;object-fit:cover;opacity:0.4;">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--space-3);">
+            <div style="font-family:var(--font-serif);font-size:var(--size-4xl);color:white;text-align:center;">Greater London</div>
+            <div style="font-size:var(--size-sm);color:rgba(255,255,255,0.7);">& Surrounding Counties</div>
+            <div class="radar-dot" style="margin-top:var(--space-4);"><div class="radar-core"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6 — EMERGENCY CONTACT FORM ═══ -->
+<section class="section" style="background:#0D1929;" id="emergency-form" aria-labelledby="emergency-form-heading">
+  <div class="container">
+    <div style="max-width:700px;margin:0 auto;">
+      <div class="section-header center" data-reveal="fade-up">
+        <div class="section-label" style="color:var(--color-copper-light);">Online Request</div>
+        <h2 class="section-title" id="emergency-form-heading" style="color:white;">Can't Call? Request Online</h2>
+        <div class="accent-line center"></div>
+        <p style="color:rgba(255,255,255,0.65);margin-bottom:var(--space-6);">If you can't call right now, complete this form and we'll call you back within 5 minutes. For immediate help, please phone us.</p>
+        <div style="background:rgba(192,57,43,0.15);border:1px solid rgba(192,57,43,0.4);border-radius:var(--radius-xl);padding:var(--space-4) var(--space-5);display:inline-flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2);">
+          <div class="radar-dot" style="width:12px;height:12px;flex-shrink:0;"><div class="radar-core"></div></div>
+          <span style="color:#FF6B6B;font-weight:var(--weight-bold);font-size:var(--size-sm);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px"><use href="icons.svg#ic-phone"></use></svg> Prefer to call? +1 800 555 6789 — answered immediately</span>
+        </div>
+      </div>
+
+      <form style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-2xl);padding:var(--space-8);" data-form data-success-msg="Emergency request received! A plumber will call you back within 5 minutes." data-reveal="fade-up">
+        <div class="grid grid-2">
+          <div class="form-group">
+            <label class="form-label" for="em-name" style="color:rgba(255,255,255,0.85);">Your Name <span class="required">*</span></label>
+            <input id="em-name" type="text" class="form-control" placeholder="Full name" data-validate="required" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:white;">
+            <span class="form-error">Name required.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="em-phone" style="color:rgba(255,255,255,0.85);">Phone Number <span class="required">*</span></label>
+            <input id="em-phone" type="tel" class="form-control" placeholder="+44 7700 900000" data-validate="required phone" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:white;">
+            <span class="form-error">Valid phone required.</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="em-address" style="color:rgba(255,255,255,0.85);">Property Address <span class="required">*</span></label>
+          <input id="em-address" type="text" class="form-control" placeholder="Full address including postcode" data-validate="required" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:white;">
+          <span class="form-error">Address required.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="em-issue" style="color:rgba(255,255,255,0.85);">Emergency Type <span class="required">*</span></label>
+          <select id="em-issue" class="form-control" data-validate="required" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);">
+            <option value="">Select emergency type...</option>
+            <option>Burst/Broken Pipe</option>
+            <option>Severe Flooding</option>
+            <option>Blocked Drain (Overflowing)</option>
+            <option>Toilet Overflow</option>
+            <option>No Hot Water</option>
+            <option>Frozen Pipes</option>
+            <option>Gas Smell / Leak</option>
+            <option>Other Emergency</option>
+          </select>
+          <span class="form-error">Please select emergency type.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="em-desc" style="color:rgba(255,255,255,0.85);">Brief Description</label>
+          <textarea id="em-desc" class="form-control" style="min-height:80px;background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:white;" placeholder="Any details that will help us respond faster..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-emergency btn-lg" style="width:100%;font-size:var(--size-base);"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> Send Emergency Request — Callback in 5 Minutes</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" style="background:#050D18;">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-text">FlowMaster</div>
+        <div class="footer-logo-tag">Emergency Service</div>
+        <p class="footer-desc">24/7 emergency plumbing — always here when you need us most.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Emergency</div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon" style="background:rgba(192,57,43,0.2);color:#FF6B6B;"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
+          <div class="footer-contact-text"><strong>Emergency Hotline</strong><a href="tel:+18005556789" style="color:#FF6B6B;font-size:var(--size-lg);font-weight:bold;">+1 800 555 6789</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">All Services</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html"   class="footer-link">About Us</a></li>
+          <li><a href="index.html"   class="footer-link">Home</a></li>
+          <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 FlowMaster Plumbing. Emergency service available 24/7/365.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy</a>
+        <a href="terms.html"   class="footer-bottom-link">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top"><svg class="icon icon-md" aria-hidden="true"><use href="icons.svg#ic-chevron-up"></use></svg></button>
+<div class="toast-container" aria-live="polite"></div>
+<script type="module" src="js/main.js"></script>
+<script>
+// Live clock for emergency page
+function updateClock() {
+  const now = new Date();
+  const hEl = document.querySelector('[data-clock-h]');
+  const mEl = document.querySelector('[data-clock-m]');
+  const sEl = document.querySelector('[data-clock-s]');
+  if (hEl) hEl.textContent = String(now.getHours()).padStart(2,'0');
+  if (mEl) mEl.textContent = String(now.getMinutes()).padStart(2,'0');
+  if (sEl) sEl.textContent = String(now.getSeconds()).padStart(2,'0');
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+</body>
+</html>
