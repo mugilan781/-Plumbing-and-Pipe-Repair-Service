@@ -377,48 +377,97 @@
 
 </main>
 
-<footer class="footer">
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
-      <div>
+      <!-- Col 1: Company / Brand -->
+      <div class="footer-col footer-col-brand">
         <div class="footer-logo-text">FlowMaster</div>
-        <div class="footer-logo-tag">Plumbing & Pipe Repair</div>
-        <p class="footer-desc">Premium plumbing expertise and trusted advice.</p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="Facebook"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-facebook"></use></svg></a>
-          <a href="#" class="social-link" aria-label="Instagram"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-instagram"></use></svg></a>
-          <a href="#" class="social-link" aria-label="Twitter"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-twitter"></use></svg></a>
+        <div class="footer-logo-tag">Plumbing &amp; Pipe Repair</div>
+        <p class="footer-desc">Delivering premium plumbing &amp; pipe repair services since 2009. Licensed, insured, and committed to prompt response and quality craftsmanship you can trust.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="https://facebook.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-facebook"></use></svg></a>
+          <a href="https://instagram.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-instagram"></use></svg></a>
+          <a href="https://x.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-twitter"></use></svg></a>
+          <a href="https://linkedin.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+          <a href="https://youtube.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-youtube"></use></svg></a>
         </div>
       </div>
-      <div>
-        <div class="footer-heading">Services</div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col footer-col-links">
+        <div class="footer-heading">Quick Links</div>
         <ul class="footer-links">
-          <li><a href="services.html" class="footer-link">All Services</a></li>
-          <li><a href="emergency.html" class="footer-link">Emergency</a></li>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="home2.html" class="footer-link">Home 2</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
           <li><a href="pricing.html" class="footer-link">Pricing</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-heading">Company</div>
-        <ul class="footer-links">
-          <li><a href="about.html" class="footer-link">About Us</a></li>
-          <li><a href="blog.html"  class="footer-link">Blog</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
           <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
-      <div>
-        <div class="footer-heading">Contact</div>
+
+      <!-- Col 3: Contact Us -->
+      <div class="footer-col footer-col-contact">
+        <div class="footer-heading">Contact Us</div>
         <div class="footer-contact-item">
-          <div class="footer-contact-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg></div>
-          <div class="footer-contact-text"><strong>Emergency</strong><a href="tel:+18005556789" style="color:var(--color-copper-light);">+1 800 555 6789</a></div>
+          <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg></div>
+          <div class="footer-contact-text">
+            <strong>Emergency Line</strong>
+            <a href="tel:+18005556789">+1 800 555 6789</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-mail"></use></svg></div>
+          <div class="footer-contact-text">
+            <strong>Email Us</strong>
+            <a href="mailto:hello@flowmaster.com">hello@flowmaster.com</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-pin"></use></svg></div>
+          <div class="footer-contact-text">
+            <strong>Office Location</strong>
+            <span>42 Copper Lane, Pipeville, London EC1A 1BB</span>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-clock"></use></svg></div>
+          <div class="footer-contact-text">
+            <strong>Working Hours</strong>
+            <span>Mon–Sat: 7am–8pm · Emergency 24/7</span>
+          </div>
         </div>
       </div>
+
+      <!-- Col 4: Newsletter -->
+      <div class="footer-col footer-col-newsletter">
+        <div class="footer-heading">Newsletter</div>
+        <p class="footer-desc">Subscribe to get our latest plumbing tips, seasonal maintenance guides, and special service offers.</p>
+        <form class="footer-newsletter-form" data-form data-success-msg="Thank you for subscribing to FlowMaster updates!">
+          <div class="footer-newsletter-group">
+            <input type="email" class="form-control footer-newsletter-input" name="email" placeholder="Your email address" aria-label="Email address for newsletter" data-validate="required email" required>
+            <button type="submit" class="btn btn-primary footer-newsletter-btn" aria-label="Subscribe to newsletter">
+              <span>Subscribe</span>
+              <svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-arrow-right"></use></svg>
+            </button>
+          </div>
+          <div class="form-error"></div>
+        </form>
+      </div>
     </div>
+
+    <!-- Bottom Legal Section & Copyright -->
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 FlowMaster Plumbing. All rights reserved.</p>
-      <div class="footer-bottom-links">
-        <a href="privacy.html" class="footer-bottom-link">Privacy</a>
-        <a href="terms.html"   class="footer-bottom-link">Terms</a>
+      <p class="footer-copy">&copy; 2026 FlowMaster Plumbing. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+        <span class="footer-legal-sep" aria-hidden="true">|</span>
+        <a href="terms.html" class="footer-legal-link">Terms &amp; Conditions</a>
+        <span class="footer-legal-sep" aria-hidden="true">|</span>
+        <a href="sitemap.html" class="footer-legal-link">Sitemap</a>
       </div>
     </div>
   </div>
