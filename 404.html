@@ -118,33 +118,62 @@
   <div class="top-bar-right"><span>Emergency 24/7</span></div>
 </div>
 
-<nav class="navbar" role="navigation">
+<!-- ════════════════════ NAVBAR ════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="navbar-inner">
-    <a href="index.html" class="navbar-logo">
-      <div class="navbar-logo-icon"><svg class="icon icon-lg" aria-hidden="true" style="color:var(--color-copper)"><use href="icons.svg#ic-wrench"></use></svg></div>
+    <a href="index.html" class="navbar-logo" aria-label="FlowMaster Home">
+      <div class="navbar-logo-icon" aria-hidden="true"><svg class="icon icon-lg" aria-hidden="true" style="color:#ffffff"><use href="icons.svg#ic-wrench"></use></svg></div>
       <div class="navbar-logo-text">
         <span class="navbar-logo-name">FlowMaster</span>
         <span class="navbar-logo-tagline">Plumbing & Pipe Repair</span>
       </div>
     </a>
-    <ul class="navbar-menu">
+    <ul class="navbar-menu" role="list">
       <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
       <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
       <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
     <div class="navbar-actions">
       <div class="theme-controls">
-        <button class="theme-btn icon-moon" data-theme-toggle aria-label="Dark mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-moon"></use></svg></button>
+        <button class="theme-btn icon-moon" data-theme-toggle aria-label="Switch to dark mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-moon"></use></svg></button>
         <button class="theme-btn icon-sun"  data-theme-toggle aria-label="Light mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-sun"></use></svg></button>
+        <button class="theme-btn dir-btn icon-ltr" data-dir-toggle aria-label="Switch to RTL">RTL</button>
+        <button class="theme-btn dir-btn icon-rtl" data-dir-toggle aria-label="Switch to LTR">LTR</button>
       </div>
       <a href="emergency.html" class="navbar-cta"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> Emergency</a>
     </div>
-    <button class="navbar-hamburger" aria-label="Open menu" aria-expanded="false">
-      <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+    <button class="navbar-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
     </button>
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="index.html"    class="mobile-nav-link">Home</a>
+  <a href="home2.html"    class="mobile-nav-link">Home 2</a>
+  <a href="about.html"    class="mobile-nav-link">About</a>
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="pricing.html"  class="mobile-nav-link">Pricing</a>
+  <a href="blog.html"     class="mobile-nav-link">Blog</a>
+  <a href="contact.html"  class="mobile-nav-link">Contact</a>
+  <div class="mobile-menu-footer">
+    <a href="tel:+18005556789" class="mobile-phone-link"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg> +1 800 555 6789</a>
+    <a href="emergency.html" class="btn btn-emergency btn-lg"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> Emergency Service</a>
+    <div style="display:flex;gap:12px;margin-top:8px;">
+      <button class="theme-btn icon-moon" data-theme-toggle style="background:rgba(255,255,255,0.1);color:#fff;" aria-label="Dark mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-moon"></use></svg></button>
+      <button class="theme-btn icon-sun"  data-theme-toggle style="background:rgba(255,255,255,0.1);color:#fff;" aria-label="Light mode"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-sun"></use></svg></button>
+      <button class="theme-btn dir-btn icon-ltr" data-dir-toggle style="background:rgba(255,255,255,0.1);color:#fff;" aria-label="Switch to RTL">RTL</button>
+      <button class="theme-btn dir-btn icon-rtl" data-dir-toggle style="background:rgba(255,255,255,0.1);color:#fff;" aria-label="Switch to LTR">LTR</button>
+    </div>
+  </div>
+</div>
 
 <main id="main-content">
 <div class="error-page">

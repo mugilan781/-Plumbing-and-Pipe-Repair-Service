@@ -114,10 +114,10 @@
 [data-theme="light"] .icon-moon { display: flex; }
 
 /* RTL icon swap */
-[dir="rtl"] .icon-ltr { display: none; }
-[dir="rtl"] .icon-rtl { display: flex; }
-[dir="ltr"] .icon-rtl { display: none; }
-[dir="ltr"] .icon-ltr { display: flex; }
+[dir="rtl"] .icon-ltr { display: none !important; }
+[dir="rtl"] .icon-rtl { display: inline-flex !important; }
+[dir="ltr"] .icon-rtl { display: none !important; }
+[dir="ltr"] .icon-ltr { display: inline-flex !important; }
 
 /* Dark mode image brightness */
 [data-theme="dark"] img:not(.no-filter) {

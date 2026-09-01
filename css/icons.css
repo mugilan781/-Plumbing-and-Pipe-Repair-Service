@@ -64,7 +64,13 @@
 .icon-wrap-round  { border-radius: 50%; }
 
 /* ── LOGO ICON ── */
-.navbar-logo-icon .icon,
+.navbar-logo-icon .icon {
+  width: 26px;
+  height: 26px;
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
 .loader-logo .icon {
   width: 26px;
   height: 26px;
