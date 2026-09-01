@@ -161,21 +161,31 @@
 
   .stat-card { padding: var(--space-6) var(--space-4); }
 
-  .emergency-float-btn span:not(.emergency-float-dot) {
-    display: none;
+  .emergency-float {
+    bottom: calc(var(--space-5) + 44px + 10px);
+    right: var(--space-4);
   }
 
   .emergency-float-btn {
-    width: 52px;
-    height: 52px;
-    border-radius: var(--radius-full);
-    padding: 0;
-    justify-content: center;
+    width: 44px;
+    height: 44px;
   }
 
   .back-to-top {
     bottom: var(--space-5);
     right: var(--space-4);
+    width: 44px;
+    height: 44px;
+  }
+
+  [dir="rtl"] .back-to-top {
+    right: auto;
+    left: var(--space-4);
+  }
+
+  [dir="rtl"] .emergency-float {
+    right: auto;
+    left: var(--space-4);
   }
 
   .section { padding-block: clamp(var(--space-12), 6vw, var(--space-20)); }
