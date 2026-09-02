@@ -37,38 +37,52 @@
   <!-- ══════════════════════════════════════════
        SERVICES
   ══════════════════════════════════════════ -->
-  <!-- Pipe / Bolt (Pipe Repair) -->
+  <!-- Pipe / Flanged Assembly (Pipe Repair) -->
   <symbol id="ic-pipe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-    <circle cx="12" cy="12" r="3"/>
+    <rect x="2" y="8" width="20" height="5" rx="1"/>
+    <path d="M5 6v9M2 7v7"/>
+    <path d="M19 6v9M22 7v7"/>
+    <path d="M9 13v6a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6"/>
+    <path d="M8 20h8"/>
   </symbol>
 
-  <!-- Drain (waves) -->
+  <!-- Drain (Circular Grate & Sewerage) -->
   <symbol id="ic-drain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M2 12c1.5-2 3-3 5-3s3.5 3 5 3 3.5-3 5-3"/>
-    <path d="M2 6c1.5-2 3-3 5-3s3.5 3 5 3 3.5-3 5-3"/>
-    <path d="M2 18c1.5-2 3-3 5-3s3.5 3 5 3 3.5-3 5-3"/>
+    <circle cx="12" cy="12" r="10"/>
+    <circle cx="12" cy="12" r="4"/>
+    <line x1="12" y1="2" x2="12" y2="8"/>
+    <line x1="12" y1="16" x2="12" y2="22"/>
+    <line x1="2" y1="12" x2="8" y2="12"/>
+    <line x1="16" y1="12" x2="22" y2="12"/>
+    <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/>
+    <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/>
   </symbol>
 
   <!-- Bathroom / Shower -->
   <symbol id="ic-shower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 4h1a2 2 0 0 1 2 2v14"/>
-    <path d="M7 15h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H7"/>
-    <path d="M9 19v2M11 19v2M13 19v2M15 19v2"/>
-    <path d="M9 15v1M11 15v1M13 15v1M15 15v1"/>
+    <path d="M3 4h4a3 3 0 0 1 3 3v2"/>
+    <path d="M6 9h8a1 1 0 0 1 1 1v1H5v-1a1 1 0 0 1 1-1z"/>
+    <line x1="6" y1="14" x2="5" y2="19"/>
+    <line x1="8" y1="14" x2="8" y2="20"/>
+    <line x1="10" y1="14" x2="10.5" y2="21"/>
+    <line x1="12" y1="14" x2="13" y2="19"/>
+    <line x1="14" y1="14" x2="15" y2="18"/>
   </symbol>
 
-  <!-- Water heater / Flame -->
+  <!-- Water heater / Boiler Unit -->
   <symbol id="ic-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+    <rect x="5" y="2" width="14" height="20" rx="3"/>
+    <circle cx="12" cy="7" r="2"/>
+    <path d="M9.5 16c0-1.5 1.2-2.3 2.5-4 1.3 1.7 2.5 2.5 2.5 4a2.5 2.5 0 0 1-5 0z"/>
   </symbol>
 
-  <!-- Tap / Faucet -->
+  <!-- Tap / Faucet Mixer -->
   <symbol id="ic-tap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M5 8h14M5 8a2 2 0 1 0-4 0v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-1"/>
-    <path d="M15 8V5a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v3"/>
-    <line x1="19" y1="12" x2="19" y2="20"/>
-    <path d="M22 20H16"/>
+    <path d="M3 21h18"/>
+    <path d="M7 21v-9a4 4 0 0 1 4-4h2a3 3 0 0 1 3 3v3"/>
+    <path d="M14 14h4v2h-4z"/>
+    <path d="M7 9H4V7h3"/>
+    <circle cx="16" cy="19" r="1" fill="currentColor"/>
   </symbol>
 
   <!-- Water drop / Tank -->
@@ -398,9 +412,12 @@
     <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
   </symbol>
 
-  <!-- Radar / Pulse (emergency) -->
+  <!-- Radar / Sonar (Emergency) -->
   <symbol id="ic-radar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+    <circle cx="12" cy="12" r="10"/>
+    <circle cx="12" cy="12" r="6"/>
+    <circle cx="12" cy="12" r="2"/>
+    <line x1="12" y1="12" x2="19.07" y2="4.93"/>
   </symbol>
 
   <!-- Globe / Language -->

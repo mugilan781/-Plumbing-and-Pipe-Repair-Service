@@ -88,59 +88,66 @@
 .hero-slide-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(22,58,95,0.88) 0%, rgba(30,41,59,0.70) 60%, rgba(22,58,95,0.40) 100%);
+  background: rgba(5, 17, 34, 0.92);
 }
 
 .hero-slide-content {
   position: relative;
   z-index: 2;
-  max-width: 700px;
+  max-width: 720px;
 }
 
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-2) var(--space-4);
-  background: rgba(184,115,51,0.15);
-  border: 1px solid rgba(184,115,51,0.4);
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(203, 213, 225, 0.35);
   border-radius: var(--radius-full);
+  font-family: var(--font-sans);
   font-size: var(--size-xs);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-wider);
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-copper-light);
+  color: #E2E8F0;
   margin-bottom: var(--space-5);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .hero-eyebrow-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--color-copper);
+  width: 8px;
+  height: 8px;
+  background: #0284C7;
   border-radius: var(--radius-full);
+  box-shadow: 0 0 8px #0284C7;
   animation: blink 1.5s infinite;
 }
 
 .hero-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+  font-weight: 800;
   color: var(--color-white);
-  line-height: var(--leading-tight);
-  letter-spacing: -0.02em;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
   margin-bottom: var(--space-5);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
 }
 
 .hero-title .accent {
-  color: var(--color-copper-light);
-  font-style: italic;
+  font-style: normal;
+  color: #38BDF8;
+  display: inline;
+  text-shadow: 0 2px 16px rgba(2, 132, 199, 0.5);
 }
 
 .hero-subtitle {
   font-size: clamp(var(--size-base), 2vw, var(--size-md));
-  color: rgba(255,255,255,0.80);
+  color: rgba(255,255,255,0.85);
   line-height: var(--leading-relaxed);
-  max-width: 560px;
+  max-width: 580px;
   margin-bottom: var(--space-8);
 }
 
@@ -163,20 +170,25 @@
   align-items: center;
   gap: var(--space-2);
   font-size: var(--size-sm);
-  color: rgba(255,255,255,0.75);
-  font-weight: var(--weight-medium);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .hero-trust-icon {
-  width: 32px;
-  height: 32px;
-  background: rgba(255,255,255,0.12);
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  backdrop-filter: blur(4px);
+  font-size: 13px;
 }
 
 /* Slider Controls */
@@ -289,9 +301,7 @@
 .page-hero-pattern {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(184,115,51,0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(22,58,95,0.3) 0%, transparent 50%);
+  background: rgba(6, 21, 40, 0.88);
   z-index: 1;
 }
 
@@ -302,8 +312,10 @@
 }
 
 .page-hero-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(var(--size-3xl), 5vw, var(--size-6xl));
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--color-white);
   margin-bottom: var(--space-3);
   line-height: var(--leading-tight);
@@ -360,22 +372,16 @@
   padding-block: 120px var(--space-20);
 }
 
-/* ── EMERGENCY HERO ── */
+/* ── EMERGENCY HERO (Solid Midnight Safety) ── */
 .emergency-hero {
   min-height: 70vh;
-  background: linear-gradient(135deg, #0D1929 0%, #2D0000 100%);
+  background: #08111D;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   padding-top: 100px;
-}
-
-.emergency-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(ellipse at 30% 60%, rgba(192,57,43,0.25) 0%, transparent 60%);
+  border-bottom: 2px solid #1E293B;
 }
 
 .emergency-badge-pulse {

@@ -93,12 +93,7 @@
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-copper-light), var(--color-cobalt-light), var(--color-copper));
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-shift 4s ease infinite;
+  color: #0284C7;
 }
 
 /* ── NUMBER TICKER ── */
@@ -196,7 +191,8 @@
 }
 
 .loader-logo {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
+  font-weight: 800;
   font-size: var(--size-3xl);
   color: var(--color-white);
   animation: float 1.5s ease-in-out infinite;
@@ -212,7 +208,7 @@
 
 .loader-bar-fill {
   height: 100%;
-  background: var(--grad-copper);
+  background: #0284C7;
   border-radius: var(--radius-full);
   animation: loader-fill 1.2s var(--ease-swift) forwards;
 }

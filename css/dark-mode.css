@@ -52,7 +52,7 @@
 
 [data-theme="dark"] .nav-dropdown-link:hover {
   background: var(--bg-accent);
-  color: var(--color-copper-light);
+  color: #38BDF8;
 }
 
 [data-theme="dark"] .mobile-menu {
@@ -60,24 +60,24 @@
 }
 
 [data-theme="dark"] .page-hero {
-  background: linear-gradient(135deg, #070E1A 0%, #163A5F 100%);
+  background: #040D1A;
 }
 
 [data-theme="dark"] .stats-row {
-  background: linear-gradient(135deg, #0D1929 0%, #163A5F 100%);
+  background: #051325;
 }
 
 [data-theme="dark"] .section-label {
-  color: var(--color-copper-light);
+  color: #CBD5E1;
 }
 
 [data-theme="dark"] .accent-line {
-  background: var(--grad-copper);
+  background: #0284C7;
 }
 
 [data-theme="dark"] blockquote {
-  border-color: var(--color-copper);
-  color: rgba(255,255,255,0.65);
+  border-color: #0284C7;
+  color: rgba(255,255,255,0.75);
 }
 
 [data-theme="dark"] hr {
@@ -85,22 +85,22 @@
 }
 
 [data-theme="dark"] .footer {
-  background: #050D18;
+  background: #030A14;
 }
 
 [data-theme="dark"] .top-bar {
-  background: #050D18;
+  background: #030A14;
   border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .badge-cobalt {
-  background: rgba(22,58,95,0.25);
-  color: #7DB3D4;
+  background: rgba(2, 132, 199, 0.22);
+  color: #38BDF8;
 }
 
 [data-theme="dark"] .badge-copper {
-  background: rgba(184,115,51,0.2);
-  color: var(--color-copper-light);
+  background: rgba(148, 163, 184, 0.15);
+  color: #CBD5E1;
 }
 
 [data-theme="dark"] .section-title {

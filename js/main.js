@@ -177,7 +177,9 @@ function initTestimonialCarousel() {
 
     function goTo(idx) {
       current = Math.max(0, Math.min(idx, cards.length - 1));
-      track.style.transform = `translateX(-${current * cardWidth()}px)`;
+      const isRtl = document.documentElement.dir === 'rtl';
+      const offset = current * cardWidth();
+      track.style.transform = `translateX(${isRtl ? offset : -offset}px)`;
     }
 
     prevBtn?.addEventListener('click', () => goTo(current - 1));
@@ -224,17 +226,23 @@ function initFilterTabs() {
 }
 
 /* ─────────────────────────────────────────────
-   ACTIVE ANCHOR LINKS
+   ACTIVE ANCHOR LINKS (Safe Selector Handling)
 ───────────────────────────────────────────── */
 function initAnchorLinks() {
   $$('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        const offset = 90;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href === '#!') return;
+      try {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const offset = 90;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      } catch (err) {
+        // Ignore invalid CSS selector
       }
     });
   });

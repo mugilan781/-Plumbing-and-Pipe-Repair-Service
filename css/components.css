@@ -45,25 +45,31 @@
 }
 
 .btn-primary {
-  background: var(--grad-cobalt);
+  background: #0C2E59;
   color: var(--color-white);
-  box-shadow: 0 4px 20px rgba(22,58,95,0.3);
+  border: 1px solid #0C2E59;
+  box-shadow: 0 4px 14px rgba(12, 46, 89, 0.25);
 }
 .btn-primary:hover {
+  background: #082142;
+  border-color: #082142;
   color: var(--color-white);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(22,58,95,0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(12, 46, 89, 0.35);
 }
 
 .btn-copper {
-  background: var(--grad-copper);
+  background: #0284C7;
   color: var(--color-white);
-  box-shadow: var(--shadow-copper);
+  border: 1px solid #0284C7;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28);
 }
 .btn-copper:hover {
+  background: #0369A1;
+  border-color: #0369A1;
   color: var(--color-white);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(184,115,51,0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.38);
 }
 
 .btn-outline {
@@ -101,20 +107,23 @@
 }
 
 .btn-emergency {
-  background: linear-gradient(135deg, #C0392B 0%, #E74C3C 100%);
+  background: #DC2626;
   color: var(--color-white);
-  box-shadow: 0 4px 20px rgba(192,57,43,0.35);
+  border: 1px solid #DC2626;
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.35);
   animation: pulse-emergency 2s infinite;
 }
 .btn-emergency:hover {
+  background: #B91C1C;
+  border-color: #B91C1C;
   color: var(--color-white);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(192,57,43,0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.45);
 }
 
 @keyframes pulse-emergency {
-  0%, 100% { box-shadow: 0 4px 20px rgba(192,57,43,0.35); }
-  50%       { box-shadow: 0 4px 30px rgba(192,57,43,0.55); }
+  0%, 100% { box-shadow: 0 4px 16px rgba(220, 38, 38, 0.35); }
+  50%       { box-shadow: 0 4px 28px rgba(220, 38, 38, 0.55); }
 }
 
 .btn-sm {
@@ -138,22 +147,42 @@
   border-radius: var(--radius-full);
 }
 
-/* ── SERVICE CARDS ── */
+/* ── SERVICE CARDS (Precision Industrial Craftsmanship) ── */
 .service-card {
-  background: var(--bg-secondary);
+  background: #FFFFFF;
   border-radius: var(--radius-2xl);
   overflow: hidden;
-  border: 1px solid var(--border-color);
+  border: 1px solid #D8E2EC;
+  border-top: 3px solid #64748B;
+  box-shadow: 0 2px 6px rgba(12, 46, 89, 0.04), 0 8px 24px -4px rgba(12, 46, 89, 0.08);
   transition: transform var(--dur-slow) var(--ease-bounce),
               box-shadow var(--dur-slow) var(--ease-swift),
               border-color var(--dur-slow) var(--ease-swift);
   position: relative;
 }
 
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #0284C7;
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-swift);
+  z-index: 3;
+}
+
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--color-copper);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px -6px rgba(12, 46, 89, 0.14);
+  border-color: #94A3B8;
+  border-top-color: #0284C7;
+}
+
+.service-card:hover::before {
+  opacity: 1;
 }
 
 .service-card-img {
@@ -164,7 +193,7 @@
 }
 
 .service-card:hover .service-card-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .service-card-img-wrap {
@@ -176,14 +205,16 @@
   position: absolute;
   top: var(--space-4);
   right: var(--space-4);
-  background: var(--color-copper);
-  color: var(--color-white);
+  background: #0C2E59;
+  color: #FFFFFF;
   font-size: var(--size-xs);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-wide);
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 4px 12px;
+  padding: 5px 13px;
   border-radius: var(--radius-full);
+  border: 1px solid #475569;
+  box-shadow: 0 2px 8px rgba(12, 46, 89, 0.25);
 }
 
 .service-card-body {
@@ -191,34 +222,45 @@
 }
 
 .service-card-icon {
-  width: 56px;
-  height: 56px;
-  background: var(--bg-accent);
+  width: 54px;
+  height: 54px;
+  background: #F1F5F9;
+  color: #0C2E59;
+  border: 1.5px solid #CBD5E1;
   border-radius: var(--radius-xl);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
   margin-bottom: var(--space-4);
+  box-shadow: inset 0 1px 0 #FFFFFF;
   transition: background var(--dur-base) var(--ease-swift),
+              color var(--dur-base) var(--ease-swift),
+              border-color var(--dur-base) var(--ease-swift),
+              box-shadow var(--dur-base) var(--ease-swift),
               transform var(--dur-base) var(--ease-bounce);
 }
 
 .service-card:hover .service-card-icon {
-  background: var(--color-copper);
-  transform: scale(1.1) rotate(-5deg);
+  background: #0C2E59;
+  border-color: #0C2E59;
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(12, 46, 89, 0.25);
+  transform: translateY(-2px);
 }
 
 .service-card-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: var(--size-xl);
-  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #0C2E59;
   margin-bottom: var(--space-2);
   transition: color var(--dur-base) var(--ease-swift);
 }
 
 .service-card:hover .service-card-title {
-  color: var(--color-cobalt);
+  color: #0284C7;
 }
 
 .service-card-desc {
@@ -242,24 +284,29 @@
 }
 
 .service-card-link:hover {
-  color: var(--color-copper);
+  color: #0284C7;
   gap: var(--space-3);
 }
 
-/* ── TESTIMONIAL CARDS ── */
+/* ── TESTIMONIAL CARDS (Machined Steel Trim) ── */
 .testimonial-card {
   background: var(--bg-secondary);
   border-radius: var(--radius-2xl);
   padding: var(--space-8);
   border: 1px solid var(--border-color);
+  border-top: 3px solid #CBD5E1;
   position: relative;
+  box-shadow: 0 2px 6px rgba(12, 46, 89, 0.04), 0 8px 24px -4px rgba(12, 46, 89, 0.06);
   transition: transform var(--dur-slow) var(--ease-bounce),
-              box-shadow var(--dur-slow) var(--ease-swift);
+              box-shadow var(--dur-slow) var(--ease-swift),
+              border-color var(--dur-slow) var(--ease-swift);
 }
 
 .testimonial-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  border-color: #94A3B8;
+  border-top-color: #0284C7;
+  box-shadow: 0 16px 36px -6px rgba(12, 46, 89, 0.12);
 }
 
 .testimonial-card::before {
@@ -267,10 +314,11 @@
   position: absolute;
   top: var(--space-4);
   right: var(--space-6);
-  font-family: var(--font-serif);
-  font-size: 80px;
-  color: var(--color-copper);
-  opacity: 0.2;
+  font-family: var(--font-heading);
+  font-size: 72px;
+  font-weight: 800;
+  color: #CBD5E1;
+  opacity: 0.35;
   line-height: 1;
 }
 
@@ -327,7 +375,9 @@
 }
 
 .stat-number {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.025em;
   font-size: clamp(var(--size-4xl), 5vw, var(--size-7xl));
   color: var(--color-cobalt);
   line-height: 1;
@@ -374,10 +424,10 @@
 }
 
 .pricing-card.featured {
-  border-color: var(--color-copper);
-  background: var(--grad-cobalt);
+  border: 2px solid #64748B;
+  background: #0C2E59;
   color: var(--color-white);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 16px 40px rgba(12, 46, 89, 0.22);
 }
 
 .pricing-card.featured .pricing-price,
@@ -390,7 +440,8 @@
   position: absolute;
   top: var(--space-4);
   right: var(--space-4);
-  background: var(--color-copper);
+  background: #334155;
+  border: 1px solid #64748B;
   color: var(--color-white);
   font-size: var(--size-xs);
   font-weight: var(--weight-bold);
@@ -405,12 +456,14 @@
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wider);
-  color: var(--color-copper);
+  color: #0284C7;
   margin-bottom: var(--space-3);
 }
 
 .pricing-price {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.02em;
   font-size: clamp(var(--size-4xl), 5vw, var(--size-6xl));
   color: var(--text-primary);
   line-height: 1;
@@ -596,11 +649,13 @@ select.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
+  font-weight: 800;
   font-size: var(--size-xl);
   color: var(--color-white);
   flex-shrink: 0;
   position: relative;
+  box-shadow: 0 4px 16px rgba(12, 46, 89, 0.25);
 }
 
 .step-content-title {
@@ -750,10 +805,11 @@ select.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #C0392B, #E74C3C);
+  background: #DC2626;
+  border: 1px solid #DC2626;
   color: var(--color-white);
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 20px rgba(192,57,43,0.45);
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.4);
   animation: pulse-emergency 2s infinite;
   transition: transform var(--dur-base) var(--ease-bounce),
               box-shadow var(--dur-base) var(--ease-swift);
@@ -919,8 +975,10 @@ select.form-control {
 }
 
 .blog-card-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: var(--size-xl);
+  font-weight: 700;
+  letter-spacing: -0.015em;
   color: var(--text-primary);
   margin-bottom: var(--space-3);
   line-height: var(--leading-snug);
@@ -992,8 +1050,10 @@ select.form-control {
 }
 
 .team-card-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: var(--size-xl);
+  font-weight: 700;
+  letter-spacing: -0.015em;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
