@@ -125,35 +125,77 @@ function initPageLoader() {
 }
 
 /* ─────────────────────────────────────────────
-   SMOOTH PAGE TRANSITIONS
+   HYDRO WATER WAVE PAGE TRANSITIONS
 ───────────────────────────────────────────── */
 function initPageTransitions() {
   const overlay = document.querySelector('.page-transition');
   if (!overlay) return;
+
+  // Dynamically inject the layered water waves & central hydro beacon
+  if (!overlay.querySelector('.water-wave-wrap')) {
+    overlay.innerHTML = `
+      <div class="water-wave-wrap">
+        <div class="water-wave-layer wave-layer-back">
+          <svg class="water-wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,112C672,107,768,149,864,176C960,203,1056,213,1152,197.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+          <div class="water-wave-body"></div>
+        </div>
+        <div class="water-wave-layer wave-layer-mid">
+          <svg class="water-wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path d="M0,96L48,122.7C96,149,192,203,288,208C384,213,480,171,576,144C672,117,768,107,864,128C960,149,1056,203,1152,208C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+          <div class="water-wave-body"></div>
+        </div>
+        <div class="water-wave-layer wave-layer-front">
+          <svg class="water-wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,181.3C960,203,1056,213,1152,192C1248,171,1344,117,1392,90.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+          <div class="water-wave-body"></div>
+        </div>
+      </div>
+      <div class="water-flow-center">
+        <div class="water-droplet-pod">
+          <svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-droplet"></use></svg>
+          <div class="water-ripple-ring ring-1"></div>
+          <div class="water-ripple-ring ring-2"></div>
+        </div>
+      </div>
+    `;
+  }
 
   document.addEventListener('click', e => {
     const link = e.target.closest('a[href]');
     if (!link) return;
 
     const href = link.getAttribute('href');
-    // Only internal links, not anchors or external
+    // Only internal page links, not anchors, mailto, tel, or external
     if (!href || href.startsWith('#') || href.startsWith('http') ||
         href.startsWith('mailto') || href.startsWith('tel') ||
+        href.startsWith('javascript:') ||
         link.hasAttribute('target')) return;
 
+    // Don't trigger if already on the same page
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const targetPath  = href.split('/').pop() || 'index.html';
+    if (currentPath === targetPath && !href.includes('#')) return;
+
     e.preventDefault();
+    overlay.classList.remove('leaving');
     overlay.classList.add('entering');
 
     setTimeout(() => {
       window.location.href = href;
-    }, 500);
+    }, 480);
   });
 
-  // Fade in on load
+  // Smooth wave flow out on page reveal
   window.addEventListener('pageshow', () => {
     overlay.classList.remove('entering');
     overlay.classList.add('leaving');
-    setTimeout(() => overlay.classList.remove('leaving'), 600);
+    setTimeout(() => {
+      overlay.classList.remove('leaving');
+    }, 550);
   });
 }
 

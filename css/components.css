@@ -241,6 +241,13 @@
               transform var(--dur-base) var(--ease-bounce);
 }
 
+.service-card-icon svg,
+.service-card-icon .icon {
+  width: 26px;
+  height: 26px;
+  stroke-width: 2.2;
+}
+
 .service-card:hover .service-card-icon {
   background: #0C2E59;
   border-color: #0C2E59;
@@ -624,44 +631,61 @@ select.form-control {
 .badge-error    { background: rgba(239,68,68,0.1);   color: var(--color-error); }
 .badge-slate    { background: rgba(71,85,105,0.1);   color: var(--color-slate); }
 
-/* ── PROCESS STEPS ── */
+/* ── PROCESS / WORKFLOW STEP CARDS (Industrial Precision) ── */
 .step-card {
   display: flex;
+  align-items: flex-start;
   gap: var(--space-5);
-  padding: var(--space-6);
-  background: var(--bg-secondary);
+  padding: 24px 26px;
+  background: #FFFFFF;
   border-radius: var(--radius-2xl);
-  border: 1px solid var(--border-color);
+  border: 1px solid #D8E2EC;
+  border-top: 3px solid #64748B;
+  box-shadow: 0 4px 14px rgba(12, 46, 89, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
   transition: transform var(--dur-slow) var(--ease-bounce),
-              box-shadow var(--dur-slow) var(--ease-swift);
+              box-shadow var(--dur-slow) var(--ease-swift),
+              border-color var(--dur-slow) var(--ease-swift);
 }
 
 .step-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  border-color: #94A3B8;
+  border-top-color: #0284C7;
+  box-shadow: 0 16px 36px -6px rgba(12, 46, 89, 0.12);
 }
 
 .step-number {
-  width: 56px;
-  height: 56px;
-  background: var(--grad-cobalt);
-  border-radius: var(--radius-xl);
+  width: 52px;
+  height: 52px;
+  background: #0C2E59;
+  border: 2px solid #CBD5E1;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: var(--size-xl);
-  color: var(--color-white);
+  font-size: 1.25rem;
+  color: #FFFFFF;
   flex-shrink: 0;
   position: relative;
-  box-shadow: 0 4px 16px rgba(12, 46, 89, 0.25);
+  box-shadow: 0 4px 14px rgba(12, 46, 89, 0.25);
+  transition: background var(--dur-base) var(--ease-swift),
+              border-color var(--dur-base) var(--ease-swift),
+              transform var(--dur-base) var(--ease-bounce);
+}
+
+.step-card:hover .step-number {
+  background: #0284C7;
+  border-color: #0284C7;
+  transform: scale(1.06);
 }
 
 .step-content-title {
+  font-family: var(--font-heading);
   font-size: var(--size-lg);
-  font-weight: var(--weight-bold);
-  color: var(--text-primary);
+  font-weight: 800;
+  color: #0C2E59;
   margin-bottom: var(--space-2);
 }
 
@@ -872,7 +896,7 @@ select.form-control {
 }
 
 .breadcrumb-item.active {
-  color: var(--color-copper-light);
+  color: #38BDF8;
   font-weight: var(--weight-semibold);
 }
 
@@ -904,7 +928,7 @@ select.form-control {
 }
 
 .social-link:hover {
-  background: var(--color-copper);
+  background: #0284C7;
   color: var(--color-white);
   transform: translateY(-3px);
 }
@@ -1032,7 +1056,7 @@ select.form-control {
 .team-card-overlay {
   position: absolute;
   inset: 0;
-  background: var(--grad-overlay);
+  background: rgba(12, 46, 89, 0.88);
   opacity: 0;
   transition: opacity var(--dur-slow) var(--ease-swift);
   display: flex;
@@ -1063,10 +1087,10 @@ select.form-control {
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
-  color: var(--color-copper);
+  color: #0284C7;
 }
 
-/* ── GUARANTEE BADGE ── */
+/* ── GUARANTEE BADGE (Machined Steel Seal) ── */
 .guarantee-badge {
   display: inline-flex;
   flex-direction: column;
@@ -1074,7 +1098,7 @@ select.form-control {
   justify-content: center;
   width: 120px;
   height: 120px;
-  background: var(--grad-cobalt);
+  background: #0C2E59;
   border-radius: var(--radius-full);
   color: var(--color-white);
   text-align: center;
@@ -1083,8 +1107,8 @@ select.form-control {
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
   padding: var(--space-4);
-  box-shadow: var(--shadow-xl);
-  border: 4px solid rgba(255,255,255,0.2);
+  border: 3px solid #CBD5E1;
+  box-shadow: 0 0 0 8px rgba(12, 46, 89, 0.15), var(--shadow-xl);
 }
 
 .guarantee-badge-icon {

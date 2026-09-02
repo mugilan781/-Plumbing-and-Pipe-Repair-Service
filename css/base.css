@@ -34,21 +34,167 @@ body {
               color var(--dur-slow) var(--ease-swift);
 }
 
-/* ── Page Transition Overlay ── */
+/* ── HYDRO WATER WAVE PAGE TRANSITION (Multi-Layer Fluid Surge) ── */
 .page-transition {
   position: fixed;
   inset: 0;
-  background: var(--color-cobalt);
-  z-index: var(--z-top);
-  transform: translateX(-100%);
-  transition: transform 0.5s var(--ease-swift);
+  z-index: 99999;
+  pointer-events: none;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.page-transition.entering,
+.page-transition.leaving {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.water-wave-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.water-wave-layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 125vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.52s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+
+.water-wave-svg {
+  width: 100%;
+  height: 90px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.water-wave-body {
+  flex: 1;
+  width: 100%;
+}
+
+/* Layer 1: Deep Abyssal Navy Wave (Back Layer) */
+.wave-layer-back {
+  z-index: 1;
+  transition-duration: 0.56s;
+  transition-delay: 0s;
+}
+.wave-layer-back .water-wave-svg path { fill: #08192E; }
+.wave-layer-back .water-wave-body     { background: #08192E; }
+
+/* Layer 2: Hydro Azure Flow Wave (Middle Layer) */
+.wave-layer-mid {
+  z-index: 2;
+  transition-duration: 0.50s;
+  transition-delay: 0.05s;
+}
+.wave-layer-mid .water-wave-svg path { fill: #0284C7; }
+.wave-layer-mid .water-wave-body     { background: #0284C7; }
+
+/* Layer 3: Solid FlowMaster Marine Navy (Front Main Layer) */
+.wave-layer-front {
+  z-index: 3;
+  transition-duration: 0.46s;
+  transition-delay: 0.10s;
+}
+.wave-layer-front .water-wave-svg path { fill: #0C2E59; }
+.wave-layer-front .water-wave-body     { background: #0C2E59; }
+
+/* Entering State: Surge upwards from bottom to fill the screen */
+.page-transition.entering .water-wave-layer {
+  transform: translateY(0%);
+}
+
+/* Leaving State: Surge out upwards to reveal the new page smoothly */
+.page-transition.leaving .water-wave-layer {
+  transform: translateY(-100%);
+  transition: transform 0.48s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.page-transition.leaving .wave-layer-front { transition-delay: 0s; }
+.page-transition.leaving .wave-layer-mid   { transition-delay: 0.04s; }
+.page-transition.leaving .wave-layer-back  { transition-delay: 0.08s; }
+
+/* Central Hydro Water Beacon */
+.water-flow-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.25s ease;
   pointer-events: none;
 }
-.page-transition.entering {
-  transform: translateX(0);
+
+.page-transition.entering .water-flow-center {
+  opacity: 1;
+  transition-delay: 0.18s;
 }
-.page-transition.leaving {
-  transform: translateX(100%);
+
+.page-transition.leaving .water-flow-center {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.water-droplet-pod {
+  width: 64px;
+  height: 64px;
+  background: #08192E;
+  border: 2px solid #38BDF8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.water-droplet-pod svg {
+  width: 30px;
+  height: 30px;
+  color: #38BDF8;
+  animation: dropletPulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes dropletPulse {
+  0%   { transform: translateY(2px) scale(0.95); }
+  100% { transform: translateY(-2px) scale(1.05); }
+}
+
+.water-ripple-ring {
+  position: absolute;
+  inset: -12px;
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  border-radius: 50%;
+  animation: waterRipple 1.4s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+.water-ripple-ring.ring-2 {
+  inset: -24px;
+  animation-delay: 0.35s;
+  border-color: rgba(2, 132, 199, 0.35);
+}
+
+@keyframes waterRipple {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
 }
 
 /* ── Typography ── */

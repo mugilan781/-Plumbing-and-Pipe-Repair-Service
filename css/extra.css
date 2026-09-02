@@ -76,7 +76,7 @@
 }
 
 .breadcrumb-item a:hover {
-  color: var(--color-copper-light);
+  color: #38BDF8;
 }
 
 .breadcrumb-item.active {
@@ -419,7 +419,7 @@
 }
 
 .comparison-table th.highlight {
-  background: var(--color-copper);
+  background: #0284C7;
 }
 
 .comparison-table tr:nth-child(even) td {
