@@ -76,25 +76,25 @@
   margin-inline: auto;
 }
 
-/* ── STATS ROW (Solid Hydro Command Bar) ── */
+/* ── STATS ROW (Light Theme — clean, airy) ── */
 .stats-row {
-  background: #08192E;
+  background: #FFFFFF;
   padding-block: var(--space-12);
   position: relative;
-  border-top: 1px solid #1E3858;
-  border-bottom: 1px solid #1E3858;
-  box-shadow: 0 10px 30px rgba(5, 17, 34, 0.3);
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px rgba(12, 46, 89, 0.06);
 }
 
 .stats-row .stat-number {
-  color: var(--color-white);
+  color: #0C2E59;
   font-family: var(--font-heading);
   font-weight: 800;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: none;
 }
 
 .stats-row .stat-label {
-  color: #94A3B8;
+  color: #64748B;
   letter-spacing: 0.12em;
   font-weight: 700;
   font-size: 13px;
@@ -108,7 +108,7 @@
 .stats-divider {
   width: 1px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.12);
+  background: #E2E8F0;
   align-self: center;
 }
 
