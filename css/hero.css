@@ -425,18 +425,18 @@
   margin-top: var(--space-4);
 }
 
-/* ── HERO VARIANT 2 (Exact same viewport height structure as Home 1) ── */
+/* ── HERO VARIANT 2 — fits correctly in viewport (size/spacing/alignment tuned) ── */
 .hero-v2 {
   position: relative;
-  /* Exact same height as hero-slider in Home 1 */
-  height: calc(100vh - var(--header-total, 112px));
-  height: calc(100svh - var(--header-total, 112px));
-  min-height: 520px;
+  min-height: calc(100vh - var(--header-total, 112px));
+  min-height: calc(100svh - var(--header-total, 112px));
+  height: auto;
   background: radial-gradient(circle at 75% 30%, #0c2e59 0%, #061528 55%, #030a14 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-block: clamp(20px, 3vh, 36px);
 }
 
 .hero-v2-bg {
@@ -501,7 +501,7 @@
 
 .hero-v2-grid {
   display: grid;
-  grid-template-columns: 1.1fr 420px;
+  grid-template-columns: 1.1fr 440px;
   gap: clamp(24px, 4vw, 52px);
   align-items: center;
   width: 100%;
@@ -549,7 +549,7 @@
 
 .hero-v2-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-size: clamp(2rem, 4.2vw, 3.6rem);
   font-weight: 800;
   color: var(--color-white);
   line-height: 1.15;
@@ -565,7 +565,7 @@
 }
 
 .hero-v2-subtitle {
-  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.55;
   max-width: 540px;
@@ -610,7 +610,7 @@
   font-weight: 600;
 }
 
-/* ── QUICK BOOKING CARD (Detailed & Ultra-Professional Glass Panel) ── */
+/* ── QUICK BOOKING CARD — slight width increase + single-line badge ── */
 .quick-booking-card {
   position: relative;
   background: linear-gradient(135deg, rgba(12, 46, 89, 0.9) 0%, rgba(6, 21, 40, 0.97) 100%);
@@ -622,7 +622,7 @@
   -webkit-backdrop-filter: blur(24px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.06);
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
   margin-left: auto;
 }
 
@@ -634,6 +634,12 @@
   margin-bottom: 12px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  flex-wrap: nowrap;
+}
+
+.qb-header-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .qb-badge-live {
@@ -649,6 +655,8 @@
   border: 1px solid rgba(52, 211, 153, 0.3);
   padding: 4px 10px;
   border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .qb-badge-dot {
@@ -811,7 +819,6 @@
   font-weight: 600;
 }
 
-/* Short Viewports / Laptop Displays for Hero-V2 (Exact match to Home 1) */
 @media (max-height: 720px) and (min-width: 769px) {
   .hero-v2 {
     min-height: 480px;

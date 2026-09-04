@@ -492,10 +492,12 @@ blockquote {
   margin-bottom: var(--space-6);
 }
 
-/* ── HERO V2 (Dark Cinematic) ── */
+/* ── HERO V2 (Dark Cinematic) — do not override home2 viewport fit (see hero.css) ── */
 .hero-v2 {
-  min-height: 100vh;
-  background: var(--color-charcoal);
+  min-height: calc(100vh - var(--header-total, 112px));
+  min-height: calc(100svh - var(--header-total, 112px));
+  height: auto;
+  background: radial-gradient(circle at 75% 30%, #0c2e59 0%, #061528 55%, #030a14 100%);
   display: flex;
   align-items: center;
   position: relative;
@@ -516,19 +518,19 @@ blockquote {
 }
 
 .hero-v2-shape-1 {
-  width: 600px;
-  height: 600px;
-  background: rgba(2, 132, 199, 0.35);
-  top: -200px;
-  right: -200px;
+  width: 440px;
+  height: 440px;
+  background: rgba(2, 132, 199, 0.22);
+  top: -80px;
+  right: -50px;
 }
 
 .hero-v2-shape-2 {
-  width: 400px;
-  height: 400px;
-  background: rgba(71, 85, 105, 0.25);
-  bottom: -100px;
-  left: -100px;
+  width: 360px;
+  height: 360px;
+  background: rgba(184, 115, 51, 0.18);
+  bottom: -60px;
+  left: 15%;
 }
 
 .hero-v2-content {
