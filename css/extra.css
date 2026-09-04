@@ -5,12 +5,12 @@
 
 /* ── PAGE HERO — perfectly vertically centered ── */
 .page-hero {
-  min-height: 480px;
+  min-height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 140px 0 80px;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
