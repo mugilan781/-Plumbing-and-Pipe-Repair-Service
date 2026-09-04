@@ -97,19 +97,14 @@
 
 <main id="main-content">
 
-<section style="min-height:45vh; background:var(--grad-cobalt); display:flex; align-items:flex-end; padding-bottom:var(--space-16); padding-top:var(--space-16); position:relative; overflow:hidden;" aria-label="Pricing hero">
+<section style="min-height:45vh; background:var(--grad-cobalt); display:flex; align-items:center; justify-content:center; text-align:center; padding-bottom:var(--space-16); padding-top:var(--space-16); position:relative; overflow:hidden;" aria-label="Pricing hero">
   <!-- Decorative shapes -->
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%, rgba(184,115,51,0.2) 0%, transparent 40%), radial-gradient(circle at 80% 30%, rgba(255,255,255,0.04) 0%, transparent 40%);" aria-hidden="true"></div>
-  <div class="container" style="position:relative;z-index:2;">
-    <nav class="breadcrumb" style="margin-bottom:var(--space-5);">
-      <div class="breadcrumb-item"><a href="index.html">Home</a></div>
-      <div class="breadcrumb-sep">›</div>
-      <div class="breadcrumb-item active">Pricing Guide</div>
-    </nav>
-    <div style="max-width:700px;">
-      <div class="section-label" style="color:var(--color-copper-light);" data-reveal="fade-up">Transparent Pricing</div>
-      <h1 style="font-family:var(--font-serif);font-size:clamp(var(--size-4xl),6vw,var(--size-6xl));color:white;margin-bottom:var(--space-4);" data-reveal="fade-up" data-delay="100">Fair Prices.<br>No Hidden Fees.</h1>
-      <p style="color:rgba(255,255,255,0.8);font-size:var(--size-md);max-width:560px;" data-reveal="fade-up" data-delay="200">Every quote is fixed before we start. What we quote is what you pay — always. Browse our service rates below or get a personalised quote.</p>
+  <div class="container" style="position:relative;z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center;">
+    <div class="page-hero-label" data-reveal="fade-up"><span style="width:6px;height:6px;background:#38BDF8;border-radius:50%;box-shadow:0 0 6px #38BDF8;flex-shrink:0;"></span> Pricing Plans</div>
+    <div style="max-width:700px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <h1 style="font-family:var(--font-serif);font-size:clamp(var(--size-4xl),6vw,var(--size-6xl));color:white;margin-bottom:var(--space-4); text-align:center;" data-reveal="fade-up" data-delay="100">Fair Prices.<br><span style="color:#38BDF8;">No Hidden Fees.</span></h1>
+      <p style="color:rgba(255,255,255,0.8);font-size:var(--size-md);max-width:560px; text-align:center; margin-inline:auto;" data-reveal="fade-up" data-delay="200">Every quote is fixed before we start. What we quote is what you pay — always. Browse our service rates below or get a personalised quote.</p>
     </div>
   </div>
 </section>
