@@ -333,16 +333,33 @@
 
 .blog-card-category {
   position: absolute;
-  bottom: var(--space-3);
+  top: var(--space-3);
   left: var(--space-3);
-  padding: 4px 12px;
-  background: var(--color-cobalt);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: #0C2E59;
   color: white;
-  font-size: var(--size-xs);
-  font-weight: var(--weight-bold);
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: 0.06em;
   border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.blog-card-category svg,
+.blog-card-category .icon {
+  width: 12px;
+  height: 12px;
+  color: #FFFFFF;
+  flex-shrink: 0;
 }
 
 .blog-card-body {
