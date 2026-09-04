@@ -200,7 +200,7 @@
   color: var(--text-light);
 }
 [data-theme="dark"] .testimonial-dot {
-  background: #1A3556;
+  background: #1E3A5F;
 }
 [data-theme="dark"] .testimonial-dot.active {
   background: #38BDF8;
@@ -248,6 +248,26 @@
   background: rgba(255,255,255,0.10);
   border-color: #FFFFFF;
   color: #FFFFFF;
+}
+
+/* ── Testimonial arrows — dark colour in dark mode, light in light (opposite as requested) ── */
+[data-theme="dark"] .testimonial-carousel .testimonial-prev,
+[data-theme="dark"] .testimonial-carousel .testimonial-next,
+[data-theme="dark"] .testimonial-carousel .testimonial-prev.btn,
+[data-theme="dark"] .testimonial-carousel .testimonial-next.btn {
+  background: #0C2E59;
+  border-color: #1E3A5F;
+  color: #E0F2FE;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+[data-theme="dark"] .testimonial-carousel .testimonial-prev:hover,
+[data-theme="dark"] .testimonial-carousel .testimonial-next:hover,
+[data-theme="dark"] .testimonial-carousel .testimonial-prev.btn:hover,
+[data-theme="dark"] .testimonial-carousel .testimonial-next.btn:hover {
+  background: #132845;
+  border-color: #0284C7;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.40);
 }
 
 [data-theme="dark"] blockquote {

@@ -250,21 +250,24 @@ function initTestimonialCarousel() {
       });
     }
     function updateButtons() {
-      const max = getMaxIndex();
+      // Infinite loop — arrows always enabled with full contrast
       if (prevBtn) {
-        prevBtn.disabled = current === 0;
-        prevBtn.style.opacity = current === 0 ? '0.45' : '1';
-        prevBtn.style.pointerEvents = current === 0 ? 'none' : '';
+        prevBtn.disabled = false;
+        prevBtn.style.opacity = '1';
+        prevBtn.style.pointerEvents = '';
       }
       if (nextBtn) {
-        nextBtn.disabled = current === max;
-        nextBtn.style.opacity = current === max ? '0.45' : '1';
-        nextBtn.style.pointerEvents = current === max ? 'none' : '';
+        nextBtn.disabled = false;
+        nextBtn.style.opacity = '1';
+        nextBtn.style.pointerEvents = '';
       }
     }
     function goTo(idx) {
       const max = getMaxIndex();
-      current = Math.max(0, Math.min(idx, max));
+      // Infinite loop: wrap around
+      if (idx < 0) current = max;
+      else if (idx > max) current = 0;
+      else current = idx;
       const step = getCardStep();
       const isRtl = document.documentElement.dir === 'rtl';
       const offset = current * step;
@@ -279,20 +282,12 @@ function initTestimonialCarousel() {
     prevBtn?.addEventListener('click', () => goTo(current - 1));
     nextBtn?.addEventListener('click', () => goTo(current + 1));
 
-    let timer = setInterval(() => {
-      const max = getMaxIndex();
-      if (current >= max) goTo(0);
-      else goTo(current + 1);
-    }, 4500);
+    let timer = setInterval(() => goTo(current + 1), 4500);
 
     const pause = () => clearInterval(timer);
     const resume = () => {
       clearInterval(timer);
-      timer = setInterval(() => {
-        const max = getMaxIndex();
-        if (current >= max) goTo(0);
-        else goTo(current + 1);
-      }, 4500);
+      timer = setInterval(() => goTo(current + 1), 4500);
     };
     carousel.addEventListener('mouseenter', pause);
     carousel.addEventListener('mouseleave', resume);

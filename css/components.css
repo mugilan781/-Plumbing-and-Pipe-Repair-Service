@@ -147,19 +147,12 @@
   border-radius: var(--radius-full);
 }
 
-/* ── SERVICES GRID — 4 cards balanced (2×2) ── */
-.services-grid.grid-auto-3,
+/* ── SERVICES GRID — 4 cards balanced, no forced columns (auto-fit handles) ── */
 .services-grid {
-  grid-template-columns: repeat(2, 1fr) !important;
   gap: var(--space-6);
   align-items: stretch;
 }
-@media (max-width: 768px) {
-  .services-grid.grid-auto-3,
-  .services-grid { grid-template-columns: 1fr !important; }
-}
 @media (min-width: 1100px) {
-  .services-grid.grid-auto-3,
   .services-grid { gap: var(--space-8); }
 }
 
@@ -367,6 +360,51 @@
 .testimonial-dot.active {
   width: 24px;
   background: #0284C7;
+}
+/* ── Testimonial arrows — high contrast, isolated to carousel ── */
+.testimonial-carousel .testimonial-prev,
+.testimonial-carousel .testimonial-next,
+.testimonial-carousel .testimonial-prev.btn,
+.testimonial-carousel .testimonial-next.btn {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 1.5px solid #D8E2EC;
+  color: #0C2E59;
+  box-shadow: 0 4px 14px rgba(12, 46, 89, 0.10);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease-swift),
+              border-color var(--dur-base) var(--ease-swift),
+              color var(--dur-base) var(--ease-swift),
+              transform var(--dur-base) var(--ease-bounce),
+              box-shadow var(--dur-base) var(--ease-swift);
+}
+.testimonial-carousel .testimonial-prev:hover,
+.testimonial-carousel .testimonial-next:hover,
+.testimonial-carousel .testimonial-prev.btn:hover,
+.testimonial-carousel .testimonial-next.btn:hover {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+  color: #0C2E59;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(12, 46, 89, 0.15);
+}
+.testimonial-prev:active,
+.testimonial-next:active {
+  transform: scale(0.96);
+}
+.testimonial-prev svg,
+.testimonial-next svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+  color: currentColor;
 }
 .testimonial-card {
   background: var(--bg-secondary);
