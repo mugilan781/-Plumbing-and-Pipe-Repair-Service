@@ -270,6 +270,31 @@
   box-shadow: 0 8px 24px rgba(2, 132, 199, 0.40);
 }
 
+/* ── Comprehensive inner pages contrast — all except home1 ── */
+/* Home2 */
+[data-theme="dark"] .h-service-card { background: var(--bg-secondary); border-color: var(--border-color); }
+[data-theme="dark"] .h-service-card h3 { color: var(--text-primary) !important; }
+[data-theme="dark"] .h-service-card p { color: var(--text-secondary) !important; }
+[data-theme="dark"] .h-service-card [style*="color:var(--color-copper)"] { color: #38BDF8 !important; }
+[data-theme="dark"] .process-number-large { color: #1E3A5F !important; opacity: 0.18 !important; }
+[data-theme="dark"] .area-tag { background: var(--bg-secondary); border-color: var(--border-color); color: var(--text-secondary); }
+[data-theme="dark"] .area-tag:hover { background: #0C2E59; border-color: #0C2E59; color: #FFFFFF; }
+/* Services */
+[data-theme="dark"] [style*="color:var(--color-cobalt)"] { color: #38BDF8 !important; }
+/* Contact */
+[data-theme="dark"] .contact-info-card { background: var(--bg-secondary); border-color: var(--border-color); }
+/* Blog */
+[data-theme="dark"] .blog-card { background: var(--bg-secondary); border-color: var(--border-color); }
+[data-theme="dark"] .blog-card-title { color: var(--text-primary); }
+[data-theme="dark"] .blog-card-excerpt { color: var(--text-secondary); }
+
+/* ── Generic hardcoded color fixes for dark mode ── */
+[data-theme="dark"] [style*="color:#0C2E59"] { color: #38BDF8 !important; }
+[data-theme="dark"] [style*="color:#334155"] { color: #94A9C4 !important; }
+[data-theme="dark"] [style*="color:#475569"] { color: #94A9C4 !important; }
+[data-theme="dark"] [style*="background:#FFFFFF"] { background: var(--bg-secondary) !important; border-color: var(--border-color) !important; }
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3 { color: var(--text-primary); }
+
 /* ── Legal pages (privacy/terms/sitemap) contrast ── */
 [data-theme="dark"] .policy-body h2 {
   color: var(--text-primary);
@@ -332,6 +357,39 @@
 
 [data-theme="dark"] .section-title {
   color: var(--text-primary);
+}
+
+/* ── Ultimate vector/text/button contrast for all inner pages (except home1) ── */
+[data-theme="dark"] .icon,
+[data-theme="dark"] svg.icon {
+  color: #38BDF8;
+}
+[data-theme="dark"] .service-card-icon svg,
+[data-theme="dark"] .feature-icon svg,
+[data-theme="dark"] .h-service-card svg,
+[data-theme="dark"] .team-card svg,
+[data-theme="dark"] .blog-card svg {
+  color: #38BDF8;
+}
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4 {
+  color: var(--text-primary);
+}
+[data-theme="dark"] p,
+[data-theme="dark"] .section-subtitle,
+[data-theme="dark"] .page-hero-subtitle {
+  color: var(--text-secondary);
+}
+[data-theme="dark"] .btn {
+  border-color: currentColor;
+}
+[data-theme="dark"] .btn-copper {
+  background: #0284C7;
+  border-color: #0284C7;
+  color: #FFFFFF;
+}
+[data-theme="dark"] .btn-copper:hover {
+  background: #0369A1;
+  border-color: #0369A1;
 }
 
 /* Dark mode toggle icon swap */
