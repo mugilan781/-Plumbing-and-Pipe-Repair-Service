@@ -88,11 +88,166 @@
 }
 
 [data-theme="dark"] .section-label {
-  color: #CBD5E1;
+  color: #E0F2FE;
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.22);
+}
+
+[data-theme="dark"] .section-label::before {
+  background: #38BDF8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
 }
 
 [data-theme="dark"] .accent-line {
   background: #0284C7;
+}
+
+/* ── Home page: What We Do — service cards contrast ── */
+[data-theme="dark"] .service-card {
+  border-top-color: #1A3556;
+}
+[data-theme="dark"] .testimonial-card {
+  border-top-color: #1A3556;
+}
+[data-theme="dark"] .service-card-title {
+  color: var(--text-primary);
+}
+[data-theme="dark"] .service-card:hover .service-card-title {
+  color: #38BDF8;
+}
+[data-theme="dark"] .service-card-link {
+  color: #38BDF8;
+}
+[data-theme="dark"] .service-card-link:hover {
+  color: #7DD3FC;
+}
+[data-theme="dark"] .service-card-icon {
+  background: #132845;
+  border-color: #1A3556;
+  color: #38BDF8;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+}
+[data-theme="dark"] .service-card:hover .service-card-icon {
+  background: #0284C7;
+  border-color: #0284C7;
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
+}
+
+/* ── Home page: Why FlowMaster — feature items contrast ── */
+[data-theme="dark"] .feature-title {
+  color: var(--text-primary);
+}
+[data-theme="dark"] .feature-desc {
+  color: var(--text-secondary);
+}
+[data-theme="dark"] .feature-icon {
+  background: #132845;
+  border-color: #1A3556;
+  color: #38BDF8;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 6px rgba(0,0,0,0.3);
+}
+[data-theme="dark"] .feature-item:hover .feature-icon {
+  background: #0284C7;
+  border-color: #0284C7;
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
+}
+[data-theme="dark"] .feature-item {
+  border-left-color: #1E3A5F;
+}
+[data-theme="dark"] .feature-item:hover {
+  border-left-color: #0284C7;
+}
+[dir="rtl"][data-theme="dark"] .feature-item {
+  border-right-color: #1E3A5F;
+}
+[dir="rtl"][data-theme="dark"] .feature-item:hover {
+  border-right-color: #0284C7;
+}
+
+/* ── Home page: Image reveal badges contrast ── */
+[data-theme="dark"] .img-reveal {
+  border-color: var(--border-color);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+[data-theme="dark"] .img-reveal > div[style*="bottom"] {
+  background: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+  border-top-color: #0284C7 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5) !important;
+}
+[data-theme="dark"] .img-reveal > div[style*="bottom"] svg {
+  color: #38BDF8 !important;
+}
+[data-theme="dark"] .img-reveal > div[style*="top"] {
+  background: #0E1F35 !important;
+  border-color: #1A3556 !important;
+}
+
+/* ── Home page: Testimonials contrast & visibility ── */
+[data-theme="dark"] .testimonial-card::before {
+  color: #1A3556;
+  opacity: 0.6;
+}
+[data-theme="dark"] .testimonial-text {
+  color: var(--text-secondary);
+}
+[data-theme="dark"] .testimonial-name {
+  color: var(--text-primary);
+}
+[data-theme="dark"] .testimonial-role {
+  color: var(--text-light);
+}
+[data-theme="dark"] .testimonial-dot {
+  background: #1A3556;
+}
+[data-theme="dark"] .testimonial-dot.active {
+  background: #38BDF8;
+}
+
+/* CTA banner label in dark — keep legible on navy */
+[data-theme="dark"] .cta-banner .section-label {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.14) !important;
+  color: #E0F2FE !important;
+}
+
+/* ── Buttons contrast in dark mode ── */
+[data-theme="dark"] .btn-outline {
+  border-color: #38BDF8;
+  color: #38BDF8;
+}
+[data-theme="dark"] .btn-outline:hover {
+  background: #0284C7;
+  border-color: #0284C7;
+  color: #FFFFFF;
+}
+[data-theme="dark"] .btn-primary {
+  background: #0284C7;
+  border-color: #0284C7;
+  color: #FFFFFF;
+}
+[data-theme="dark"] .btn-primary:hover {
+  background: #0369A1;
+  border-color: #0369A1;
+  color: #FFFFFF;
+}
+[data-theme="dark"] .btn-ghost {
+  color: #94A9C4;
+}
+[data-theme="dark"] .btn-ghost:hover {
+  background: var(--bg-accent);
+  color: var(--text-primary);
+}
+[data-theme="dark"] .btn-outline-white {
+  border-color: rgba(255,255,255,0.35);
+  color: #F1F6FB;
+}
+[data-theme="dark"] .btn-outline-white:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 [data-theme="dark"] blockquote {

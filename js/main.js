@@ -200,46 +200,131 @@ function initPageTransitions() {
 }
 
 /* ─────────────────────────────────────────────
-   TESTIMONIAL CAROUSEL (simple auto-scroll)
+   TESTIMONIAL CAROUSEL — proper viewport, no clipping, dots + responsive
 ───────────────────────────────────────────── */
 function initTestimonialCarousel() {
   $$('.testimonial-carousel').forEach(carousel => {
-    const track   = carousel.querySelector('.testimonial-track');
-    const prevBtn = carousel.querySelector('.testimonial-prev');
-    const nextBtn = carousel.querySelector('.testimonial-next');
-    const cards   = $$('.testimonial-card', track);
+    const viewport = carousel.querySelector('.testimonial-viewport') || carousel;
+    const track    = carousel.querySelector('.testimonial-track');
+    const prevBtn  = carousel.querySelector('.testimonial-prev');
+    const nextBtn  = carousel.querySelector('.testimonial-next');
+    const dotsWrap = carousel.querySelector('.testimonial-dots');
+    const cards    = $$('.testimonial-card', track);
     if (!track || !cards.length) return;
 
     let current = 0;
-    const gap   = 24;
+    const gap = 24;
 
-    function cardWidth() {
-      return cards[0].offsetWidth + gap;
+    function getVisibleCount() {
+      const vw = viewport.getBoundingClientRect().width;
+      if (vw < 768) return 1;
+      if (vw < 1024) return Math.min(2, cards.length);
+      return Math.min(3, cards.length);
     }
-
+    function getCardStep() {
+      const w = cards[0].getBoundingClientRect().width;
+      return w + gap;
+    }
+    function getMaxIndex() {
+      return Math.max(0, cards.length - getVisibleCount());
+    }
+    function createDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      const pages = getMaxIndex() + 1;
+      for (let i = 0; i < pages; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'testimonial-dot' + (i === current ? ' active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Go to testimonial group ' + (i + 1));
+        dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      }
+    }
+    function updateDots() {
+      if (!dotsWrap) return;
+      $$('.testimonial-dot', dotsWrap).forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+        d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      });
+    }
+    function updateButtons() {
+      const max = getMaxIndex();
+      if (prevBtn) {
+        prevBtn.disabled = current === 0;
+        prevBtn.style.opacity = current === 0 ? '0.45' : '1';
+        prevBtn.style.pointerEvents = current === 0 ? 'none' : '';
+      }
+      if (nextBtn) {
+        nextBtn.disabled = current === max;
+        nextBtn.style.opacity = current === max ? '0.45' : '1';
+        nextBtn.style.pointerEvents = current === max ? 'none' : '';
+      }
+    }
     function goTo(idx) {
-      current = Math.max(0, Math.min(idx, cards.length - 1));
+      const max = getMaxIndex();
+      current = Math.max(0, Math.min(idx, max));
+      const step = getCardStep();
       const isRtl = document.documentElement.dir === 'rtl';
-      const offset = current * cardWidth();
-      track.style.transform = `translateX(${isRtl ? offset : -offset}px)`;
+      const offset = current * step;
+      track.style.transform = 'translateX(' + (isRtl ? offset : -offset) + 'px)';
+      updateDots();
+      updateButtons();
     }
+
+    createDots();
+    goTo(0);
 
     prevBtn?.addEventListener('click', () => goTo(current - 1));
     nextBtn?.addEventListener('click', () => goTo(current + 1));
 
-    // Auto-advance
     let timer = setInterval(() => {
-      current = (current + 1) % cards.length;
-      goTo(current);
-    }, 4000);
+      const max = getMaxIndex();
+      if (current >= max) goTo(0);
+      else goTo(current + 1);
+    }, 4500);
 
-    carousel.addEventListener('mouseenter', () => clearInterval(timer));
-    carousel.addEventListener('mouseleave', () => {
+    const pause = () => clearInterval(timer);
+    const resume = () => {
+      clearInterval(timer);
       timer = setInterval(() => {
-        current = (current + 1) % cards.length;
-        goTo(current);
-      }, 4000);
+        const max = getMaxIndex();
+        if (current >= max) goTo(0);
+        else goTo(current + 1);
+      }, 4500);
+    };
+    carousel.addEventListener('mouseenter', pause);
+    carousel.addEventListener('mouseleave', resume);
+    carousel.addEventListener('focusin', pause);
+    carousel.addEventListener('focusout', resume);
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        createDots();
+        goTo(Math.min(current, getMaxIndex()));
+      }, 150);
     });
+
+    // Touch swipe
+    let startX = 0, isDragging = false;
+    viewport.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      pause();
+    }, { passive: true });
+    viewport.addEventListener('touchend', e => {
+      if (!isDragging) return;
+      const diff = e.changedTouches[0].clientX - startX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) goTo(current + 1);
+        else goTo(current - 1);
+      }
+      isDragging = false;
+      resume();
+    }, { passive: true });
   });
 }
 
