@@ -60,6 +60,24 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
+
+  @media (max-width: 860px) {
+    .hero-v2 {
+      height: auto;
+      min-height: auto;
+      padding-block: var(--space-10);
+    }
+
+    .hero-v2-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .quick-booking-card {
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }
 }
 
 /* ── Tablet Portrait (max 768px) ── */
@@ -235,6 +253,30 @@
   .hero-eyebrow { font-size: 10px; padding: 5px 14px; margin-bottom: 8px; }
   .hero-title   { font-size: clamp(1.6rem, 6.2vw, 2.2rem); margin-bottom: 8px; }
   .hero-subtitle { font-size: var(--size-sm); margin-bottom: 14px; max-width: 92%; }
+
+  .hero-v2 {
+    padding-block: var(--space-6);
+  }
+
+  .hero-v2-title {
+    font-size: clamp(1.65rem, 6.5vw, 2.2rem);
+  }
+
+  .hero-v2-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero-v2-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .qb-input-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 
   .hero-actions {
     flex-direction: column;

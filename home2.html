@@ -170,69 +170,155 @@
     <div class="hero-v2-shape hero-v2-shape-2"></div>
   </div>
   <!-- Background image with dark overlay -->
-  <div style="position:absolute; inset:0; z-index:0;">
-    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80&fit=crop" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;opacity:0.2;">
+  <div class="hero-v2-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80&fit=crop" alt="" aria-hidden="true">
   </div>
+  <div class="hero-v2-overlay" aria-hidden="true"></div>
 
-  <div class="container hero-v2-content" style="position:relative;z-index:2;">
-    <div style="max-width:760px;">
-      <!-- Animated badge -->
-      <div style="display:inline-flex; align-items:center; gap:var(--space-3); padding:var(--space-2) var(--space-5); background:rgba(184,115,51,0.12); border:1px solid rgba(184,115,51,0.3); border-radius:var(--radius-full); margin-bottom:var(--space-6); backdrop-filter:blur(8px);" data-reveal="fade-up">
-        <div style="width:8px;height:8px;background:var(--color-copper);border-radius:50%;animation:blink 1.5s infinite;"></div>
-        <span style="font-size:var(--size-xs);font-weight:var(--weight-bold);letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-copper-light);">The #1 Rated Plumbing Service</span>
-      </div>
+  <div class="container hero-v2-content">
+    <div class="hero-v2-grid">
 
-      <h1 style="font-family:var(--font-serif); font-size:clamp(2.8rem,6vw,5.5rem); color:var(--color-white); line-height:var(--leading-tight); letter-spacing:-0.02em; margin-bottom:var(--space-5);" data-reveal="fade-up" data-delay="100">
-        We Fix It Right.<br>
-        <span style="color:var(--color-copper-light);font-style:italic;">The First Time.</span>
-      </h1>
-
-      <p style="font-size:clamp(var(--size-base),2vw,var(--size-md)); color:rgba(255,255,255,0.75); line-height:var(--leading-relaxed); max-width:560px; margin-bottom:var(--space-8);" data-reveal="fade-up" data-delay="200">
-        From a dripping tap to a full bathroom overhaul — FlowMaster delivers expert plumbing solutions with guaranteed results, transparent pricing, and same-day availability.
-      </p>
-
-      <div style="display:flex; gap:var(--space-4); flex-wrap:wrap; margin-bottom:var(--space-10);" data-reveal="fade-up" data-delay="300">
-        <a href="contact.html" class="btn btn-copper btn-xl">Book a Plumber</a>
-        <a href="services.html" class="btn btn-outline-white btn-lg">Browse Services</a>
-      </div>
-
-      <!-- Trust row -->
-      <div style="display:flex; gap:var(--space-5); flex-wrap:wrap;" data-reveal="fade-up" data-delay="400">
-        <div style="display:flex; align-items:center; gap:var(--space-2); color:rgba(255,255,255,0.7); font-size:var(--size-sm);">
-          <span style="color:var(--color-warning);"><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true" style="color:var(--color-warning)"><use href="icons.svg#ic-star"></use></svg></span> 4.9 Rating
+      <!-- Left Narrative Column -->
+      <div class="hero-v2-left">
+        <!-- Animated badge -->
+        <div class="hero-v2-eyebrow" data-reveal="fade-up">
+          <div class="hero-v2-eyebrow-dot"></div>
+          <span class="hero-v2-eyebrow-text">Certified Master Plumbers • #1 Rated Service</span>
         </div>
-        <div style="width:1px; background:rgba(255,255,255,0.2);"></div>
-        <div style="color:rgba(255,255,255,0.7); font-size:var(--size-sm);">4,800+ Jobs Completed</div>
-        <div style="width:1px; background:rgba(255,255,255,0.2);"></div>
-        <div style="color:rgba(255,255,255,0.7); font-size:var(--size-sm);">15+ Years Experience</div>
-      </div>
-    </div>
 
-    <!-- Right card -->
-    <div style="position:absolute; right:0; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:var(--radius-2xl); padding:var(--space-8); backdrop-filter:blur(16px); min-width:280px; max-width:320px;" data-reveal="fade-left" class="hide-mobile">
-      <div style="font-size:var(--size-sm); font-weight:var(--weight-bold); color:var(--color-white); margin-bottom:var(--space-5); text-transform:uppercase; letter-spacing:var(--tracking-wide);">Quick Booking</div>
-      <form style="display:flex; flex-direction:column; gap:var(--space-3);" data-form>
-        <input type="text" placeholder="Your Name" class="form-control" data-validate="required" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:white;">
-        <input type="tel" placeholder="Phone Number" class="form-control" data-validate="required phone" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:white;">
-        <select class="form-control" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);">
-          <option value="">Select Service</option>
-          <option>Pipe Repair</option>
-          <option>Drain Unblocking</option>
-          <option>Bathroom Fitting</option>
-          <option>Water Heater</option>
-          <option>Tap Replacement</option>
-          <option>Emergency</option>
-        </select>
-        <button type="submit" class="btn btn-copper" style="width:100%;">Request Callback</button>
-      </form>
-      <p style="font-size:var(--size-xs); color:rgba(255,255,255,0.5); text-align:center; margin-top:var(--space-3);">We'll call back within 15 minutes</p>
+        <h1 class="hero-v2-title" data-reveal="fade-up" data-delay="100">
+          We Fix It Right.<br>
+          <span class="accent">The First Time.</span>
+        </h1>
+
+        <p class="hero-v2-subtitle" data-reveal="fade-up" data-delay="200">
+          From high-pressure pipe leaks to complete luxury bathroom fitting — FlowMaster delivers premium plumbing solutions with guaranteed craftsmanship, upfront pricing, and immediate dispatch.
+        </p>
+
+        <div class="hero-v2-actions" data-reveal="fade-up" data-delay="300">
+          <a href="contact.html" class="btn btn-copper btn-lg"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-calendar"></use></svg> Book a Consultation</a>
+          <a href="services.html" class="btn btn-outline-white btn-lg"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-pipe"></use></svg> Explore Services</a>
+        </div>
+
+        <!-- Trust row -->
+        <div class="hero-v2-trust" data-reveal="fade-up" data-delay="400">
+          <div class="hero-v2-trust-item">
+            <span style="color:var(--color-warning);display:inline-flex;gap:2px;"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-star"></use></svg><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-star"></use></svg></span>
+            <strong style="color:#fff;">4.9</strong> (2,800+ Reviews)
+          </div>
+          <div class="hero-v2-trust-sep" aria-hidden="true"></div>
+          <div class="hero-v2-trust-item">
+            <svg class="icon icon-sm" aria-hidden="true" style="color:var(--color-success);"><use href="icons.svg#ic-check"></use></svg>
+            <span>60-Min Response</span>
+          </div>
+          <div class="hero-v2-trust-sep" aria-hidden="true"></div>
+          <div class="hero-v2-trust-item">
+            <svg class="icon icon-sm" aria-hidden="true" style="color:#38BDF8;"><use href="icons.svg#ic-shield-check"></use></svg>
+            <span>Licensed & Insured</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Quick Booking Column -->
+      <div class="hero-v2-right" data-reveal="fade-left" data-delay="200">
+        <div class="quick-booking-card">
+          <!-- Card Header with live dispatch status -->
+          <div class="qb-header">
+            <div class="qb-header-text">
+              <h3 class="qb-title">Priority Quick Booking</h3>
+              <p class="qb-subtitle">Plumber dispatched in under 60 seconds</p>
+            </div>
+            <div class="qb-badge-live">
+              <span class="qb-badge-dot"></span>
+              <span>Live Dispatch</span>
+            </div>
+          </div>
+
+          <!-- Urgency Selector -->
+          <div class="qb-urgency-toggle" role="group" aria-label="Service Urgency">
+            <button type="button" class="qb-tab-btn active" data-urgency="standard" onclick="setUrgency(this, 'standard')">
+              <svg class="icon icon-xs" aria-hidden="true"><use href="icons.svg#ic-calendar"></use></svg> Standard Schedule
+            </button>
+            <button type="button" class="qb-tab-btn" data-urgency="emergency" onclick="setUrgency(this, 'emergency')">
+              <svg class="icon icon-xs" aria-hidden="true" style="color:#EF4444;"><use href="icons.svg#ic-zap"></use></svg> 60-Min Emergency
+            </button>
+          </div>
+
+          <!-- Form Fields -->
+          <form class="qb-form" data-form data-success-msg="Priority booking confirmed! Our team is calling you within 15 minutes.">
+            <div class="qb-input-row">
+              <div class="qb-field-group">
+                <svg class="icon qb-field-icon" aria-hidden="true"><use href="icons.svg#ic-user"></use></svg>
+                <input type="text" placeholder="Your Name *" class="qb-control" data-validate="required" aria-label="Full Name" required>
+              </div>
+              <div class="qb-field-group">
+                <svg class="icon qb-field-icon" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg>
+                <input type="tel" placeholder="Phone Number *" class="qb-control" data-validate="required phone" aria-label="Phone Number" required>
+              </div>
+            </div>
+
+            <div class="qb-input-row">
+              <div class="qb-field-group">
+                <svg class="icon qb-field-icon" aria-hidden="true"><use href="icons.svg#ic-tool"></use></svg>
+                <select class="qb-control qb-select" data-validate="required" aria-label="Service Required" required>
+                  <option value="">Select Service *</option>
+                  <option value="pipe-repair">Pipe Repair & Leak Detection</option>
+                  <option value="drain-unblocking">Drain & Sewer Unblocking</option>
+                  <option value="bathroom-fitting">Full Bathroom Fitting</option>
+                  <option value="water-heater">Water Heater & Boiler</option>
+                  <option value="emergency-leak">Emergency Burst Pipe</option>
+                </select>
+              </div>
+              <div class="qb-field-group">
+                <svg class="icon qb-field-icon" aria-hidden="true"><use href="icons.svg#ic-pin"></use></svg>
+                <input type="text" placeholder="Postal Code / Area" class="qb-control" data-validate="required" aria-label="Postal Code or Area">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-copper qb-submit-btn" id="qbSubmitBtn">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg>
+              <span>Confirm Instant Booking</span>
+            </button>
+          </form>
+
+          <!-- Trust Badges Footer -->
+          <div class="qb-footer-guarantees">
+            <span class="qb-guarantee-item">
+              <svg class="icon icon-xs" aria-hidden="true" style="color:var(--color-success);"><use href="icons.svg#ic-shield-check"></use></svg>
+              100% Guaranteed
+            </span>
+            <span class="qb-guarantee-item">
+              <svg class="icon icon-xs" aria-hidden="true" style="color:#38BDF8;"><use href="icons.svg#ic-clock"></use></svg>
+              15-Min Callback
+            </span>
+            <span class="qb-guarantee-item">
+              <svg class="icon icon-xs" aria-hidden="true" style="color:var(--color-copper-light);"><use href="icons.svg#ic-credit-card"></use></svg>
+              No Upfront Fee
+            </span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<style>
-  @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
-</style>
+<script>
+  function setUrgency(btn, type) {
+    document.querySelectorAll('.qb-tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const submitBtn = document.getElementById('qbSubmitBtn');
+    if (submitBtn) {
+      if (type === 'emergency') {
+        submitBtn.className = 'btn btn-emergency qb-submit-btn';
+        submitBtn.innerHTML = '<svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> <span>Dispatch Emergency Plumber Now</span>';
+      } else {
+        submitBtn.className = 'btn btn-copper qb-submit-btn';
+        submitBtn.innerHTML = '<svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> <span>Confirm Instant Booking</span>';
+      }
+    }
+  }
+</script>
 
 <!-- ═══════════════════════════════════════════
      SECTION 2 — HORIZONTAL SCROLL SERVICES
