@@ -108,14 +108,16 @@
 <main id="main-content">
 
 <!-- ═══ SECTION 1 — HERO — vertically centered ─══ -->
-<section style="background:var(--grad-cobalt);padding:80px 0; min-height:520px; display:flex; align-items:center; justify-content:center; text-align:center;" aria-label="Privacy policy hero">
-  <div class="container" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+<section style="background:var(--grad-dark);padding:80px 0; min-height:520px; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden;" aria-label="Privacy policy hero">
+  <div class="page-hero-pattern" aria-hidden="true" style="position:absolute; inset:0; background:rgba(6,21,40,0.88); z-index:1;"></div>
+  <div class="container" style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center;">
     <div class="page-hero-label" data-reveal="fade-up"><span style="width:6px;height:6px;background:#38BDF8;border-radius:50%;box-shadow:0 0 6px #38BDF8;flex-shrink:0;"></span> Your Privacy</div>
     <div style="display:flex; flex-direction:column; align-items:center; gap:var(--space-4); text-align:center;">
-      <div style="width:72px;height:72px;background:rgba(255,255,255,0.1);border-radius:var(--radius-2xl);display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-lock"></use></svg></div>
+      <div style="width:72px;height:72px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.25);border-radius:var(--radius-2xl);display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0; color:#38BDF8;"><svg class="icon icon-xl" aria-hidden="true" style="color:#38BDF8;"><use href="icons.svg#ic-lock"></use></svg></div>
       <div>
-        <h1 style="font-family:var(--font-serif);font-size:clamp(var(--size-3xl),5vw,var(--size-5xl));color:white;margin-bottom:var(--space-2); text-align:center;">Privacy <span style="color:#38BDF8;">Policy</span></h1>
-        <p style="color:rgba(255,255,255,0.75);font-size:var(--size-sm); text-align:center;">Last updated: January 1, 2026 · Effective immediately</p>
+        <h1 style="font-family:var(--font-serif);font-size:clamp(var(--size-3xl),5vw,var(--size-5xl));color:white;margin-bottom:var(--space-3); text-align:center;">Privacy <span style="color:#38BDF8;">Policy</span></h1>
+        <p style="color:rgba(255,255,255,0.85);font-size:var(--size-md); max-width:640px; text-align:center; line-height:var(--leading-relaxed);">We respect your privacy and protect your personal data with full transparency<br>and strict security standards you can trust.</p>
+        <p style="color:rgba(255,255,255,0.60);font-size:var(--size-xs); text-align:center; margin-top:var(--space-2);">Last updated: January 1, 2026 · Effective immediately</p>
       </div>
     </div>
   </div>
