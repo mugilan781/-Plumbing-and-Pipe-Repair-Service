@@ -4,7 +4,7 @@
 
 /* ── Large Desktop (1440px+) ── */
 @media (min-width: 1440px) {
-  .hero-title { font-size: var(--size-7xl); }
+  .hero-title { font-size: clamp(2.4rem, 4.2vw, 3.8rem); }
 }
 
 /* ── Desktop (max 1280px) ── */
@@ -83,8 +83,19 @@
 
   .top-bar-right { display: none; }
 
-  .hero-slider { height: 100svh; }
-  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-slider {
+    height: calc(100vh - var(--header-total));
+    height: calc(100svh - var(--header-total));
+    min-height: 480px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+  }
 
   .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr;
@@ -147,9 +158,13 @@
   .timeline-dot { left: -44px; }
 
   .hero-trust-badges {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-3);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2-5, 10px);
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   .breadcrumb { display: none; }
@@ -199,7 +214,13 @@
 @media (max-width: 640px) {
   :root { --container-pad: 1rem; }
 
-  .hero-slider-nav { bottom: var(--space-6); }
+  .hero-slider {
+    height: calc(100vh - var(--header-total));
+    height: calc(100svh - var(--header-total));
+    min-height: 450px;
+  }
+
+  .hero-slider-nav { bottom: var(--space-3); }
 
   .service-card-img { height: 180px; }
   .blog-card-img    { height: 200px; }
@@ -211,9 +232,48 @@
 
   .section-header { margin-bottom: var(--space-8); }
 
-  .hero-eyebrow { font-size: 10px; }
-  .hero-title   { font-size: clamp(1.8rem, 7vw, 2.5rem); }
-  .hero-subtitle { font-size: var(--size-base); }
+  .hero-eyebrow { font-size: 10px; padding: 5px 14px; margin-bottom: 8px; }
+  .hero-title   { font-size: clamp(1.6rem, 6.2vw, 2.2rem); margin-bottom: 8px; }
+  .hero-subtitle { font-size: var(--size-sm); margin-bottom: 14px; max-width: 92%; }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 290px;
+    margin-inline: auto;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 18px;
+  }
+
+  .hero-trust-badges {
+    flex-direction: row;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .hero-trust-item {
+    font-size: 11px;
+    padding: 4px 10px;
+    gap: 6px;
+  }
+
+  .hero-trust-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hero-trust-icon svg,
+  .hero-trust-icon .icon {
+    width: 12px;
+    height: 12px;
+  }
 
   .guarantee-badge { width: 100px; height: 100px; font-size: 10px; }
   .guarantee-badge-icon { font-size: 22px; }
