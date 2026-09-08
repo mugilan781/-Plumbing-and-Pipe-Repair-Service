@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient: Deep Authority Cobalt to Dark Midnight Navy -->
+    <linearGradient id="fm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F3B70"/>
+      <stop offset="50%" stop-color="#0C2E59"/>
+      <stop offset="100%" stop-color="#06182E"/>
+    </linearGradient>
+
+    <!-- Outer Border Gradient -->
+    <linearGradient id="fm-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#0284C7" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0F3B70" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Ambient Hydro Glow -->
+    <radialGradient id="fm-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#0284C7" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Polished Machined Chrome / Steel -->
+    <linearGradient id="fm-chrome" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#F1F5F9"/>
+      <stop offset="65%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+
+    <!-- Steel Inset Core -->
+    <linearGradient id="fm-steel-core" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <!-- Hydro Water Droplet Gradient -->
+    <linearGradient id="fm-drop" x1="25%" y1="10%" x2="75%" y2="90%">
+      <stop offset="0%" stop-color="#7DD3FC"/>
+      <stop offset="35%" stop-color="#38BDF8"/>
+      <stop offset="70%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+
+    <!-- Droplet Highlight -->
+    <linearGradient id="fm-drop-hl" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="fm-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#020B18" flood-opacity="0.7"/>
+    </filter>
+    <filter id="fm-drop-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#00A3FF" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Base Squircle Container -->
+  <rect x="28" y="28" width="456" height="456" rx="108" ry="108" fill="url(#fm-bg)"/>
+  
+  <!-- Central Hydro Ambient Glow -->
+  <circle cx="256" cy="256" r="208" fill="url(#fm-glow)"/>
+
+  <!-- Outer Precision Machined Cyan Border -->
+  <rect x="28" y="28" width="456" height="456" rx="108" ry="108" fill="none" stroke="url(#fm-border)" stroke-width="9"/>
+  
+  <!-- Subtle Inner Inset Rim -->
+  <rect x="37" y="37" width="438" height="438" rx="99" ry="99" fill="none" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="4"/>
+
+  <!-- Hydro Flow Orbital Arc -->
+  <path d="M 120 380 A 185 185 0 0 1 395 140" fill="none" stroke="#38BDF8" stroke-opacity="0.25" stroke-width="12" stroke-linecap="round" stroke-dasharray="16 22"/>
+
+  <!-- ════════ BRAND SYMBOL: PRECISION WRENCH & HYDRO DROPLET ════════ -->
+  <g filter="url(#fm-shadow)">
+    <!-- WRENCH SHADOW & SILHOUETTE -->
+    <g id="wrench">
+      <!-- Wrench Silhouette (Angled at 45 deg) -->
+      <path d="M 112 376 
+               L 260 228 
+               C 272 216 288 206 304 200 
+               L 310 186 
+               C 314 176 322 170 334 168 
+               L 366 136 
+               C 374 128 386 128 394 136 
+               L 398 140 
+               C 406 148 406 160 398 168 
+               L 366 200 
+               C 364 212 358 220 348 224 
+               L 334 230 
+               C 328 246 318 262 306 274 
+               L 158 422 
+               C 146 434 124 434 112 422 
+               L 100 410 
+               C 88 398 88 376 100 364 
+               Z" 
+            fill="#051528" opacity="0.6"/>
+
+      <!-- Polished Chrome Wrench Body -->
+      <path d="M 120 360 
+               L 266 214 
+               L 278 200 
+               C 292 184 312 174 334 170 
+               L 358 132 
+               C 364 124 374 124 380 130 
+               L 396 146 
+               C 402 152 402 162 394 168 
+               L 356 192 
+               C 352 214 342 234 326 248 
+               L 312 260 
+               L 166 406 
+               C 156 416 140 416 130 406 
+               L 116 392 
+               C 106 382 106 366 116 356 
+               Z" 
+            fill="url(#fm-chrome)" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
+
+      <!-- Jaw Inner Throat Cavity -->
+      <path d="M 346 150 
+               L 368 172 
+               L 350 190 
+               L 328 168 Z" 
+            fill="#0A2242" stroke="#0284C7" stroke-width="4"/>
+
+      <!-- Handle Shaft Inlay (Forged Machined Tool Steel) -->
+      <path d="M 134 366 
+               L 256 244 
+               L 268 256 
+               L 146 378 
+               Z" 
+            fill="url(#fm-steel-core)"/>
+
+      <!-- Handle Hanging Hole -->
+      <circle cx="128" cy="386" r="14" fill="#0C2E59" stroke="#CBD5E1" stroke-width="4"/>
+    </g>
+
+    <!-- ════════ LUMINOUS 3D HYDRO WATER DROPLET ════════ -->
+    <g filter="url(#fm-drop-glow)">
+      <!-- Smooth Organic Teardrop: Tip at (228, 148), Bulbous Base centered at (228, 284), radius 72 -->
+      <path d="M 228 148 
+               C 200 200 156 244 156 284 
+               A 72 72 0 1 0 300 284 
+               C 300 244 256 200 228 148 
+               Z" 
+            fill="url(#fm-drop)" stroke="#E0F2FE" stroke-width="6" stroke-linejoin="round"/>
+
+      <!-- Droplet 3D Volumetric Left Sheen -->
+      <path d="M 228 156 
+               C 206 204 166 246 166 284 
+               A 62 62 0 0 0 228 346 
+               L 228 156 
+               Z" 
+            fill="#38BDF8" opacity="0.45"/>
+
+      <!-- Specular Curved Highlight Reflection (Glassy shine on left curve) -->
+      <path d="M 224 180 
+               C 206 218 184 252 184 286 
+               A 44 44 0 0 1 190 264 
+               C 196 240 216 202 224 180 
+               Z" 
+            fill="url(#fm-drop-hl)"/>
+
+      <!-- Specular Glint Reflection -->
+      <circle cx="198" cy="286" r="8" fill="#FFFFFF" opacity="0.95"/>
+
+      <!-- Bottom Ambient Light Pool Reflection -->
+      <path d="M 188 322 A 52 52 0 0 0 268 322" fill="none" stroke="#7DD3FC" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+    </g>
+
+    <!-- Dynamic Hydro Splash Beads -->
+    <circle cx="372" cy="304" r="13" fill="#38BDF8" stroke="#FFFFFF" stroke-width="3" filter="url(#fm-drop-glow)"/>
+    <circle cx="370" cy="302" r="4" fill="#FFFFFF"/>
+
+    <circle cx="160" cy="168" r="9" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2.5" filter="url(#fm-drop-glow)"/>
+    <circle cx="158" cy="166" r="3" fill="#FFFFFF"/>
+  </g>
+</svg>
