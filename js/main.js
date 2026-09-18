@@ -112,17 +112,36 @@ function initBackToTop() {
 
 /* ─────────────────────────────────────────────
    PAGE LOADER
+   Never gate on window 'load': it waits for every external
+   image, so one slow/hanging image traps the user behind the
+   full-screen loader forever. Hide once the DOM is interactive,
+   with pageshow + absolute-cap safety nets.
 ───────────────────────────────────────────── */
 function initPageLoader() {
   const loader = $('.page-loader');
   if (!loader) return;
 
-  window.addEventListener('load', () => {
+  let done = false;
+  const hideLoader = () => {
+    if (done) return;
+    done = true;
+    // Short branded pause, then fade out and detach from the DOM.
     setTimeout(() => {
       loader.classList.add('hidden');
       setTimeout(() => loader.remove(), 700);
-    }, 600);
-  });
+    }, 450);
+  };
+
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    hideLoader();
+  } else {
+    document.addEventListener('DOMContentLoaded', hideLoader, { once: true });
+  }
+
+  // Safety nets so the loader can never trap the user on screen:
+  // bfcache restore + an absolute cap if events misfire.
+  window.addEventListener('pageshow', hideLoader);
+  setTimeout(hideLoader, 3500);
 }
 
 /* ─────────────────────────────────────────────
@@ -165,7 +184,36 @@ function initPageTransitions() {
     `;
   }
 
+  // ── Guarded navigation state ──
+  // Prevents stacked timers from rapid clicks and lets a stuck
+  // overlay self-heal if the browser never unloads the page.
+  let navPending = false;
+  let navTimer   = null;
+
+  const resetNavState = () => {
+    navPending = false;
+    if (navTimer) { clearTimeout(navTimer); navTimer = null; }
+    overlay.classList.remove('entering');
+  };
+
+  const smoothScrollToHash = hash => {
+    try {
+      const target = document.getElementById(hash) || document.querySelector('#' + CSS.escape(hash));
+      if (!target) return false;
+      const top = target.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top, behavior: 'smooth' });
+      return true;
+    } catch (err) {
+      return false;
+    }
+  };
+
   document.addEventListener('click', e => {
+    // Respect new-tab / modifier clicks — never hijack those.
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    // A wave transition is already running — swallow extra clicks.
+    if (navPending) { e.preventDefault(); return; }
+
     const link = e.target.closest('a[href]');
     if (!link) return;
 
@@ -178,21 +226,38 @@ function initPageTransitions() {
 
     // Don't trigger if already on the same page
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const targetPath  = href.split('/').pop() || 'index.html';
-    if (currentPath === targetPath && !href.includes('#')) return;
+    const [targetBase, targetHash] = href.split('#');
+    const targetPath  = (targetBase.split('/').pop() || 'index.html');
+    if (currentPath === targetPath) {
+      // Same-page section link (e.g. services.html#drain): smooth-scroll
+      // in place instead of a pointless full reload behind the wave.
+      if (targetHash && smoothScrollToHash(targetHash)) e.preventDefault();
+      return;
+    }
 
     e.preventDefault();
+    navPending = true;
     overlay.classList.remove('leaving');
     overlay.classList.add('entering');
 
-    setTimeout(() => {
+    navTimer = setTimeout(() => {
       window.location.href = href;
     }, 480);
+
+    // Self-heal: if the browser never unloads (blocked navigation,
+    // cancelled request…), drop the overlay instead of staying stuck.
+    setTimeout(() => {
+      if (navPending) resetNavState();
+    }, 3000);
   });
+
+  // Clear pending navigation state when leaving / restoring the page,
+  // so frozen timers can never fire or trap the overlay after restore.
+  window.addEventListener('pagehide', resetNavState);
 
   // Smooth wave flow out on page reveal
   window.addEventListener('pageshow', () => {
-    overlay.classList.remove('entering');
+    resetNavState();
     overlay.classList.add('leaving');
     setTimeout(() => {
       overlay.classList.remove('leaving');
@@ -373,8 +438,11 @@ function initAnchorLinks() {
 
 /* ─────────────────────────────────────────────
    INIT ALL
+   If the module arrives late (slow network) and DOMContentLoaded
+   already fired, boot immediately instead of waiting for an
+   event that will never come again.
 ───────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', () => {
+function boot() {
   initTheme();
   initPageLoader();
   initPageTransitions();
@@ -393,4 +461,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialCarousel();
   initFilterTabs();
   initAnchorLinks();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', boot);
+} else {
+  boot();
+}
