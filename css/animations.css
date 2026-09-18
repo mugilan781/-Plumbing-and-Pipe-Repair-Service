@@ -190,12 +190,62 @@
   pointer-events: none;
 }
 
+/* ── Loader brand lockup: unified logo + brand name on every page ── */
 .loader-logo {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: var(--size-3xl);
-  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   animation: float 1.5s ease-in-out infinite;
+}
+
+.loader-brand-badge {
+  width: 52px;
+  height: 52px;
+  background: #0C2E59;
+  border: 1.5px solid #475569;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+/* Higher specificity than the generic .loader-logo .icon sizing */
+.page-loader .loader-brand-badge .icon {
+  width: 28px;
+  height: 28px;
+  color: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.loader-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
+}
+
+[dir="rtl"] .loader-brand-text {
+  text-align: right;
+}
+
+.loader-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.loader-brand-tagline {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
 }
 
 .loader-bar-track {

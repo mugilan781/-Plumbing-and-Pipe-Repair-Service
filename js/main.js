@@ -174,13 +174,6 @@ function initPageTransitions() {
           <div class="water-wave-body"></div>
         </div>
       </div>
-      <div class="water-flow-center">
-        <div class="water-droplet-pod">
-          <svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-droplet"></use></svg>
-          <div class="water-ripple-ring ring-1"></div>
-          <div class="water-ripple-ring ring-2"></div>
-        </div>
-      </div>
     `;
   }
 
