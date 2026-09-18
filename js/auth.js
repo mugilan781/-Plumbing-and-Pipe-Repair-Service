@@ -185,16 +185,6 @@ function setSubmitting(btn, submitting) {
   }
 }
 
-function bindSocialButtons(form) {
-  $$('.auth-social-btn', form).forEach(btn => {
-    if (btn.__bound) return;
-    btn.__bound = true;
-    btn.addEventListener('click', () => {
-      showToast('Social sign-in is not configured in this demo. Please use email.', 'info');
-    });
-  });
-}
-
 /* ── LOGIN ── */
 function initLoginForm(form) {
   const email = $('#loginEmail', form);
@@ -217,8 +207,6 @@ function initLoginForm(form) {
   password?.addEventListener('input', () => {
     if (password.classList.contains('error')) validatePassword(password, 1);
   });
-
-  bindSocialButtons(form);
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -277,8 +265,6 @@ function initSignupForm(form) {
     if (confirm?.value && confirm.classList.contains('success')) validateConfirm(password, confirm);
   });
   terms?.addEventListener('change', () => validateTerms(terms));
-
-  bindSocialButtons(form);
 
   form.addEventListener('submit', async e => {
     e.preventDefault();

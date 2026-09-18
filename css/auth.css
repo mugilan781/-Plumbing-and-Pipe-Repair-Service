@@ -464,7 +464,7 @@ body.auth-body {
 /* Social buttons */
 .auth-social {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
   margin-bottom: var(--space-6);
 }
@@ -483,6 +483,7 @@ body.auth-body {
   font-size: var(--size-sm);
   font-weight: var(--weight-semibold);
   color: var(--text-primary);
+  text-decoration: none;
   cursor: pointer;
   transition: border-color var(--dur-base) var(--ease-swift),
               background var(--dur-base) var(--ease-swift),
@@ -546,20 +547,6 @@ body.auth-body {
 
 .auth-terms a:hover { color: var(--link-hover); }
 
-/* Back-home link below card */
-.auth-back {
-  margin-top: var(--space-6);
-  font-size: var(--size-sm);
-  font-weight: var(--weight-semibold);
-  color: var(--text-light);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.auth-back:hover { color: var(--link-hover); }
-
 /* Auth toast container reuse */
 .auth-page .toast-container {
   position: fixed;
@@ -596,6 +583,43 @@ body.auth-body {
 [dir="rtl"] .auth-subtitle { text-align: center; }
 
 [dir="rtl"] .auth-brand-text { text-align: right; }
+
+/* ── Dark-mode contrast fixes ──
+   --link-color resolves to deep cobalt (#0C2E59), which is
+   near-invisible on dark surfaces, so auth links, toggles,
+   dividers and errors get explicit high-contrast values. */
+[data-theme="dark"] .auth-forgot,
+[data-theme="dark"] .auth-redirect a,
+[data-theme="dark"] .auth-terms a {
+  color: #38BDF8;
+}
+
+[data-theme="dark"] .auth-forgot:hover,
+[data-theme="dark"] .auth-redirect a:hover,
+[data-theme="dark"] .auth-terms a:hover {
+  color: #7DD3FC;
+}
+
+[data-theme="dark"] .auth-divider {
+  color: #94A9C4;
+}
+
+[data-theme="dark"] .auth-pass-toggle {
+  color: #94A9C4;
+}
+
+[data-theme="dark"] .auth-pass-toggle:hover {
+  color: #38BDF8;
+  background: rgba(2, 132, 199, 0.15);
+}
+
+[data-theme="dark"] .auth-form .form-error {
+  color: #F87171;
+}
+
+[data-theme="dark"] .profile-dropdown-label {
+  color: #94A9C4;
+}
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
