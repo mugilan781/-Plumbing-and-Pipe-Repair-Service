@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your FlowMaster Plumbing account to book services faster.">
+  <meta name="theme-color" content="#FAFAF7">
+  <title>Create Account — FlowMaster Plumbing</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-body">
+<main class="auth-page" aria-labelledby="signupTitle">
+  <div class="auth-wrap auth-wrap-wide">
+    <div class="auth-card">
+      <a href="index.html" class="auth-brand" aria-label="FlowMaster Home">
+        <span class="auth-brand-icon" aria-hidden="true"><svg class="icon icon-lg" aria-hidden="true"><use href="icons.svg#ic-wrench"></use></svg></span>
+        <span class="auth-brand-text">
+          <span class="auth-brand-name">FlowMaster</span>
+          <span class="auth-brand-tagline">Plumbing &amp; Pipe Repair</span>
+        </span>
+      </a>
+
+      <h1 class="auth-title" id="signupTitle">Create Account</h1>
+      <p class="auth-subtitle">Create an account to get started.</p>
+
+      <form class="auth-form" id="signupForm" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="signupName">Full Name</label>
+          <input type="text" class="form-control" id="signupName" name="name"
+                 placeholder="John Smith" autocomplete="name" required aria-describedby="signupNameError">
+          <div class="form-error" id="signupNameError" role="alert"></div>
+        </div>
+
+        <div class="auth-row">
+          <div class="form-group">
+            <label class="form-label" for="signupEmail">Email Address</label>
+            <input type="email" class="form-control" id="signupEmail" name="email"
+                   placeholder="you@example.com" autocomplete="email" required aria-describedby="signupEmailError">
+            <div class="form-error" id="signupEmailError" role="alert"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signupPhone">Phone Number</label>
+            <input type="tel" class="form-control" id="signupPhone" name="phone"
+                   placeholder="+1 800 555 0000" autocomplete="tel" required aria-describedby="signupPhoneError">
+            <div class="form-error" id="signupPhoneError" role="alert"></div>
+          </div>
+        </div>
+
+        <div class="auth-row">
+          <div class="form-group">
+            <label class="form-label" for="signupPassword">Password</label>
+            <div class="auth-pass-wrap">
+              <input type="password" class="form-control" id="signupPassword" name="password"
+                     placeholder="Min. 8 characters" autocomplete="new-password" required aria-describedby="signupPasswordError">
+              <button type="button" class="auth-pass-toggle" data-target="signupPassword" aria-controls="signupPassword"
+                      aria-label="Show password" aria-pressed="false">
+                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+            <div class="form-error" id="signupPasswordError" role="alert"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signupConfirm">Confirm Password</label>
+            <div class="auth-pass-wrap">
+              <input type="password" class="form-control" id="signupConfirm" name="confirm"
+                     placeholder="Repeat password" autocomplete="new-password" required aria-describedby="signupConfirmError">
+              <button type="button" class="auth-pass-toggle" data-target="signupConfirm" aria-controls="signupConfirm"
+                      aria-label="Show password" aria-pressed="false">
+                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+            <div class="form-error" id="signupConfirmError" role="alert"></div>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: var(--space-5);">
+          <label class="auth-terms" for="termsAgree" style="margin-bottom: 0;">
+            <input type="checkbox" id="termsAgree" name="terms">
+            <span>I agree to the <a href="terms.html">Terms &amp; Conditions</a> and <a href="privacy.html">Privacy Policy</a>.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-copper btn-lg auth-submit">Create Account</button>
+
+        <div class="auth-divider" aria-hidden="true">or sign up with</div>
+
+        <div class="auth-social">
+          <button type="button" class="auth-social-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/></svg>
+            Google
+          </button>
+          <button type="button" class="auth-social-btn">
+            <svg viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.09 24 18.1 24 12.07z"/></svg>
+            Facebook
+          </button>
+        </div>
+
+        <p class="auth-redirect">Already have an account? <a href="login.html">Sign In</a></p>
+      </form>
+    </div>
+    <a href="index.html" class="auth-back">&larr; Back to home</a>
+  </div>
+</main>
+
+<div class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

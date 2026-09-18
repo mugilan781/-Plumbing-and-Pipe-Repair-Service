@@ -5,6 +5,7 @@ import { initTheme }        from './theme.js';
 import { initHeroSlider }   from './hero-slider.js';
 import { initScrollReveal, initCounters, initParallax, initScrollProgress, initUnderlineDraws, initTiltCards } from './animations.js';
 import { initForms }        from './forms.js';
+import { initAuth }         from './auth.js';
 import { initFAQ }          from './faq.js';
 import { $, $$, throttle }  from './utils.js';
 
@@ -387,6 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initUnderlineDraws();
   initTiltCards();
   initForms();
+  initAuth();
   initFAQ();
   initTestimonialCarousel();
   initFilterTabs();

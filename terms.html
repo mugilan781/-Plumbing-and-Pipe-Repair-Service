@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/extra.css">
   <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/auth.css">
   <style>
     .policy-body h2 { font-family:var(--font-serif); font-size:var(--size-2xl); margin:var(--space-10) 0 var(--space-4); padding-top:var(--space-2); border-top:1px solid var(--border-color); }
     .policy-body h3 { font-size:var(--size-lg); font-weight:var(--weight-bold); margin:var(--space-6) 0 var(--space-3); }
@@ -80,6 +81,15 @@
         <button class="theme-btn dir-btn icon-ltr" data-dir-toggle aria-label="Switch to RTL">RTL</button>
         <button class="theme-btn dir-btn icon-rtl" data-dir-toggle aria-label="Switch to LTR">LTR</button>
       </div>
+      <div class="profile-menu">
+        <button class="profile-btn" aria-label="Account menu" aria-haspopup="true" aria-expanded="false"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-user"></use></svg></button>
+        <ul class="profile-dropdown" role="menu" aria-label="Account">
+          <li><span class="profile-dropdown-label">Profile</span></li>
+          <li><hr class="profile-dropdown-divider"></li>
+          <li><a href="login.html" class="profile-dropdown-link" role="menuitem"><span class="nav-dropdown-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-user"></use></svg></span> Login</a></li>
+          <li><a href="signup.html" class="profile-dropdown-link" role="menuitem"><span class="nav-dropdown-icon"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-edit"></use></svg></span> Signup</a></li>
+        </ul>
+      </div>
       <a href="emergency.html" class="navbar-cta"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> Emergency</a>
     </div>
     <button class="navbar-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -99,6 +109,8 @@
   <a href="pricing.html"  class="mobile-nav-link">Pricing</a>
   <a href="blog.html"     class="mobile-nav-link">Blog</a>
   <a href="contact.html"  class="mobile-nav-link">Contact</a>
+  <a href="login.html"  class="mobile-nav-link">Login</a>
+  <a href="signup.html"  class="mobile-nav-link">Signup</a>
   <div class="mobile-menu-footer">
     <a href="tel:+18005556789" class="mobile-phone-link"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg> +1 800 555 6789</a>
     <a href="emergency.html" class="btn btn-emergency btn-lg"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg> Emergency Service</a>
