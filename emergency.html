@@ -97,6 +97,49 @@
       border-radius: 50%;
       z-index: 1;
     }
+
+    /* ═══ Always-dark sections: readable in BOTH themes ═══ */
+    /* Service list icons (section bg is hardcoded dark) */
+    .emergency-service-item > div:first-child { color: #FF6B6B; }
+    .emergency-service-item .icon { color: #FF6B6B !important; }
+    /* Promise icon chips */
+    .promise-ic .icon { color: inherit !important; }
+    .promise-ic-red { color: #FF6B6B; }
+    .promise-ic-amber { color: #F5B04C; }
+    .promise-ic-green { color: #34D399; }
+    /* Top-bar icons stay emergency-red in dark mode too */
+    [data-theme="dark"] .emg-topbar .icon { color: #FF6B6B !important; }
+    /* Button icons keep button-text color in dark mode */
+    [data-theme="dark"] .btn-emergency .icon { color: #FFFFFF !important; stroke: #FFFFFF !important; }
+    [data-theme="dark"] .emg-call-btn .icon { color: #C0392B !important; stroke: #C0392B !important; }
+
+    /* ═══ Numbers: single line, no overflow ═══ */
+    .emg-bignum { white-space: nowrap; font-size: clamp(1.75rem, 8vw, 5rem); }
+    .emg-hotline-num { white-space: nowrap; font-size: clamp(var(--size-2xl), 6vw, var(--size-5xl)); }
+
+    /* ═══ Hero badges: stack on small screens ═══ */
+    @media (max-width: 640px) {
+      .hero-badges { grid-template-columns: 1fr !important; }
+    }
+
+    /* ═══ Emergency form (fields always dark): arrow, placeholder, errors ═══ */
+    #em-issue.form-control {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23E0F2FE' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+    #emergency-form .form-control::placeholder { color: rgba(255,255,255,0.5); }
+    #emergency-form .form-error { color: #FF9B9B; }
+    #emergency-form .required { color: #FF6B6B; }
+
+    /* ═══ Coverage map + top-bar note on small screens ═══ */
+    @media (max-width: 768px) {
+      .coverage-map { height: 300px !important; }
+    }
+    @media (max-width: 560px) {
+      .emg-topbar-note, .emg-topbar .top-bar-divider { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -109,11 +152,11 @@
 <div class="page-transition" aria-hidden="true"></div>
 <div class="scroll-progress" aria-hidden="true"></div>
 
-<div class="top-bar" style="background:#1A0000;">
+<div class="top-bar emg-topbar" style="background:#1A0000;">
   <div class="top-bar-left">
     <span><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px;color:#FF6B6B"><use href="icons.svg#ic-zap"></use></svg> EMERGENCY LINE: <a href="tel:+18005556789" style="color:#FF6B6B;font-weight:bold;">+1 800 555 6789</a></span>
     <div class="top-bar-divider"></div>
-    <span><svg class="icon icon-xs" aria-hidden="true" style="margin-right:4px"><use href="icons.svg#ic-zap"></use></svg> 24/7 · 365 Days · 60-Min Response</span>
+    <span class="emg-topbar-note"><svg class="icon icon-xs" aria-hidden="true" style="margin-right:4px"><use href="icons.svg#ic-zap"></use></svg> 24/7 · 365 Days · 60-Min Response</span>
   </div>
   <div class="top-bar-right"><span>No call-out charge during business hours</span></div>
 </div><!-- ════════════════════ NAVBAR ════════════════════ -->
@@ -187,7 +230,7 @@
 <main id="main-content">
 
 <!-- ═══ SECTION 1 — EMERGENCY HERO ═══ -->
-<section class="emergency-hero" aria-label="Emergency hero" style="min-height:100vh;">
+<section class="emergency-hero" aria-label="Emergency hero" style="min-height:0;padding:110px 0 80px;">
   <div class="container" style="position:relative;z-index:2;padding-top:var(--space-10);">
     <div style="max-width:800px;margin:0 auto;text-align:center;">
       <div class="emergency-badge-pulse" style="margin:0 auto var(--space-5);">
@@ -205,7 +248,7 @@
       </p>
 
       <!-- BIG PHONE NUMBER -->
-      <a href="tel:+18005556789" style="display:block;font-family:var(--font-serif);font-size:clamp(2.5rem,8vw,5rem);color:white;font-weight:bold;text-decoration:none;margin-bottom:var(--space-6);transition:color var(--dur-base) var(--ease-swift);" data-reveal="fade-up" data-delay="200" onmouseover="this.style.color='#FF6B6B'" onmouseout="this.style.color='white'">
+      <a href="tel:+18005556789" class="emg-bignum" style="display:block;font-family:var(--font-serif);color:white;font-weight:bold;text-decoration:none;margin-bottom:var(--space-6);transition:color var(--dur-base) var(--ease-swift);" data-reveal="fade-up" data-delay="200" onmouseover="this.style.color='#FF6B6B'" onmouseout="this.style.color='white'">
         <svg class="icon icon-md" aria-hidden="true" style="margin-right:6px"><use href="icons.svg#ic-phone"></use></svg>+1 800 555 6789
       </a>
 
@@ -215,19 +258,19 @@
       </div>
 
       <!-- Promise badges -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);" data-reveal="fade-up" data-delay="400">
+      <div class="hero-badges" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);" data-reveal="fade-up" data-delay="400">
         <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-xl);padding:var(--space-5);text-align:center;">
-          <div style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
+          <div class="promise-ic promise-ic-red" style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
           <div style="font-family:var(--font-serif);font-size:var(--size-2xl);color:white;">60 min</div>
           <div style="font-size:var(--size-xs);color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:var(--tracking-wide);">Max Response Time</div>
         </div>
-        <div style="background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.3);border-radius:var(--radius-xl);padding:var(--space-5);text-align:center;">
-          <div style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-clock"></use></svg></div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-xl);padding:var(--space-5);text-align:center;">
+          <div class="promise-ic promise-ic-amber" style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-clock"></use></svg></div>
           <div style="font-family:var(--font-serif);font-size:var(--size-2xl);color:white;">24/7</div>
           <div style="font-size:var(--size-xs);color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:var(--tracking-wide);">Always Available</div>
         </div>
         <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-xl);padding:var(--space-5);text-align:center;">
-          <div style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
+          <div class="promise-ic promise-ic-green" style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
           <div style="font-family:var(--font-serif);font-size:var(--size-2xl);color:white;">Fixed</div>
           <div style="font-size:var(--size-xs);color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:var(--tracking-wide);">Before We Start</div>
         </div>
@@ -242,11 +285,11 @@
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6);" data-reveal="fade-up">
       <div>
         <div style="font-size:var(--size-xs);font-weight:var(--weight-bold);text-transform:uppercase;letter-spacing:var(--tracking-wider);color:rgba(255,255,255,0.7);margin-bottom:var(--space-2);">24/7 Emergency Hotline</div>
-        <div style="font-family:var(--font-serif);font-size:clamp(var(--size-3xl),4vw,var(--size-5xl));color:white;line-height:1;">+1 800 555 6789</div>
+        <div class="emg-hotline-num" style="font-family:var(--font-serif);color:white;line-height:1;">+1 800 555 6789</div>
         <div style="font-size:var(--size-sm);color:rgba(255,255,255,0.75);margin-top:var(--space-2);">For burst pipes, flooding, gas leaks, and all plumbing emergencies</div>
       </div>
       <div style="display:flex;flex-direction:column;gap:var(--space-3);">
-        <a href="tel:+18005556789" class="btn btn-xl" style="background:white;color:#C0392B;font-weight:var(--weight-bold);"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg> Call Now — We Answer Immediately</a>
+        <a href="tel:+18005556789" class="btn btn-xl emg-call-btn" style="background:white;color:#C0392B;font-weight:var(--weight-bold);"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg> Call Now — We Answer Immediately</a>
         <div style="display:flex;gap:var(--space-4);justify-content:center;">
           <span style="color:rgba(255,255,255,0.75);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="margin-right:4px;color:#6EE7B7"><use href="icons.svg#ic-check"></use></svg> No voicemail</span>
           <span style="color:rgba(255,255,255,0.75);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="margin-right:4px;color:#6EE7B7"><use href="icons.svg#ic-check"></use></svg> Real plumber answers</span>
@@ -268,17 +311,17 @@
 
     <div class="grid grid-auto-3 stagger-children" style="margin-top:var(--space-12);">
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
-        <div style="width:72px;height:72px;background:rgba(192,57,43,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
+        <div class="promise-ic promise-ic-red" style="width:72px;height:72px;background:rgba(192,57,43,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
         <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);color:white;margin-bottom:var(--space-3);">60-Minute Arrival</h3>
         <p style="color:rgba(255,255,255,0.65);font-size:var(--size-sm);line-height:var(--leading-relaxed);">We guarantee to reach your address within 60 minutes of your call. Our team is strategically positioned for maximum coverage.</p>
       </div>
-      <div style="background:rgba(184,115,51,0.08);border:1px solid rgba(184,115,51,0.25);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
-        <div style="width:72px;height:72px;background:rgba(184,115,51,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-shield-check"></use></svg></div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
+        <div class="promise-ic promise-ic-amber" style="width:72px;height:72px;background:rgba(184,115,51,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-shield-check"></use></svg></div>
         <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);color:white;margin-bottom:var(--space-3);">Fixed Before We Start</h3>
         <p style="color:rgba(255,255,255,0.65);font-size:var(--size-sm);line-height:var(--leading-relaxed);">Even in an emergency, we provide a clear, agreed price before starting. No surprise charges — even at 3am on a bank holiday.</p>
       </div>
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
-        <div style="width:72px;height:72px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
+        <div class="promise-ic promise-ic-green" style="width:72px;height:72px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
         <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);color:white;margin-bottom:var(--space-3);">Fixed Before We Leave</h3>
         <p style="color:rgba(255,255,255,0.65);font-size:var(--size-sm);line-height:var(--leading-relaxed);">We don't leave until the problem is fully resolved. Every emergency job is backed by our workmanship guarantee.</p>
       </div>
@@ -287,7 +330,7 @@
 </section>
 
 <!-- ═══ SECTION 4 — EMERGENCY SERVICES LIST ═══ -->
-<section class="section" style="background:#0D1929;" aria-labelledby="emergency-services-heading">
+<section class="section section-sm" style="background:#0D1929;" aria-labelledby="emergency-services-heading">
   <div class="container">
     <div class="section-header center" data-reveal="fade-up">
       <div class="section-label" style="color:var(--color-copper-light);">What We Handle</div>
@@ -295,7 +338,7 @@
       <div class="accent-line center"></div>
     </div>
 
-    <div class="grid grid-auto-3 stagger-children" style="margin-top:var(--space-10);">
+    <div class="grid grid-auto-3 stagger-children" style="margin-top:var(--space-8);">
       <div class="emergency-service-item">
         <div style="font-size:1.8rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
         <div><h3 style="color:white;font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Burst & Broken Pipes</h3><p style="font-size:var(--size-sm);color:rgba(255,255,255,0.6);">Emergency isolation and repair of burst pipes to stop flooding immediately.</p></div>
@@ -337,7 +380,7 @@
 </section>
 
 <!-- ═══ SECTION 5 — COVERAGE AREA ═══ -->
-<section class="section" style="background:var(--color-charcoal);" aria-labelledby="coverage-heading">
+<section class="section section-sm" style="background:var(--color-charcoal);" aria-labelledby="coverage-heading">
   <div class="container">
     <div class="split-50-50">
       <div data-reveal="fade-right">
@@ -366,7 +409,7 @@
       </div>
 
       <div data-reveal="fade-left">
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-3xl);overflow:hidden;height:420px;position:relative;">
+        <div class="coverage-map" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-3xl);overflow:hidden;height:420px;position:relative;">
           <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=600&q=80&fit=crop" alt="Emergency coverage map" style="width:100%;height:100%;object-fit:cover;opacity:0.4;">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--space-3);">
             <div style="font-family:var(--font-serif);font-size:var(--size-4xl);color:white;text-align:center;">Greater London</div>
