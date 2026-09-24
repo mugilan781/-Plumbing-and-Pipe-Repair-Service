@@ -25,6 +25,26 @@
   <link rel="stylesheet" href="css/extra.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/auth.css">
+  <style>
+    /* ═══ PRICING — Service Plans: "per month" proper visibility ═══ */
+    .pricing-card .pricing-period {
+      color: var(--text-secondary);
+      font-weight: var(--weight-semibold);
+    }
+    .pricing-card.featured .pricing-period {
+      color: rgba(255,255,255,0.85);
+    }
+    [data-theme="dark"] .pricing-card:not(.featured) .pricing-period {
+      color: #94A9C4;
+    }
+    /* ═══ PRICING — Custom Quote: dark-mode select arrow fix ═══ */
+    [data-theme="dark"] select.form-control {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23E0F2FE' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+  </style>
 </head>
 <body>
 <div id="svg-sprites" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;"><svg xmlns="http://www.w3.org/2000/svg"><use href="icons.svg"></use></svg></div>
@@ -302,10 +322,10 @@
         <h3 style="font-size:var(--size-base);font-weight:var(--weight-bold);">Digital Wallets</h3>
         <p style="font-size:var(--size-sm);color:var(--text-secondary);">Apple Pay, Google Pay, and PayPal accepted.</p>
       </div>
-      <div style="background:var(--grad-copper);border-radius:var(--radius-xl);padding:var(--space-6);text-align:center;color:white;">
+      <div style="background:var(--bg-secondary);border-radius:var(--radius-xl);padding:var(--space-6);border:1px solid var(--border-color);text-align:center;">
         <div style="font-size:2rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-calendar"></use></svg></div>
-        <h3 style="font-size:var(--size-base);font-weight:var(--weight-bold);color:white;">0% Finance</h3>
-        <p style="font-size:var(--size-sm);color:rgba(255,255,255,0.85);">Spread larger jobs over 6–12 months interest-free.</p>
+        <h3 style="font-size:var(--size-base);font-weight:var(--weight-bold);">0% Finance</h3>
+        <p style="font-size:var(--size-sm);color:var(--text-secondary);">Spread larger jobs over 6–12 months interest-free.</p>
       </div>
     </div>
   </div>
