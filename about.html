@@ -25,6 +25,188 @@
   <link rel="stylesheet" href="css/extra.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/auth.css">
+  <style>
+    /* ═══ ABOUT PAGE — Foundation: uniform cards + high-contrast icons ═══ */
+    .about-foundation-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      transition: transform var(--dur-slow) var(--ease-bounce), box-shadow var(--dur-slow) var(--ease-swift), border-color var(--dur-slow) var(--ease-swift);
+    }
+    .about-foundation-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: #94A3B8;
+    }
+    .about-foundation-icon {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #EBF2F8;
+      color: #0C2E59;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 18px;
+      box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 8px rgba(12,46,89,0.08);
+    }
+    .about-foundation-icon .icon { width: 30px; height: 30px; stroke-width: 2.2; }
+    .about-foundation-card h3 {
+      font-family: var(--font-serif);
+      font-size: var(--size-xl);
+      margin-bottom: var(--space-3);
+      color: var(--text-primary);
+    }
+    .about-foundation-card p {
+      color: var(--text-secondary);
+      font-size: var(--size-sm);
+      line-height: var(--leading-relaxed);
+    }
+    .about-value-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5);
+      border: 1px solid var(--border-color);
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+      transition: transform var(--dur-base) var(--ease-swift), box-shadow var(--dur-base) var(--ease-swift);
+    }
+    .about-value-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .about-value-icon {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #EBF2F8;
+      color: #0C2E59;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 13px;
+      box-shadow: inset 0 1px 0 #FFFFFF;
+    }
+    .about-value-icon .icon { width: 22px; height: 22px; stroke-width: 2.2; }
+    [data-theme="dark"] .about-foundation-icon,
+    [data-theme="dark"] .about-value-icon {
+      background: #132845;
+      border-color: #1E3A5F;
+      color: #38BDF8;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* ═══ ABOUT PAGE — Team redesign ═══ */
+    .about-team-grid { margin-top: var(--space-12); }
+    .about-team-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform var(--dur-slow) var(--ease-bounce), box-shadow var(--dur-slow) var(--ease-swift), border-color var(--dur-slow) var(--ease-swift);
+    }
+    .about-team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: #94A3B8;
+    }
+    .about-team-media { position: relative; height: 300px; overflow: hidden; flex-shrink: 0; }
+    .about-team-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform var(--dur-slower) var(--ease-swift); }
+    .about-team-card:hover .about-team-media img { transform: scale(1.06); }
+    .about-team-exp {
+      position: absolute;
+      top: var(--space-4);
+      left: var(--space-4);
+      background: #0C2E59;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .about-team-body { padding: var(--space-6); display: flex; flex-direction: column; flex: 1; text-align: left; }
+    .about-team-name { font-family: var(--font-heading); font-size: var(--size-lg); font-weight: 800; color: var(--text-primary); letter-spacing: -0.015em; margin-bottom: 6px; }
+    .about-team-role {
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0C2E59;
+      background: #EBF2F8;
+      border: 1px solid #CBD5E1;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-3);
+    }
+    .about-team-desc { font-size: var(--size-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); margin-bottom: var(--space-5); flex: 1; }
+    .about-team-foot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--border-color);
+    }
+    .about-team-social { display: flex; gap: 8px; justify-content: center; }
+    .about-team-social a {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--bg-accent);
+      color: var(--color-cobalt);
+      border: 1px solid var(--border-color);
+      transition: background var(--dur-base) var(--ease-swift), color var(--dur-base) var(--ease-swift), transform var(--dur-base) var(--ease-bounce);
+    }
+    .about-team-social a:hover { background: #0C2E59; border-color: #0C2E59; color: #fff; transform: translateY(-2px); }
+    .about-team-social .icon { width: 16px; height: 16px; }
+    [data-theme="dark"] .about-team-role { background: rgba(56,189,248,0.12); border-color: rgba(56,189,248,0.25); color: #38BDF8; }
+    [data-theme="dark"] .about-team-social a { background: #132845; border-color: #1E3A5F; color: #38BDF8; }
+    [data-theme="dark"] .about-team-social a:hover { background: #0284C7; border-color: #0284C7; color: #fff; }
+    [data-theme="dark"] .about-team-exp { background: #0284C7; border-color: rgba(255,255,255,0.25); }
+
+    /* ═══ ABOUT PAGE — Recognition: uniform cards + high-contrast icons on dark ═══ */
+    .about-recog-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      text-align: center;
+      transition: transform var(--dur-slow) var(--ease-bounce), background var(--dur-base) var(--ease-swift), border-color var(--dur-base) var(--ease-swift);
+    }
+    .about-recog-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(56,189,248,0.35);
+    }
+    .about-recog-icon {
+      width: 66px;
+      height: 66px;
+      margin: 0 auto var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(56,189,248,0.14);
+      color: #38BDF8;
+      border: 1px solid rgba(56,189,248,0.32);
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(2,132,199,0.22), inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+    .about-recog-icon .icon { width: 30px; height: 30px; stroke-width: 2; }
+    .about-recog-card h3 { font-size: var(--size-lg); font-weight: var(--weight-bold); color: #fff; margin-bottom: var(--space-2); }
+    .about-recog-card p { color: rgba(255,255,255,0.68); font-size: var(--size-sm); line-height: var(--leading-relaxed); }
+  </style>
 </head>
 <body>
 <div id="svg-sprites" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;"><svg xmlns="http://www.w3.org/2000/svg"><use href="icons.svg"></use></svg></div>
@@ -167,38 +349,38 @@
     </div>
 
     <div class="grid grid-auto-3 stagger-children" style="margin-top:var(--space-12);">
-      <div style="background:var(--bg-secondary);border-radius:var(--radius-2xl);padding:var(--space-8);border:1px solid var(--border-color);text-align:center;">
-        <div style="font-size:3rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-award"></use></svg></div>
-        <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);margin-bottom:var(--space-3);">Our Mission</h3>
-        <p style="color:var(--text-secondary);font-size:var(--size-sm);line-height:var(--leading-relaxed);">To deliver premium plumbing services that protect and improve our customers' homes, while building lasting relationships based on trust and quality.</p>
+      <div class="about-foundation-card">
+        <div class="about-foundation-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-award"></use></svg></div>
+        <h3>Our Mission</h3>
+        <p>To deliver premium plumbing services that protect and improve our customers' homes, while building lasting relationships based on trust and quality.</p>
       </div>
-      <div style="background:var(--grad-cobalt);border-radius:var(--radius-2xl);padding:var(--space-8);border:1px solid var(--border-color);text-align:center;box-shadow:var(--shadow-xl);">
-        <div style="font-size:3rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-shield"></use></svg></div>
-        <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);margin-bottom:var(--space-3);color:white;">Our Vision</h3>
-        <p style="color:rgba(255,255,255,0.75);font-size:var(--size-sm);line-height:var(--leading-relaxed);">To be the most trusted and respected plumbing brand in the UK — synonymous with quality, integrity, and exceptional service.</p>
+      <div class="about-foundation-card">
+        <div class="about-foundation-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-shield"></use></svg></div>
+        <h3>Our Vision</h3>
+        <p>To be the most trusted and respected plumbing brand in the UK — synonymous with quality, integrity, and exceptional service.</p>
       </div>
-      <div style="background:var(--bg-secondary);border-radius:var(--radius-2xl);padding:var(--space-8);border:1px solid var(--border-color);text-align:center;">
-        <div style="font-size:3rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-star-outline"></use></svg></div>
-        <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);margin-bottom:var(--space-3);">Our Promise</h3>
-        <p style="color:var(--text-secondary);font-size:var(--size-sm);line-height:var(--leading-relaxed);">Fixed right, on time, at the price quoted. Every FlowMaster job is backed by our comprehensive workmanship guarantee.</p>
+      <div class="about-foundation-card">
+        <div class="about-foundation-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-star-outline"></use></svg></div>
+        <h3>Our Promise</h3>
+        <p>Fixed right, on time, at the price quoted. Every FlowMaster job is backed by our comprehensive workmanship guarantee.</p>
       </div>
     </div>
 
     <div class="grid grid-4 stagger-children" style="margin-top:var(--space-8);">
-      <div style="background:var(--bg-secondary);border-radius:var(--radius-xl);padding:var(--space-5);border:1px solid var(--border-color);display:flex;gap:var(--space-3);align-items:flex-start;">
-        <div style="font-size:1.5rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-users"></use></svg></div>
+      <div class="about-value-card">
+        <div class="about-value-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-users"></use></svg></div>
         <div><h4 style="font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Integrity</h4><p style="font-size:var(--size-xs);color:var(--text-secondary);">Honest advice, fair pricing, transparent communication at all times.</p></div>
       </div>
-      <div style="background:var(--bg-secondary);border-radius:var(--radius-xl);padding:var(--space-5);border:1px solid var(--border-color);display:flex;gap:var(--space-3);align-items:flex-start;">
-        <div style="font-size:1.5rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-star"></use></svg></div>
+      <div class="about-value-card">
+        <div class="about-value-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-star"></use></svg></div>
         <div><h4 style="font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Excellence</h4><p style="font-size:var(--size-xs);color:var(--text-secondary);">We never cut corners. Every job is done to the highest possible standard.</p></div>
       </div>
-      <div style="background:var(--bg-secondary);border-radius:var(--radius-xl);padding:var(--space-5);border:1px solid var(--border-color);display:flex;gap:var(--space-3);align-items:flex-start;">
-        <div style="font-size:1.5rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-trending-up"></use></svg></div>
+      <div class="about-value-card">
+        <div class="about-value-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-trending-up"></use></svg></div>
         <div><h4 style="font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Innovation</h4><p style="font-size:var(--size-xs);color:var(--text-secondary);">We invest in the latest tools and techniques to deliver better outcomes.</p></div>
       </div>
-      <div style="background:var(--bg-secondary);border-radius:var(--radius-xl);padding:var(--space-5);border:1px solid var(--border-color);display:flex;gap:var(--space-3);align-items:flex-start;">
-        <div style="font-size:1.5rem;flex-shrink:0;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
+      <div class="about-value-card">
+        <div class="about-value-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
         <div><h4 style="font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:4px;">Sustainability</h4><p style="font-size:var(--size-xs);color:var(--text-secondary);">Promoting water efficiency and eco-friendly solutions for a greener future.</p></div>
       </div>
     </div>
@@ -215,67 +397,86 @@
       <p class="section-subtitle">Every member of our team is fully certified, background-checked, and committed to delivering exceptional service.</p>
     </div>
 
-    <div class="grid grid-4 stagger-children" style="margin-top:var(--space-12);">
-      <div class="team-card">
-        <div class="team-card-img-wrap">
-          <img class="team-card-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=75&fit=crop&crop=faces" alt="David Harris">
-          <div class="team-card-overlay">
-            <div class="social-links" style="justify-content:center;">
-              <a href="#" class="social-link" aria-label="LinkedIn"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
-              <a href="#" class="social-link" aria-label="Email"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-mail"></use></svg></a>
+    <div class="grid grid-4 stagger-children about-team-grid">
+      <article class="about-team-card">
+        <div class="about-team-media">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=75&fit=crop&crop=faces" alt="David Harris — Founder and Master Plumber">
+          <span class="about-team-exp">20+ Yrs Exp</span>
+        </div>
+        <div class="about-team-body">
+          <h3 class="about-team-name">David Harris</h3>
+          <span class="about-team-role">Founder & Master Plumber</span>
+          <p class="about-team-desc">Founded FlowMaster in 2009. Gas Safe registered master plumber specialising in complex diagnostics, boiler systems and mentoring every engineer on the team.</p>
+          <div class="about-team-foot">
+            <div class="about-team-social">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="David Harris on LinkedIn"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="David Harris on X (Twitter)"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-twitter"></use></svg></a>
+              <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="David Harris on Facebook"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-facebook"></use></svg></a>
+              <a href="mailto:david.harris@flowmaster.com" aria-label="Email David Harris"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-mail"></use></svg></a>
             </div>
           </div>
         </div>
-        <div class="team-card-body">
-          <div class="team-card-name">David Harris</div>
-          <div class="team-card-role">Founder & Master Plumber</div>
-        </div>
-      </div>
+      </article>
 
-      <div class="team-card">
-        <div class="team-card-img-wrap">
-          <img class="team-card-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=75&fit=crop&crop=faces" alt="Mark Stevens">
-          <div class="team-card-overlay">
-            <div class="social-links" style="justify-content:center;">
-              <a href="#" class="social-link" aria-label="LinkedIn"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+      <article class="about-team-card">
+        <div class="about-team-media">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=75&fit=crop&crop=faces" alt="Mark Stevens — Operations Director">
+          <span class="about-team-exp">15+ Yrs Exp</span>
+        </div>
+        <div class="about-team-body">
+          <h3 class="about-team-name">Mark Stevens</h3>
+          <span class="about-team-role">Operations Director</span>
+          <p class="about-team-desc">Runs scheduling, quality control and rapid dispatch. Keeps our 45-engineer team on time, on budget and obsessed with five-star customer feedback.</p>
+          <div class="about-team-foot">
+            <div class="about-team-social">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Mark Stevens on LinkedIn"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Mark Stevens on X (Twitter)"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-twitter"></use></svg></a>
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Mark Stevens on Instagram"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-instagram"></use></svg></a>
+              <a href="mailto:mark.stevens@flowmaster.com" aria-label="Email Mark Stevens"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-mail"></use></svg></a>
             </div>
           </div>
         </div>
-        <div class="team-card-body">
-          <div class="team-card-name">Mark Stevens</div>
-          <div class="team-card-role">Operations Director</div>
-        </div>
-      </div>
+      </article>
 
-      <div class="team-card">
-        <div class="team-card-img-wrap">
-          <img class="team-card-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=75&fit=crop&crop=faces" alt="Sarah Chen">
-          <div class="team-card-overlay">
-            <div class="social-links" style="justify-content:center;">
-              <a href="#" class="social-link" aria-label="LinkedIn"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+      <article class="about-team-card">
+        <div class="about-team-media">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=75&fit=crop&crop=faces" alt="Sarah Chen — Lead Bathroom Designer">
+          <span class="about-team-exp">10+ Yrs Exp</span>
+        </div>
+        <div class="about-team-body">
+          <h3 class="about-team-name">Sarah Chen</h3>
+          <span class="about-team-role">Lead Bathroom Designer</span>
+          <p class="about-team-desc">Designed 300+ bathrooms across London. Blends water-efficient fixtures, smart layouts and premium finishes for beautiful, practical spaces.</p>
+          <div class="about-team-foot">
+            <div class="about-team-social">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Sarah Chen on LinkedIn"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Sarah Chen on Instagram"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-instagram"></use></svg></a>
+              <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Sarah Chen on Facebook"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-facebook"></use></svg></a>
+              <a href="mailto:sarah.chen@flowmaster.com" aria-label="Email Sarah Chen"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-mail"></use></svg></a>
             </div>
           </div>
         </div>
-        <div class="team-card-body">
-          <div class="team-card-name">Sarah Chen</div>
-          <div class="team-card-role">Lead Bathroom Designer</div>
-        </div>
-      </div>
+      </article>
 
-      <div class="team-card">
-        <div class="team-card-img-wrap">
-          <img class="team-card-img" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=75&fit=crop&crop=faces" alt="James Patel">
-          <div class="team-card-overlay">
-            <div class="social-links" style="justify-content:center;">
-              <a href="#" class="social-link" aria-label="LinkedIn"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+      <article class="about-team-card">
+        <div class="about-team-media">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=75&fit=crop&crop=faces" alt="James Patel — Senior Emergency Plumber">
+          <span class="about-team-exp">12+ Yrs Exp</span>
+        </div>
+        <div class="about-team-body">
+          <h3 class="about-team-name">James Patel</h3>
+          <span class="about-team-role">Senior Emergency Plumber</span>
+          <p class="about-team-desc">Leads our 24/7 emergency response. Expert in burst pipes, major leaks and boiler breakdowns — average on-site in under 60 minutes.</p>
+          <div class="about-team-foot">
+            <div class="about-team-social">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="James Patel on LinkedIn"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="James Patel on X (Twitter)"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-twitter"></use></svg></a>
+              <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="James Patel on YouTube"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-youtube"></use></svg></a>
+              <a href="mailto:james.patel@flowmaster.com" aria-label="Email James Patel"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-mail"></use></svg></a>
             </div>
           </div>
         </div>
-        <div class="team-card-body">
-          <div class="team-card-name">James Patel</div>
-          <div class="team-card-role">Senior Emergency Plumber</div>
-        </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
@@ -290,35 +491,45 @@
     </div>
 
     <div class="grid grid-auto-3 stagger-children" style="margin-top:var(--space-12);">
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
-        <div style="font-size:3rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-award"></use></svg></div>
-        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:white;margin-bottom:var(--space-2);">Gas Safe Registered</h3>
-        <p style="color:rgba(255,255,255,0.6);font-size:var(--size-sm);">All gas work carried out by fully Gas Safe registered engineers. Registration #GS-2247891.</p>
+      <div class="about-recog-card">
+        <div class="about-recog-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-shield-check"></use></svg></div>
+        <h3>Gas Safe Registered</h3>
+        <p>All gas work carried out by fully Gas Safe registered engineers. Registration #GS-2247891.</p>
       </div>
-      <div style="background:rgba(184,115,51,0.1);border:1px solid rgba(184,115,51,0.3);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
-        <div style="font-size:3rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-award"></use></svg></div>
-        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:white;margin-bottom:var(--space-2);">Best Plumbing Co. 2024</h3>
-        <p style="color:rgba(255,255,255,0.6);font-size:var(--size-sm);">Winner of the London Business Excellence Award for Best Home Service Company 2024.</p>
+      <div class="about-recog-card">
+        <div class="about-recog-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-award"></use></svg></div>
+        <h3>Best Plumbing Co. 2024</h3>
+        <p>Winner of the London Business Excellence Award for Best Home Service Company 2024.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
-        <div style="font-size:3rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-star"></use></svg></div>
-        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:white;margin-bottom:var(--space-2);">Which? Trusted Trader</h3>
-        <p style="color:rgba(255,255,255,0.6);font-size:var(--size-sm);">Endorsed by Which? — the UK's most trusted consumer organisation — since 2018.</p>
+      <div class="about-recog-card">
+        <div class="about-recog-icon"><svg class="icon icon-filled" aria-hidden="true"><use href="icons.svg#ic-star"></use></svg></div>
+        <h3>Which? Trusted Trader</h3>
+        <p>Endorsed by Which? — the UK's most trusted consumer organisation — since 2018.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
-        <div style="font-size:3rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-shield-check"></use></svg></div>
-        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:white;margin-bottom:var(--space-2);">CIPHE Member</h3>
-        <p style="color:rgba(255,255,255,0.6);font-size:var(--size-sm);">Proud members of the Chartered Institute of Plumbing & Heating Engineering.</p>
+      <div class="about-recog-card">
+        <div class="about-recog-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-users"></use></svg></div>
+        <h3>CIPHE Member</h3>
+        <p>Proud members of the Chartered Institute of Plumbing & Heating Engineering.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
-        <div style="font-size:3rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
-        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:white;margin-bottom:var(--space-2);">Checkatrade Top Rated</h3>
-        <p style="color:rgba(255,255,255,0.6);font-size:var(--size-sm);">Consistently rated 9.8/10 on Checkatrade from over 2,000 verified customer reviews.</p>
+      <div class="about-recog-card">
+        <div class="about-recog-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
+        <h3>Checkatrade Top Rated</h3>
+        <p>Consistently rated 9.8/10 on Checkatrade from over 2,000 verified customer reviews.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;">
-        <div style="font-size:3rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-check-circle"></use></svg></div>
-        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);color:white;margin-bottom:var(--space-2);">Green Plumbers UK</h3>
-        <p style="color:rgba(255,255,255,0.6);font-size:var(--size-sm);">Certified Green Plumbers, promoting water efficiency and sustainable plumbing practices.</p>
+      <div class="about-recog-card">
+        <div class="about-recog-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-droplet"></use></svg></div>
+        <h3>Green Plumbers UK</h3>
+        <p>Certified Green Plumbers, promoting water efficiency and sustainable plumbing practices.</p>
+      </div>
+      <div class="about-recog-card">
+        <div class="about-recog-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-shield"></use></svg></div>
+        <h3>WaterSafe Approved</h3>
+        <p>WaterSafe approved contractors — qualified to work safely with drinking water systems.</p>
+      </div>
+      <div class="about-recog-card">
+        <div class="about-recog-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-gear"></use></svg></div>
+        <h3>ISO 9001 Certified</h3>
+        <p>ISO 9001 certified quality management — audited processes for consistent, reliable service.</p>
       </div>
     </div>
   </div>
