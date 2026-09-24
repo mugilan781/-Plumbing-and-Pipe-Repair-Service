@@ -124,29 +124,29 @@
 
 <section style="padding:80px 0; min-height:520px; display:flex; align-items:center; justify-content:center; background:var(--bg-accent); text-align:center;" aria-label="Article header">
   <div class="container" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
-    <div class="section-label" style="justify-content:center; margin-bottom:var(--space-4);" data-reveal="fade-up"><span style="width:6px;height:6px;background:#0284C7;border-radius:50%;box-shadow:0 0 6px #0284C7;flex-shrink:0;"></span> Featured Article</div>
+    <div class="section-label" id="postKicker" style="justify-content:center; margin-bottom:var(--space-4);" data-reveal="fade-up"><span style="width:6px;height:6px;background:#0284C7;border-radius:50%;box-shadow:0 0 6px #0284C7;flex-shrink:0;"></span> Featured Article</div>
 
     <div style="max-width:840px; display:flex; flex-direction:column; align-items:center; text-align:center;" data-reveal="fade-up">
-      <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-4); justify-content:center;">
+      <div id="postBadges" style="display:flex;gap:var(--space-3);margin-bottom:var(--space-4); justify-content:center;">
         <span class="badge badge-copper">Featured</span>
         <span class="badge badge-cobalt">Maintenance</span>
         <span class="badge badge-slate">8 min read</span>
       </div>
 
-      <h1 style="font-family:var(--font-serif);font-size:clamp(var(--size-3xl),5vw,var(--size-6xl));line-height:var(--leading-tight);margin-bottom:var(--space-5); text-align:center;">
+      <h1 id="postTitle" style="font-family:var(--font-serif);font-size:clamp(var(--size-3xl),5vw,var(--size-6xl));line-height:var(--leading-tight);margin-bottom:var(--space-5); text-align:center;">
         The Complete <span style="color:#0284C7;">Winter Plumbing</span> Protection Guide for UK Homeowners
       </h1>
 
-      <p style="font-size:var(--size-md);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-6); text-align:center;">
+      <p id="postExcerpt" style="font-size:var(--size-md);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-6); text-align:center;">
         With temperatures dropping across the UK, your plumbing faces its biggest annual challenge. Frozen pipes can burst and cause thousands of pounds in damage — but almost every case is completely preventable.
       </p>
 
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);padding:var(--space-5);background:var(--bg-secondary);border-radius:var(--radius-xl);border:1px solid var(--border-color);">
         <div style="display:flex;align-items:center;gap:var(--space-4);">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=75&fit=crop&crop=faces" alt="David Harris" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--color-copper);">
+          <img id="postAuthorImg" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=75&fit=crop&crop=faces" alt="David Harris" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--color-copper);">
           <div>
-            <div style="font-weight:var(--weight-bold);font-size:var(--size-sm);">David Harris</div>
-            <div style="font-size:var(--size-xs);color:var(--text-light);">Founder & Master Plumber · January 20, 2026</div>
+            <div id="postAuthorName" style="font-weight:var(--weight-bold);font-size:var(--size-sm);">David Harris</div>
+            <div id="postAuthorMeta" style="font-size:var(--size-xs);color:var(--text-light);">Founder & Master Plumber · January 20, 2026</div>
           </div>
         </div>
         <div style="display:flex;gap:var(--space-3);">
@@ -165,7 +165,9 @@
 
       <!-- Main content -->
       <article class="article-body" data-reveal="fade-up">
-        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=900&q=80&fit=crop" alt="Winter plumbing protection" style="width:100%;height:400px;object-fit:cover;border-radius:var(--radius-2xl);margin-bottom:var(--space-8);">
+        <img id="postHeroImg" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=900&q=80&fit=crop" alt="Winter plumbing protection" style="width:100%;height:400px;object-fit:cover;border-radius:var(--radius-2xl);margin-bottom:var(--space-8);">
+
+        <div id="postBody">
 
         <h2>Why Winter Is Your Plumbing's Biggest Threat</h2>
         <p>Every year, the Association of British Insurers estimates that frozen and burst pipes cost homeowners in the UK over £1 billion in damage. Yet the vast majority of these incidents are entirely preventable with basic preparation and awareness.</p>
@@ -225,6 +227,8 @@
           <li>Call FlowMaster if you're unsure — we offer same-day emergency assessment</li>
         </ul>
 
+        </div><!-- /#postBody -->
+
         <!-- Share -->
         <div style="margin-top:var(--space-10);padding:var(--space-6);background:var(--bg-accent);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);">
           <div style="font-weight:var(--weight-bold);">Found this useful? Share it:</div>
@@ -269,7 +273,7 @@
         <!-- Table of Contents -->
         <div style="background:var(--bg-secondary);border-radius:var(--radius-2xl);padding:var(--space-6);border:1px solid var(--border-color);">
           <h3 style="font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:var(--space-4);"><svg class="icon icon-sm" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-file"></use></svg> Contents</h3>
-          <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div id="postToc" style="display:flex;flex-direction:column;gap:var(--space-2);">
             <a href="#" style="font-size:var(--size-sm);color:var(--text-secondary);">1. Why winter is a threat</a>
             <a href="#" style="font-size:var(--size-sm);color:var(--text-secondary);">2. Insulate exposed pipes</a>
             <a href="#" style="font-size:var(--size-sm);color:var(--text-secondary);">3. Find your stopcock</a>
@@ -288,11 +292,11 @@
 <section class="section section-sm" style="background:var(--bg-accent);" aria-label="Author bio">
   <div class="container">
     <div style="max-width:840px;margin:0 auto;background:var(--bg-secondary);border-radius:var(--radius-2xl);padding:var(--space-8);border:1px solid var(--border-color);display:flex;gap:var(--space-6);align-items:flex-start;" data-reveal="fade-up">
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=75&fit=crop&crop=faces" alt="David Harris" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--color-copper);flex-shrink:0;">
+      <img id="bioAuthorImg" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=75&fit=crop&crop=faces" alt="David Harris" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--color-copper);flex-shrink:0;">
       <div>
         <div style="font-size:var(--size-xs);font-weight:var(--weight-bold);text-transform:uppercase;letter-spacing:var(--tracking-wide);color:var(--color-copper);margin-bottom:var(--space-1);">About the Author</div>
-        <h3 style="font-size:var(--size-lg);font-weight:var(--weight-bold);margin-bottom:var(--space-2);">David Harris</h3>
-        <p style="font-size:var(--size-sm);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-4);">David is the founder of FlowMaster Plumbing with 20+ years as a Master Plumber. He regularly writes about preventative plumbing maintenance, emergency preparedness, and sustainable water systems.</p>
+        <h3 id="bioAuthorName" style="font-size:var(--size-lg);font-weight:var(--weight-bold);margin-bottom:var(--space-2);">David Harris</h3>
+        <p id="bioAuthorBio" style="font-size:var(--size-sm);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-4);">David is the founder of FlowMaster Plumbing with 20+ years as a Master Plumber. He regularly writes about preventative plumbing maintenance, emergency preparedness, and sustainable water systems.</p>
         <div class="social-links">
           <a href="#" class="social-link" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="LinkedIn"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
           <a href="#" class="social-link" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="Twitter"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-twitter"></use></svg></a>
@@ -306,8 +310,8 @@
 <section class="section section-sm" aria-labelledby="related-heading">
   <div class="container">
     <h2 id="related-heading" style="font-family:var(--font-serif);font-size:var(--size-3xl);margin-bottom:var(--space-8);" data-reveal="fade-up">Related Articles</h2>
-    <div class="grid grid-auto-3 stagger-children">
-      <article class="blog-card">
+    <div class="grid grid-auto-3 stagger-children" id="relatedGrid">
+      <article class="blog-card" data-post="burst-pipe-first-10-minutes">
         <div class="blog-card-img-wrap">
           <img class="blog-card-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&q=75&fit=crop" alt="Burst pipe advice">
           <span class="blog-card-category">Emergency</span>
@@ -318,7 +322,7 @@
           <a href="blog-details.html" class="service-card-link">Read <svg class="icon icon-xs" aria-hidden="true"><use href="icons.svg#ic-arrow-right"></use></svg></a>
         </div>
       </article>
-      <article class="blog-card">
+      <article class="blog-card" data-post="water-heater-replacing">
         <div class="blog-card-img-wrap">
           <img class="blog-card-img" src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=500&q=75&fit=crop" alt="Water heater guide">
           <span class="blog-card-category">Maintenance</span>
@@ -329,7 +333,7 @@
           <a href="blog-details.html" class="service-card-link">Read <svg class="icon icon-xs" aria-hidden="true"><use href="icons.svg#ic-arrow-right"></use></svg></a>
         </div>
       </article>
-      <article class="blog-card">
+      <article class="blog-card" data-post="drains-clear-year-round">
         <div class="blog-card-img-wrap">
           <img class="blog-card-img" src="https://images.unsplash.com/photo-1580901368919-7738efb0f87e?w=500&q=75&fit=crop" alt="Drain care">
           <span class="blog-card-category">Drains</span>
@@ -498,5 +502,192 @@
 </div>
 <div class="toast-container" aria-live="polite"></div>
 <script type="module" src="js/main.js"></script>
+<script>
+/* Single details page for every blog post — no extra HTML files.
+   blog.html links here as blog-details.html?post=<slug>; this renders that post. */
+var BLOG_AUTHORS = {
+  david: { name: 'David Harris', role: 'Founder & Master Plumber',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=75&fit=crop&crop=faces',
+    bio: 'David is the founder of FlowMaster Plumbing with 20+ years as a Master Plumber. He regularly writes about preventative plumbing maintenance, emergency preparedness, and sustainable water systems.' },
+  sarah: { name: 'Sarah Chen', role: 'Lead Bathroom Designer',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=75&fit=crop&crop=faces',
+    bio: 'Sarah leads bathroom design at FlowMaster with 10+ years of experience and 300+ completed renovations. She writes about bathroom planning, fixtures, and water-efficient design.' },
+  james: { name: 'James Patel', role: 'Senior Emergency Plumber',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=75&fit=crop&crop=faces',
+    bio: 'James leads FlowMaster\u2019s 24/7 emergency response team with 12+ years on the tools. He writes about emergency preparedness, rapid fixes, and what to do before the plumber arrives.' }
+};
+
+var BLOG_POSTS = [
+  { slug: 'winter-guide', category: 'Maintenance', label: 'Featured Article',
+    title: 'The Complete Winter Plumbing Protection Guide for UK Homeowners',
+    titleHtml: 'The Complete <span style="color:#0284C7;">Winter Plumbing</span> Protection Guide for UK Homeowners',
+    excerpt: 'With temperatures dropping across the UK, your plumbing faces its biggest annual challenge. Frozen pipes can burst and cause thousands of pounds in damage \u2014 but almost every case is completely preventable.',
+    image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=900&q=80&fit=crop',
+    thumb: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=500&q=75&fit=crop',
+    author: 'david', date: 'January 20, 2026', readTime: '8 min read',
+    badges: [['Featured', 'badge-copper'], ['Maintenance', 'badge-cobalt'], ['8 min read', 'badge-slate']],
+    toc: ['Why winter is a threat', 'Insulate exposed pipes', 'Find your stopcock', 'Keep heating on', 'Let taps drip', 'Drain outdoor systems', 'Boiler service'],
+    body: '<h2>Why Winter Is Your Plumbing\u2019s Biggest Threat</h2>'
+      + '<p>Every year, frozen and burst pipes cost UK homeowners over \u00A31 billion in damage. Yet the vast majority of these incidents are entirely preventable with basic preparation and awareness.</p>'
+      + '<p>When water freezes inside a pipe it expands, creating enormous pressure that the pipe was never designed to handle. The result is often a burst in a hidden location, releasing hundreds of litres before you even notice.</p>'
+      + '<h2>The 7 Essential Steps to Protect Your Pipes</h2>'
+      + '<h3>1. Insulate Exposed Pipes</h3><p>Lagging is inexpensive and takes minutes to fit. Focus on pipes in the loft, garage, external walls, and outdoor taps.</p>'
+      + '<ul><li>Pipes in the loft and attic space</li><li>Pipes in the garage or utility room</li><li>Any pipes on external walls</li><li>Outdoor taps and garden hose connections</li></ul>'
+      + '<h3>2. Know Where Your Stopcock Is</h3><p>Usually under the kitchen sink or near the front door. In an emergency, turning it off immediately can save thousands of pounds. Make sure everyone in the household knows where it is.</p>'
+      + '<blockquote>\u201CIn the first 10 minutes after a pipe bursts, most homeowners waste precious time looking for the stopcock. Know it before you need it.\u201D \u2014 David Harris, FlowMaster</blockquote>'
+      + '<h3>3. Keep Your Heating On During Cold Spells</h3><p>Set your thermostat to a minimum of 12\u201315\u00B0C overnight and while you are out, so pipes never reach freezing point.</p>'
+      + '<h3>4. Let Taps Drip in Extreme Cold</h3><p>Below -5\u00B0C, a slow drip from taps on vulnerable runs keeps water moving and prevents ice formation.</p>'
+      + '<h3>5. Drain Outdoor Water Systems</h3><ul><li>Disconnect and drain garden hoses</li><li>Turn off and drain outdoor taps</li><li>Drain irrigation systems and water features</li></ul>'
+      + '<h3>6. Service Your Boiler Before Winter</h3><p>An annual service keeps your heating efficient and reliable through the coldest months \u2014 a failed boiler in January is expensive and dangerous.</p>'
+      + '<h3>7. Know the Warning Signs</h3><ul><li>No water from a tap in cold weather</li><li>Frost on exposed pipes</li><li>Visible bulging or cracking in pipe walls</li></ul>'
+      + '<h2>What to Do If a Pipe Freezes</h2><ul><li>Turn off your mains stopcock immediately</li><li>Warm the section gently with a warm cloth \u2014 never a flame</li><li>Open the nearest tap so water can flow as it thaws</li><li>Call FlowMaster for same-day emergency assessment</li></ul>' },
+  { slug: 'frozen-pipes', category: 'Maintenance', label: 'Maintenance',
+    title: '7 Ways to Prevent Frozen Pipes This Winter',
+    titleHtml: '7 Ways to Prevent <span style="color:#0284C7;">Frozen Pipes</span> This Winter',
+    excerpt: 'Cold weather is the number one cause of burst pipes in the UK. Act before temperatures drop with these seven proven preventative steps.',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&fit=crop',
+    thumb: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&q=75&fit=crop',
+    author: 'david', date: 'January 15, 2026', readTime: '5 min read',
+    badges: [['Maintenance', 'badge-cobalt'], ['5 min read', 'badge-slate']],
+    toc: ['Insulate at-risk pipework', 'Seal draughts and gaps', 'Keep heating steady', 'Open cabinet doors', 'Drip taps in deep frost', 'Going away? Protect the house', 'When to call a plumber'],
+    body: '<h2>Start Before the First Frost</h2>'
+      + '<p>Frozen pipes rarely give warnings. The week before a cold snap is the time to act \u2014 every step below costs little but prevents the average \u00A37,000+ insurance claim for burst-pipe damage.</p>'
+      + '<h2>The 7 Proven Steps</h2>'
+      + '<ul><li><strong>Lag exposed pipes</strong> in lofts, garages and on outside walls with foam insulation.</li><li><strong>Seal draughts</strong> around pipe entry points so icy air cannot reach them.</li><li><strong>Keep heating steady</strong> at 12\u201315\u00B0C minimum, day and night, during freezes.</li><li><strong>Open cabinet doors</strong> under sinks on outside walls so warm air circulates.</li><li><strong>Drip vulnerable taps</strong> slightly when temperatures fall below -5\u00B0C.</li><li><strong>Going away?</strong> Leave heating on low and ask someone to check the house.</li><li><strong>Insulate the loft hatch and tanks</strong> \u2014 frozen tanks split just like pipes.</li></ul>'
+      + '<blockquote>\u201CPrevention costs pounds; cure costs thousands. Lagging a loft\u2019s pipework takes an afternoon and pays for itself the first winter.\u201D \u2014 David Harris, FlowMaster</blockquote>'
+      + '<h2>Check Tonight in 10 Minutes</h2><p>Walk your home and touch-test exposed pipes in cold spots. If a pipe feels icy and supplies an unused tap, insulate it this weekend \u2014 and make sure you know exactly where your stopcock is.</p>' },
+  { slug: 'burst-pipe-first-10-minutes', category: 'Emergency Tips', label: 'Emergency Tips',
+    title: 'Burst Pipe? Here\u2019s What to Do in the First 10 Minutes',
+    titleHtml: 'Burst Pipe? What to Do in the <span style="color:#0284C7;">First 10 Minutes</span>',
+    excerpt: 'A burst pipe can release hundreds of litres in minutes. Follow these immediate steps to minimise damage before help arrives.',
+    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=900&q=80&fit=crop',
+    thumb: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&q=75&fit=crop',
+    author: 'james', date: 'January 10, 2026', readTime: '4 min read',
+    badges: [['Emergency Tips', 'badge-copper'], ['4 min read', 'badge-slate']],
+    toc: ['Minute 1: stop the water', 'Minute 2: kill the power', 'Minutes 3\u20135: drain and contain', 'Minutes 5\u201310: document and call'],
+    body: '<h2>Minute 1: Stop the Water</h2><p>Turn your mains stopcock fully clockwise \u2014 usually under the kitchen sink. Then turn on all cold taps to drain the system and relieve pressure.</p>'
+      + '<h2>Minute 2: Switch Off Power and Heating</h2><p>If water is near sockets, switches or the boiler, switch off electricity at the fuse box and turn the boiler off. Never touch wet electrics.</p>'
+      + '<h2>Minutes 3\u20135: Drain and Contain</h2><ul><li>Place buckets, towels and bins under the leak</li><li>Move furniture, rugs and electronics away from the water</li><li>Pierce bulging ceilings with a screwdriver to release trapped water into a bucket</li><li>Open windows for ventilation if weather allows</li></ul>'
+      + '<blockquote>\u201CPeople panic about the pipe; the real damage comes from the next 100 litres. Stop the water first, diagnose second.\u201D \u2014 James Patel, FlowMaster</blockquote>'
+      + '<h2>Minutes 5\u201310: Document and Call</h2><p>Photograph everything for your insurer, then call an emergency plumber. FlowMaster\u2019s rapid response averages under 60 minutes across Greater London \u2014 day or night.</p>' },
+  { slug: 'bathroom-renovation-guide', category: 'Renovation', label: 'Renovation',
+    title: 'Planning Your Bathroom Renovation: A Complete Guide',
+    titleHtml: 'Planning Your <span style="color:#0284C7;">Bathroom Renovation:</span> A Complete Guide',
+    excerpt: 'From design concept to finished installation \u2014 everything you need to know before starting your bathroom project, including budgets and timelines.',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=80&fit=crop',
+    thumb: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&q=75&fit=crop',
+    author: 'sarah', date: 'January 5, 2026', readTime: '7 min read',
+    badges: [['Renovation', 'badge-cobalt'], ['7 min read', 'badge-slate']],
+    toc: ['Set a realistic budget', 'Plan the layout first', 'Choose fixtures wisely', 'Understand the timeline', 'Avoid these pitfalls'],
+    body: '<h2>Set a Realistic Budget</h2><p>A standard UK bathroom refit typically runs from \u00A31,200 for like-for-like replacements to \u00A32,500+ for en-suites with repositioned pipework. Allow a 10\u201315% contingency \u2014 hidden leaks and rotten flooring are common once tiles come up.</p>'
+      + '<h2>Plan the Layout Before Anything Else</h2><p>Keeping the toilet, basin and shower where they are saves hundreds in pipework. If you move them, check soil-pipe routes and falls first \u2014 gravity decides what is possible, not the brochure.</p>'
+      + '<h2>Choose Fixtures Wisely</h2><ul><li>Wall-hung toilets and vanities make small rooms feel bigger and cleaning easier</li><li>Thermostatic shower valves prevent scalding and are a legal must in new builds</li><li>Water-efficient dual-flush cisterns and aerated taps cut bills without cutting comfort</li><li>Match brassware finishes across the room for a designer look</li></ul>'
+      + '<blockquote>\u201CMeasure twice, order once. Wrong-size baths and basins are the most expensive mistake I see \u2014 check door swings, soil positions and tile quantities before you buy.\u201D \u2014 Sarah Chen, FlowMaster</blockquote>'
+      + '<h2>Understand the Timeline</h2><p>A standard refit takes 3\u20135 working days; en-suites 5\u20138. Tiling and drying times cannot be rushed \u2014 anyone promising a full bathroom in two days is cutting corners you will pay for later.</p>' },
+  { slug: 'drains-clear-year-round', category: 'Drains', label: 'Drains',
+    title: 'How to Keep Your Drains Clear All Year Round',
+    titleHtml: 'How to Keep Your <span style="color:#0284C7;">Drains Clear</span> All Year Round',
+    excerpt: 'Simple monthly habits prevent costly blockages and keep water flowing freely \u2014 inside the house and out in the garden drains.',
+    image: 'https://images.unsplash.com/photo-1580901368919-7738efb0f87e?w=900&q=80&fit=crop',
+    thumb: 'https://images.unsplash.com/photo-1580901368919-7738efb0f87e?w=500&q=75&fit=crop',
+    author: 'david', date: 'December 28, 2025', readTime: '3 min read',
+    badges: [['Drains', 'badge-cobalt'], ['3 min read', 'badge-slate']],
+    toc: ['Monthly 5-minute routine', 'What never goes down drains', 'Outdoor gullies and grates', 'When to call for jetting'],
+    body: '<h2>The Monthly 5-Minute Routine</h2><ul><li>Flush kitchen drains with a kettle of boiling water to melt fat build-up</li><li>Clear hair from shower and bath traps before it mats down</li><li>Run hot water for 30 seconds after oily washing-up</li><li>Check outdoor gullies for leaves after storms</li></ul>'
+      + '<h2>What Never Goes Down Your Drains</h2><p>Fat, oil and grease cause most kitchen blockages \u2014 wipe pans into the bin first. In bathrooms, only toilet paper should be flushed; wipes labelled \u201Cflushable\u201D are the number one cause of toilet blockages we clear.</p>'
+      + '<blockquote>\u201CNine out of ten blocked drains I attend were avoidable. Fat down the sink and wipes down the toilet \u2014 that is nearly the whole story.\u201D \u2014 David Harris, FlowMaster</blockquote>'
+      + '<h2>When to Call for Jetting or CCTV</h2><p>Slow drainage in several outlets at once, gurgling sounds, or recurring blockages in the same spot signal a deeper problem \u2014 roots, scale or a collapsed section. High-pressure jetting clears it; a CCTV survey shows exactly what is going on underground.</p>' },
+  { slug: 'water-heater-replacing', category: 'Maintenance', label: 'Maintenance',
+    title: 'Signs Your Water Heater Needs Replacing',
+    titleHtml: 'Signs Your <span style="color:#0284C7;">Water Heater</span> Needs Replacing',
+    excerpt: 'Rusty water, strange noises, rising bills \u2014 know exactly when repair stops making sense and an upgrade will save you money.',
+    image: 'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=900&q=80&fit=crop',
+    thumb: 'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=500&q=75&fit=crop',
+    author: 'david', date: 'December 20, 2025', readTime: '4 min read',
+    badges: [['Maintenance', 'badge-cobalt'], ['4 min read', 'badge-slate']],
+    toc: ['The 6 warning signs', 'Repair or replace?', 'Choosing the right replacement', 'Keep the new one healthy'],
+    body: '<h2>The 6 Warning Signs</h2><ul><li><strong>Age over 10\u201312 years</strong> \u2014 efficiency falls off a cliff after this point</li><li><strong>Rusty or discoloured hot water</strong> \u2014 the tank lining is failing</li><li><strong>Rumbling or popping noises</strong> \u2014 hardened sediment overheating at the base</li><li><strong>Water pooling at the base</strong> \u2014 often a cracked tank, not a loose fitting</li><li><strong>Running out faster</strong> \u2014 sediment has eaten your usable capacity</li><li><strong>Rising energy bills</strong> with no change in usage</li></ul>'
+      + '<h2>Repair or Replace?</h2><p>A good rule: if the repair costs more than half a replacement and the unit is past 8 years old, replace it. Two or more callouts in a year is the heater telling you it is done.</p>'
+      + '<blockquote>\u201CA ten-year-old heater with a failed element is a replacement, not a repair. New A-rated models typically pay back the difference in two to three years of bills.\u201D \u2014 David Harris, FlowMaster</blockquote>'
+      + '<h2>Keep the New One Healthy</h2><p>Annual servicing, checking the pressure relief valve, and flushing sediment every couple of years will double the working life of most systems.</p>' },
+  { slug: 'low-water-pressure-causes', category: 'Emergency Tips', label: 'Emergency Tips',
+    title: 'Low Water Pressure? Here Are the 8 Most Common Causes',
+    titleHtml: 'Low Water Pressure? The <span style="color:#0284C7;">8 Most Common</span> Causes',
+    excerpt: 'Identify in minutes whether weak flow is a simple fix or a sign of a deeper plumbing issue that needs professional attention.',
+    image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=900&q=80&fit=crop',
+    thumb: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=500&q=75&fit=crop',
+    author: 'james', date: 'December 12, 2025', readTime: '5 min read',
+    badges: [['Emergency Tips', 'badge-copper'], ['5 min read', 'badge-slate']],
+    toc: ['Quick checks first', 'The 8 common causes', 'DIY fixes that work', 'When it needs a plumber'],
+    body: '<h2>Quick Checks First</h2><p>Is the problem at one tap or everywhere? One tap points to that fitting; everywhere points to supply. Also check whether neighbours are affected \u2014 area-wide dips are the water company\u2019s job, not yours.</p>'
+      + '<h2>The 8 Most Common Causes</h2><ul><li><strong>Clogged aerators</strong> \u2014 limescale chokes tap outlets; unscrew and soak in vinegar</li><li><strong>Partially closed stopcock</strong> \u2014 often left half-turned after past work</li><li><strong>Failing pressure regulator</strong> \u2014 whole-house pressure slowly sags</li><li><strong>Hidden leaks</strong> \u2014 water escaping before it reaches your taps</li><li><strong>Corroded old pipework</strong> \u2014 decades of scale narrowing the bore</li><li><strong>Peak-time demand</strong> \u2014 mornings and evenings dip naturally</li><li><strong>Faulty combi boiler pressure</strong> \u2014 check the gauge sits near 1\u20131.5 bar</li><li><strong>Shared supply issues</strong> \u2014 common in converted flats and terraces</li></ul>'
+      + '<blockquote>\u201CClean the aerators and check the stopcock before you call anyone \u2014 those two fix a third of the low-pressure jobs we get called to.\u201D \u2014 James Patel, FlowMaster</blockquote>'
+      + '<h2>When It Needs a Plumber</h2><p>Sudden pressure loss, damp patches, hissing in walls, or pressure that keeps falling after DIY checks all mean call FlowMaster \u2014 a hidden leak only gets more expensive with time.</p>' }
+];
+
+(function renderPost() {
+  document.querySelectorAll('[data-post]').forEach(function (el) {
+    var s = el.getAttribute('data-post');
+    el.querySelectorAll('a[href="blog-details.html"]').forEach(function (a) {
+      a.setAttribute('href', 'blog-details.html?post=' + encodeURIComponent(s));
+    });
+  });
+  var slug = '';
+  try { slug = new URLSearchParams(window.location.search).get('post') || ''; } catch (e) { slug = ''; }
+  var post = null;
+  for (var i = 0; i < BLOG_POSTS.length; i++) { if (BLOG_POSTS[i].slug === slug) { post = BLOG_POSTS[i]; break; } }
+  if (!post) return;
+  var author = BLOG_AUTHORS[post.author] || BLOG_AUTHORS.david;
+  document.title = post.title + ' \u2014 FlowMaster Blog';
+  var meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', post.excerpt);
+  var dot = '<span style="width:6px;height:6px;background:#0284C7;border-radius:50%;box-shadow:0 0 6px #0284C7;flex-shrink:0;"></span> ';
+  var kicker = document.getElementById('postKicker');
+  if (kicker) kicker.innerHTML = dot + post.label;
+  var badges = document.getElementById('postBadges');
+  if (badges) badges.innerHTML = post.badges.map(function (b) { return '<span class="badge ' + b[1] + '">' + b[0] + '</span>'; }).join('');
+  var title = document.getElementById('postTitle');
+  if (title) title.innerHTML = post.titleHtml;
+  var excerpt = document.getElementById('postExcerpt');
+  if (excerpt) excerpt.textContent = post.excerpt;
+  var aImg = document.getElementById('postAuthorImg');
+  if (aImg) { aImg.src = author.avatar; aImg.alt = author.name; }
+  var aName = document.getElementById('postAuthorName');
+  if (aName) aName.textContent = author.name;
+  var aMeta = document.getElementById('postAuthorMeta');
+  if (aMeta) aMeta.textContent = author.role + ' \u00B7 ' + post.date;
+  var hero = document.getElementById('postHeroImg');
+  if (hero) { hero.src = post.image; hero.alt = post.title; }
+  var body = document.getElementById('postBody');
+  if (body) body.innerHTML = post.body;
+  var toc = document.getElementById('postToc');
+  if (toc) toc.innerHTML = post.toc.map(function (t, idx) {
+    return '<a href="#" style="font-size:var(--size-sm);color:var(--text-secondary);">' + (idx + 1) + '. ' + t + '</a>';
+  }).join('');
+  var bImg = document.getElementById('bioAuthorImg');
+  if (bImg) { bImg.src = author.avatar.replace('w=80', 'w=120'); bImg.alt = author.name; }
+  var bName = document.getElementById('bioAuthorName');
+  if (bName) bName.textContent = author.name;
+  var bBio = document.getElementById('bioAuthorBio');
+  if (bBio) bBio.textContent = author.bio;
+  var grid = document.getElementById('relatedGrid');
+  if (grid) {
+    var others = BLOG_POSTS.filter(function (p) { return p.slug !== post.slug; });
+    var sameCat = others.filter(function (p) { return p.category === post.category; });
+    var rest = others.filter(function (p) { return p.category !== post.category; });
+    var related = sameCat.concat(rest).slice(0, 3);
+    grid.innerHTML = related.map(function (p) {
+      return '<article class="blog-card" data-post="' + p.slug + '">'
+        + '<div class="blog-card-img-wrap"><img class="blog-card-img" src="' + p.thumb + '" alt="' + p.title + '">'
+        + '<span class="blog-card-category">' + p.category + '</span></div>'
+        + '<div class="blog-card-body"><div class="blog-card-meta"><span>' + p.date + '</span></div>'
+        + '<a href="blog-details.html?post=' + encodeURIComponent(p.slug) + '"><h3 class="blog-card-title">' + p.title + '</h3></a>'
+        + '<a href="blog-details.html?post=' + encodeURIComponent(p.slug) + '" class="service-card-link">Read <svg class="icon icon-xs" aria-hidden="true"><use href="icons.svg#ic-arrow-right"></use></svg></a>'
+        + '</div></article>';
+    }).join('');
+  }
+  if (window.scrollTo) window.scrollTo(0, 0);
+})();
+</script>
 </body>
 </html>
