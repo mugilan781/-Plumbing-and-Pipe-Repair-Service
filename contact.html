@@ -25,6 +25,68 @@
   <link rel="stylesheet" href="css/extra.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/auth.css">
+  <style>
+    /* ═══ CONTACT — Info cards: uniform + high-contrast icons ═══ */
+    .cinfo-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--dur-slow) var(--ease-bounce), box-shadow var(--dur-slow) var(--ease-swift);
+    }
+    .cinfo-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+    .cinfo-icon {
+      width: 64px; height: 64px;
+      margin: 0 auto var(--space-4);
+      display: flex; align-items: center; justify-content: center;
+      background: #EBF2F8; color: #0C2E59;
+      border: 1.5px solid #CBD5E1; border-radius: 18px;
+      box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 8px rgba(12,46,89,0.08);
+      flex-shrink: 0;
+    }
+    .cinfo-icon .icon { width: 28px; height: 28px; stroke-width: 2.2; }
+    .cinfo-card h3 { font-family: var(--font-serif); font-size: var(--size-xl); margin-bottom: var(--space-3); color: var(--text-primary); }
+    .cinfo-main { font-weight: 800; font-size: var(--size-md); margin-bottom: 4px; }
+    .cinfo-main a { color: #0C2E59; }
+    .cinfo-main a:hover { color: #0284C7; }
+    .cinfo-sub { font-size: var(--size-sm); color: var(--text-light); }
+    .cinfo-div { border-top: 1px solid var(--border-color); margin-top: var(--space-4); padding-top: var(--space-4); font-size: var(--size-sm); }
+    .cinfo-div a { color: var(--text-secondary); font-weight: 700; }
+    .cinfo-div a:hover { color: #0284C7; }
+    [data-theme="dark"] .cinfo-icon { background: #132845; border-color: #1E3A5F; color: #38BDF8; box-shadow: inset 0 1px 0 rgba(255,255,255,0.06); }
+    [data-theme="dark"] .cinfo-main a { color: #38BDF8; }
+
+    /* ═══ CONTACT — Send a Message: dark-mode select arrow + consent link ═══ */
+    [data-theme="dark"] select.form-control {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23E0F2FE' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+    [data-theme="dark"] .consent-label a { color: #38BDF8; }
+    [data-theme="dark"] .consent-label a:hover { color: #7DD3FC; }
+
+    /* ═══ CONTACT — Emergency card: white zap icon in dark mode ═══ */
+    [data-theme="dark"] .emg-card .icon,
+    [data-theme="dark"] .emg-card svg.icon { color: #FFFFFF !important; stroke: #FFFFFF !important; }
+    .emg-number { white-space: nowrap; font-size: clamp(var(--size-xl), 2.4vw, var(--size-3xl)); }
+
+    /* ═══ CONTACT — FAQ dark-mode contrast ═══ */
+    [data-theme="dark"] .faq-trigger { background: var(--bg-secondary); color: var(--text-primary); }
+    [data-theme="dark"] .faq-item.open .faq-trigger { background: var(--bg-accent); color: #38BDF8; }
+    [data-theme="dark"] .faq-icon { background: var(--bg-accent); color: #38BDF8; }
+    [data-theme="dark"] .faq-item.open .faq-icon { background: #0284C7; color: #FFFFFF; }
+    [data-theme="dark"] .faq-answer-inner { background: var(--bg-secondary); color: var(--text-secondary); }
+
+    /* ═══ CONTACT — Office map ═══ */
+    .office-map { width: 100%; height: 420px; border: 0; border-radius: var(--radius-2xl); display: block; box-shadow: var(--shadow-lg); }
+    @media (max-width: 768px) { .office-map { height: 300px; } }
+  </style>
 </head>
 <body>
 <div id="svg-sprites" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;"><svg xmlns="http://www.w3.org/2000/svg"><use href="icons.svg"></use></svg></div>
@@ -129,42 +191,37 @@
 <section class="section section-sm" aria-label="Contact information">
   <div class="container">
     <div class="grid grid-auto-3 stagger-children">
-      <div style="background:var(--grad-cobalt);border-radius:var(--radius-2xl);padding:var(--space-8);color:white;text-align:center;box-shadow:var(--shadow-xl);">
-        <div style="font-size:2.5rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg></div>
-        <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);color:white;margin-bottom:var(--space-2);">Phone</h3>
-        <div style="margin-bottom:var(--space-3);">
-          <div style="font-weight:var(--weight-bold);font-size:var(--size-lg);"><a href="tel:+18005556789" style="color:var(--color-copper-light);">+1 800 555 6789</a></div>
-          <div style="font-size:var(--size-sm);opacity:0.75;margin-top:4px;">Emergency · 24/7</div>
-        </div>
-        <div style="font-size:var(--size-sm);opacity:0.7;border-top:1px solid rgba(255,255,255,0.15);padding-top:var(--space-3);">
-          <div style="font-weight:var(--weight-semibold);"><a href="tel:+442071234567" style="color:rgba(255,255,255,0.85);">+44 20 7123 4567</a></div>
-          <div>Office · Mon–Sat 7am–8pm</div>
+      <div class="cinfo-card">
+        <div class="cinfo-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-phone"></use></svg></div>
+        <h3>Phone</h3>
+        <div class="cinfo-main"><a href="tel:+18005556789">+1 800 555 6789</a></div>
+        <div class="cinfo-sub">Emergency · 24/7</div>
+        <div class="cinfo-div">
+          <div><a href="tel:+442071234567">+44 20 7123 4567</a></div>
+          <div class="cinfo-sub">Office · Mon–Sat 7am–8pm</div>
         </div>
       </div>
 
-      <div style="background:var(--bg-secondary);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;border:1px solid var(--border-color);box-shadow:var(--shadow-md);">
-        <div style="font-size:2.5rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-mail"></use></svg></div>
-        <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);margin-bottom:var(--space-2);">Email</h3>
-        <div style="margin-bottom:var(--space-3);">
-          <div style="font-weight:var(--weight-semibold);"><a href="mailto:hello@flowmaster.com" style="color:var(--color-cobalt);">hello@flowmaster.com</a></div>
-          <div style="font-size:var(--size-sm);color:var(--text-light);">General enquiries</div>
-        </div>
-        <div style="font-size:var(--size-sm);border-top:1px solid var(--border-color);padding-top:var(--space-3);">
-          <div><a href="mailto:bookings@flowmaster.com" style="color:var(--color-copper);">bookings@flowmaster.com</a></div>
-          <div style="color:var(--text-light);">Appointments & booking</div>
+      <div class="cinfo-card">
+        <div class="cinfo-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-mail"></use></svg></div>
+        <h3>Email</h3>
+        <div class="cinfo-main"><a href="mailto:hello@flowmaster.com">hello@flowmaster.com</a></div>
+        <div class="cinfo-sub">General enquiries</div>
+        <div class="cinfo-div">
+          <div><a href="mailto:bookings@flowmaster.com">bookings@flowmaster.com</a></div>
+          <div class="cinfo-sub">Appointments &amp; booking</div>
         </div>
       </div>
 
-      <div style="background:var(--bg-secondary);border-radius:var(--radius-2xl);padding:var(--space-8);text-align:center;border:1px solid var(--border-color);box-shadow:var(--shadow-md);">
-        <div style="font-size:2.5rem;margin-bottom:var(--space-4);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-pin"></use></svg></div>
-        <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);margin-bottom:var(--space-2);">Office</h3>
-        <address style="font-style:normal;margin-bottom:var(--space-3);">
-          <div style="font-weight:var(--weight-semibold);">42 Copper Lane</div>
-          <div style="color:var(--text-secondary);">Pipeville, London</div>
-          <div style="color:var(--text-secondary);">EC1A 1BB</div>
+      <div class="cinfo-card">
+        <div class="cinfo-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-pin"></use></svg></div>
+        <h3>Office</h3>
+        <address style="font-style:normal;">
+          <div class="cinfo-main">42 Copper Lane</div>
+          <div class="cinfo-sub">Pipeville, London EC1A 1BB</div>
         </address>
-        <div style="font-size:var(--size-sm);border-top:1px solid var(--border-color);padding-top:var(--space-3);color:var(--text-secondary);">
-          <svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-clock"></use></svg> Mon–Sat: 7am–8pm<br>Emergency: 24/7
+        <div class="cinfo-div cinfo-sub">
+          <svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-clock"></use></svg> Mon–Sat: 7am–8pm · Emergency: 24/7
         </div>
       </div>
     </div>
@@ -220,7 +277,7 @@
           </div>
           <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-5);">
             <input type="checkbox" id="c-consent" style="width:18px;height:18px;accent-color:var(--color-cobalt);">
-            <label for="c-consent" style="font-size:var(--size-sm);color:var(--text-secondary);">I agree to the <a href="privacy.html">Privacy Policy</a> and consent to being contacted.</label>
+            <label for="c-consent" class="consent-label" style="font-size:var(--size-sm);color:var(--text-secondary);">I agree to the <a href="privacy.html">Privacy Policy</a> and consent to being contacted.</label>
           </div>
           <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send Message</button>
         </form>
@@ -250,22 +307,22 @@
           </div>
         </div>
 
-        <div style="background:linear-gradient(135deg,#C0392B,#E74C3C);border-radius:var(--radius-2xl);padding:var(--space-6);color:white;text-align:center;">
+        <div class="emg-card" style="background:linear-gradient(135deg,#C0392B,#E74C3C);border-radius:var(--radius-2xl);padding:var(--space-6);color:white;text-align:center;">
           <div style="font-size:2.5rem;margin-bottom:var(--space-2);"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-zap"></use></svg></div>
           <h3 style="font-family:var(--font-serif);font-size:var(--size-xl);color:white;margin-bottom:var(--space-2);">Emergency?</h3>
           <p style="color:rgba(255,255,255,0.8);font-size:var(--size-sm);margin-bottom:var(--space-4);">Don't fill in a form. Call us right now.</p>
-          <a href="tel:+18005556789" style="display:block;font-family:var(--font-serif);font-size:var(--size-3xl);color:white;font-weight:bold;text-decoration:none;">+1 800<br>555 6789</a>
+          <a href="tel:+18005556789" class="emg-number" style="display:block;font-family:var(--font-serif);color:white;font-weight:bold;text-decoration:none;">+1 800 555 6789</a>
           <div style="font-size:var(--size-xs);margin-top:var(--space-2);opacity:0.75;">Available 24 hours, 7 days</div>
         </div>
 
         <div style="background:var(--bg-secondary);border-radius:var(--radius-2xl);padding:var(--space-6);border:1px solid var(--border-color);">
           <h3 style="font-size:var(--size-base);font-weight:var(--weight-bold);margin-bottom:var(--space-4);">Follow Us</h3>
           <div class="social-links">
-            <a href="#" class="social-link" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="Facebook"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-facebook"></use></svg></a>
-            <a href="#" class="social-link" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="Instagram"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-instagram"></use></svg></a>
-            <a href="#" class="social-link" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="Twitter"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-twitter"></use></svg></a>
-            <a href="#" class="social-link" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="LinkedIn"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
-            <a href="#" class="social-link" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="YouTube"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-youtube"></use></svg></a>
+            <a href="https://facebook.com/" class="social-link" target="_blank" rel="noopener noreferrer" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="Facebook"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-facebook"></use></svg></a>
+            <a href="https://instagram.com/" class="social-link" target="_blank" rel="noopener noreferrer" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="Instagram"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-instagram"></use></svg></a>
+            <a href="https://x.com/" class="social-link" target="_blank" rel="noopener noreferrer" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="X (Twitter)"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-twitter"></use></svg></a>
+            <a href="https://linkedin.com/" class="social-link" target="_blank" rel="noopener noreferrer" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="LinkedIn"><svg class="icon icon-sm icon-filled" aria-hidden="true"><use href="icons.svg#ic-linkedin"></use></svg></a>
+            <a href="https://youtube.com/" class="social-link" target="_blank" rel="noopener noreferrer" style="background:var(--bg-accent);color:var(--text-secondary);" aria-label="YouTube"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-youtube"></use></svg></a>
           </div>
         </div>
       </div>
@@ -323,29 +380,44 @@
   </div>
 </section>
 
-<!-- ═══ SECTION 5 — SERVICE AREAS ═══ -->
-<section class="section section-sm" style="background:var(--bg-accent);" aria-labelledby="areas-contact-heading">
+<!-- ═══ SECTION 5 — OFFICE LOCATION ═══ -->
+<section class="section section-sm" style="background:var(--bg-accent);" aria-labelledby="office-contact-heading">
   <div class="container">
     <div class="section-header center" data-reveal="fade-up">
-      <div class="section-label">Coverage</div>
-      <h2 class="section-title" id="areas-contact-heading" style="font-size:var(--size-3xl);">Service Areas</h2>
+      <div class="section-label">Office Location</div>
+      <h2 class="section-title" id="office-contact-heading" style="font-size:var(--size-3xl);">Visit Our Office</h2>
       <div class="accent-line center"></div>
-      <p class="section-subtitle">We cover Greater London and all surrounding counties — 32+ districts, 60-minute maximum response.</p>
+      <p class="section-subtitle">Drop by during working hours — or find us easily on the map below.</p>
     </div>
 
-    <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;margin-top:var(--space-8);" class="stagger-children">
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Central London</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> North London</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> South London</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> East London</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> West London</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Surrey</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Essex</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Kent</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Hertfordshire</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Berkshire</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Buckinghamshire</span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-full);font-size:var(--size-sm);"><svg class="icon icon-xs" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="icons.svg#ic-pin"></use></svg> Middlesex</span>
+    <div class="split-60-40" style="align-items:stretch;margin-top:var(--space-8);" data-reveal="fade-up">
+      <div>
+        <iframe class="office-map" title="FlowMaster office location map" src="https://maps.google.com/maps?q=EC1A%201BB%20London&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <div style="background:var(--bg-secondary);border-radius:var(--radius-2xl);padding:var(--space-8);border:1px solid var(--border-color);display:flex;flex-direction:column;justify-content:center;gap:var(--space-4);">
+        <div style="display:flex;gap:var(--space-3);align-items:flex-start;">
+          <div class="cinfo-icon" style="width:44px;height:44px;margin:0;border-radius:13px;"><svg class="icon" aria-hidden="true" style="width:20px;height:20px;"><use href="icons.svg#ic-pin"></use></svg></div>
+          <div>
+            <div style="font-weight:var(--weight-bold);">42 Copper Lane</div>
+            <div style="font-size:var(--size-sm);color:var(--text-secondary);">Pipeville, London EC1A 1BB</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-3);align-items:flex-start;">
+          <div class="cinfo-icon" style="width:44px;height:44px;margin:0;border-radius:13px;"><svg class="icon" aria-hidden="true" style="width:20px;height:20px;"><use href="icons.svg#ic-clock"></use></svg></div>
+          <div>
+            <div style="font-weight:var(--weight-bold);">Working Hours</div>
+            <div style="font-size:var(--size-sm);color:var(--text-secondary);">Mon–Sat: 7am–8pm · Emergency 24/7</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-3);align-items:flex-start;">
+          <div class="cinfo-icon" style="width:44px;height:44px;margin:0;border-radius:13px;"><svg class="icon" aria-hidden="true" style="width:20px;height:20px;"><use href="icons.svg#ic-phone"></use></svg></div>
+          <div>
+            <div style="font-weight:var(--weight-bold);">Call the Office</div>
+            <div style="font-size:var(--size-sm);"><a href="tel:+442071234567" style="color:var(--color-cobalt);">+44 20 7123 4567</a></div>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=EC1A+1BB+London" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="justify-content:center;margin-top:var(--space-2);"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-pin"></use></svg> Get Directions</a>
+      </div>
     </div>
   </div>
 </section>
