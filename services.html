@@ -25,6 +25,108 @@
   <link rel="stylesheet" href="css/extra.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/auth.css">
+  <style>
+    /* ═══ SERVICES — What We Offer: high-contrast service icons (both themes) ═══ */
+    .svc-icon {
+      width: 52px;
+      height: 52px;
+      background: #0C2E59;
+      color: #FFFFFF;
+      border: 1.5px solid #0C2E59;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(12,46,89,0.25);
+    }
+    .svc-icon .icon,
+    .svc-icon svg.icon {
+      width: 26px;
+      height: 26px;
+      color: #FFFFFF !important;
+      stroke: #FFFFFF !important;
+      stroke-width: 2.2;
+    }
+    [data-theme="dark"] .svc-icon {
+      background: #0284C7;
+      border-color: #38BDF8;
+      box-shadow: 0 4px 16px rgba(2,132,199,0.4);
+    }
+    [data-theme="dark"] .svc-icon .icon,
+    [data-theme="dark"] .svc-icon svg.icon {
+      color: #FFFFFF !important;
+      stroke: #FFFFFF !important;
+    }
+
+    /* ═══ SERVICES — Our Promise: redesigned guarantee seal ═══ */
+    .guarantee-seal {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      color: #0C2E59;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      text-align: center;
+      flex-shrink: 0;
+      border: 5px solid #38BDF8;
+      outline: 3px solid rgba(255,255,255,0.25);
+      outline-offset: 6px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 0 40px rgba(56,189,248,0.25);
+    }
+    .guarantee-seal-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #0C2E59;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+    .guarantee-seal-icon .icon {
+      width: 26px;
+      height: 26px;
+      color: #FFFFFF !important;
+      stroke: #FFFFFF !important;
+    }
+    .guarantee-seal-value {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #0C2E59;
+    }
+    .guarantee-seal-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #0284C7;
+    }
+
+    /* ═══ SERVICES — Book a Service: dark-mode colour-only fixes ═══ */
+    [data-theme="dark"] #book-submit-icon {
+      color: #FFFFFF !important;
+      stroke: #FFFFFF !important;
+    }
+    [data-theme="dark"] input[type="date"].form-control::-webkit-calendar-picker-indicator {
+      filter: invert(1) brightness(1.4);
+      opacity: 1;
+      cursor: pointer;
+    }
+    [data-theme="dark"] select.form-control {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23E0F2FE' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+  </style>
 </head>
 <body>
 <div id="svg-sprites" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;"><svg xmlns="http://www.w3.org/2000/svg"><use href="icons.svg"></use></svg></div>
@@ -147,7 +249,7 @@
       <div class="split-60-40" data-reveal="fade-up">
         <div>
           <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-4);">
-            <div style="width:52px;height:52px;background:var(--grad-cobalt);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:22px;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-pipe"></use></svg></div>
+            <div class="svc-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-pipe"></use></svg></div>
             <div class="section-label">01 — Pipe Repair</div>
           </div>
           <h3 style="font-family:var(--font-serif);font-size:var(--size-3xl);margin-bottom:var(--space-4);">Pipe Repair & Replacement</h3>
@@ -181,7 +283,7 @@
         </div>
         <div>
           <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-4);">
-            <div style="width:52px;height:52px;background:var(--grad-cobalt);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:22px;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-drain"></use></svg></div>
+            <div class="svc-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-drain"></use></svg></div>
             <div class="section-label">02 — Drains</div>
           </div>
           <h3 style="font-family:var(--font-serif);font-size:var(--size-3xl);margin-bottom:var(--space-4);">Drain Unblocking & Survey</h3>
@@ -209,7 +311,7 @@
       <div class="split-60-40" data-reveal="fade-up">
         <div>
           <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-4);">
-            <div style="width:52px;height:52px;background:var(--grad-copper);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:22px;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-shower"></use></svg></div>
+            <div class="svc-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-shower"></use></svg></div>
             <div class="section-label">03 — Bathrooms</div>
           </div>
           <h3 style="font-family:var(--font-serif);font-size:var(--size-3xl);margin-bottom:var(--space-4);">Bathroom Fitting & Renovation</h3>
@@ -243,7 +345,7 @@
         </div>
         <div>
           <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-4);">
-            <div style="width:52px;height:52px;background:var(--grad-cobalt);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:22px;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-flame"></use></svg></div>
+            <div class="svc-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-flame"></use></svg></div>
             <div class="section-label">04 — Water Heaters</div>
           </div>
           <h3 style="font-family:var(--font-serif);font-size:var(--size-3xl);margin-bottom:var(--space-4);">Water Heater Installation</h3>
@@ -266,33 +368,62 @@
 
     <hr style="border-color:var(--border-color); margin:var(--space-12) 0;">
 
-    <!-- Service 5 & 6: Tap + Tank (side by side) -->
-    <div class="grid grid-2" data-reveal="fade-up">
-      <div id="tap" style="scroll-margin-top:100px; background:var(--bg-secondary); border-radius:var(--radius-2xl); padding:var(--space-8); border:1px solid var(--border-color);">
-        <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
-          <div style="width:48px;height:48px;background:var(--grad-cobalt);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:20px;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-tap"></use></svg></div>
-          <div class="section-label">05 — Taps</div>
+    <!-- Service 5: Tap Replacement -->
+    <div id="tap" style="scroll-margin-top:100px; margin-bottom:var(--space-16);">
+      <div class="split-60-40" data-reveal="fade-up">
+        <div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-4);">
+            <div class="svc-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-tap"></use></svg></div>
+            <div class="section-label">05 — Taps</div>
+          </div>
+          <h3 style="font-family:var(--font-serif);font-size:var(--size-3xl);margin-bottom:var(--space-4);">Tap Replacement & Repair</h3>
+          <p style="color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-5);">Dripping taps waste water and money. Choose from our premium range or supply your own — expertly fitted within hours, with every connection tested for a drip-free finish.</p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-3); margin-bottom:var(--space-6);">
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Mixer tap fitting</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Pillar taps</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Sensor taps</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Outdoor taps</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Tap repair & reseating</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Water-saving aerators</div>
+          </div>
+          <div style="display:flex;gap:var(--space-3);align-items:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary">Book Now</a>
+            <span style="font-size:var(--size-sm);color:var(--text-secondary);">From <strong style="color:var(--color-cobalt);">£65</strong></span>
+          </div>
         </div>
-        <h3 style="font-family:var(--font-serif);font-size:var(--size-2xl);margin-bottom:var(--space-3);">Tap Replacement</h3>
-        <img src="https://images.unsplash.com/photo-1617727553252-65be88a976c3?w=500&q=75&fit=crop" alt="Tap replacement" style="width:100%;height:180px;object-fit:cover;border-radius:var(--radius-xl);margin-bottom:var(--space-4);">
-        <p style="color:var(--text-secondary);font-size:var(--size-sm);line-height:var(--leading-relaxed);margin-bottom:var(--space-5);">Dripping taps waste water and money. Choose from our premium range or supply your own — expertly fitted within hours.</p>
-        <div style="display:flex;gap:var(--space-3);align-items:center;flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
-          <span style="font-size:var(--size-sm);color:var(--text-secondary);">From <strong style="color:var(--color-cobalt);">£65</strong></span>
+        <div class="img-zoom" style="border-radius:var(--radius-2xl);overflow:hidden;height:340px;">
+          <img src="https://images.unsplash.com/photo-1617727553252-65be88a976c3?w=600&q=80&fit=crop" alt="Tap replacement" style="width:100%;height:100%;object-fit:cover;">
         </div>
       </div>
+    </div>
 
-      <div id="tank" style="scroll-margin-top:100px; background:var(--bg-secondary); border-radius:var(--radius-2xl); padding:var(--space-8); border:1px solid var(--border-color);">
-        <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
-          <div style="width:48px;height:48px;background:var(--grad-cobalt);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-size:20px;"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-droplet"></use></svg></div>
-          <div class="section-label">06 — Tanks</div>
+    <hr style="border-color:var(--border-color); margin:var(--space-12) 0;">
+
+    <!-- Service 6: Overhead Tank Cleaning -->
+    <div id="tank" style="scroll-margin-top:100px; margin-bottom:var(--space-16);">
+      <div class="split-40-60" data-reveal="fade-up">
+        <div class="img-zoom" style="border-radius:var(--radius-2xl);overflow:hidden;height:340px;">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Tank cleaning" style="width:100%;height:100%;object-fit:cover;">
         </div>
-        <h3 style="font-family:var(--font-serif);font-size:var(--size-2xl);margin-bottom:var(--space-3);">Overhead Tank Cleaning</h3>
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=75&fit=crop" alt="Tank cleaning" style="width:100%;height:180px;object-fit:cover;border-radius:var(--radius-xl);margin-bottom:var(--space-4);">
-        <p style="color:var(--text-secondary);font-size:var(--size-sm);line-height:var(--leading-relaxed);margin-bottom:var(--space-5);">Complete tank cleaning, sediment removal, disinfection, and inspection. Ensures safe, healthy water throughout your property.</p>
-        <div style="display:flex;gap:var(--space-3);align-items:center;flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
-          <span style="font-size:var(--size-sm);color:var(--text-secondary);">From <strong style="color:var(--color-cobalt);">£120</strong></span>
+        <div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-4);">
+            <div class="svc-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-droplet"></use></svg></div>
+            <div class="section-label">06 — Tanks</div>
+          </div>
+          <h3 style="font-family:var(--font-serif);font-size:var(--size-3xl);margin-bottom:var(--space-4);">Overhead Tank Cleaning</h3>
+          <p style="color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-5);">Complete tank cleaning, sediment removal, disinfection, and inspection. Ensures safe, healthy water throughout your property — recommended every 12 months.</p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-3); margin-bottom:var(--space-6);">
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Full tank cleaning</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Sediment removal</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Disinfection</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Lid & insulation check</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Float valve replacement</div>
+            <div style="display:flex;gap:var(--space-2);align-items:center;font-size:var(--size-sm);color:var(--text-secondary);"><svg class="icon icon-sm" aria-hidden="true" style="margin-right:4px;color:var(--color-success)"><use href="icons.svg#ic-check-circle"></use></svg> Water quality test</div>
+          </div>
+          <div style="display:flex;gap:var(--space-3);align-items:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary">Book Now</a>
+            <span style="font-size:var(--size-sm);color:var(--text-secondary);">From <strong style="color:var(--color-cobalt);">£120</strong></span>
+          </div>
         </div>
       </div>
     </div>
@@ -412,9 +543,10 @@
 <section class="section" style="background:var(--grad-cobalt);" aria-labelledby="guarantee-heading">
   <div class="container">
     <div style="display:flex; align-items:center; justify-content:center; gap:clamp(var(--space-10),6vw,var(--space-24)); flex-wrap:wrap;" data-reveal="fade-up">
-      <div class="guarantee-badge animate-float">
-        <div class="guarantee-badge-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="icons.svg#ic-shield-check"></use></svg></div>
-        <div>100%<br>Guaranteed</div>
+      <div class="guarantee-seal animate-float" role="img" aria-label="100 percent guaranteed">
+        <div class="guarantee-seal-icon"><svg class="icon" aria-hidden="true"><use href="icons.svg#ic-shield-check"></use></svg></div>
+        <div class="guarantee-seal-value">100%</div>
+        <div class="guarantee-seal-label">Guaranteed</div>
       </div>
       <div style="max-width:600px;">
         <div class="section-label" style="color:var(--color-copper-light);">Our Promise</div>
@@ -500,7 +632,7 @@
           <textarea id="book-desc" class="form-control" placeholder="Please describe the issue in as much detail as possible..." data-validate="required minLength:20"></textarea>
           <span class="form-error">Please describe the issue (min 20 characters).</span>
         </div>
-        <button type="submit" class="btn btn-copper btn-lg" style="width:100%;"><svg class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-calendar"></use></svg> Submit Booking Request</button>
+        <button type="submit" class="btn btn-copper btn-lg" style="width:100%;"><svg id="book-submit-icon" class="icon icon-sm" aria-hidden="true"><use href="icons.svg#ic-calendar"></use></svg> Submit Booking Request</button>
         <p style="font-size:var(--size-xs);color:var(--text-light);text-align:center;margin-top:var(--space-3);">We'll confirm your appointment within 2 hours. No payment required upfront.</p>
       </form>
     </div>
