@@ -53,6 +53,27 @@ function initNavbar() {
       if (e.target === mobileMenu) closeMobileMenu();
     });
 
+    // Close on close button click
+    document.addEventListener('click', e => {
+      if (e.target.closest('#mobileMenuClose, .mobile-menu-close')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close on mobile nav link click
+    $$('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+    });
+
     // Mobile sub-menus
     $$('.mobile-nav-toggle').forEach(toggle => {
       toggle.addEventListener('click', e => {

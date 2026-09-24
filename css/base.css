@@ -281,17 +281,17 @@ hr {
 
 /* ── Section Spacing ── */
 .section {
-  padding-block: clamp(var(--space-16), 8vw, var(--space-32));
+  padding-block: clamp(64px, 7vw, 112px);
   position: relative;
   overflow: hidden;
 }
 
 .section-sm {
-  padding-block: clamp(var(--space-10), 5vw, var(--space-20));
+  padding-block: clamp(40px, 4.5vw, 72px);
 }
 
 .section-lg {
-  padding-block: clamp(var(--space-20), 10vw, var(--space-48));
+  padding-block: clamp(80px, 9vw, 144px);
 }
 
 /* ── Section Labels ── */

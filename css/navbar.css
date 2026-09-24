@@ -271,6 +271,8 @@ body.scrolled-down .navbar {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  margin-inline-start: auto;
+  margin-inline-end: var(--space-2);
 }
 
 .navbar-phone {
@@ -452,17 +454,20 @@ body.scrolled-down .navbar {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ── Mobile Menu ── */
+/* ── Mobile Menu Drawer ── */
 .mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--color-charcoal);
-  z-index: 250;
-  padding: calc(var(--header-total) + var(--space-6)) var(--space-6) var(--space-8);
+  background: #0B192C;
+  z-index: 300;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transform: translateX(-100%);
   transition: transform var(--dur-slow) var(--ease-swift);
 }
@@ -471,13 +476,102 @@ body.scrolled-down .navbar {
   transform: translateX(0);
 }
 
+/* Mobile Drawer Header */
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #071220;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.mobile-menu-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.mobile-menu-logo .navbar-logo-icon {
+  width: 38px;
+  height: 38px;
+  background: #0C2E59;
+  border: 1px solid #475569;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(12, 46, 89, 0.3);
+}
+
+.mobile-menu-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.mobile-menu-logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.mobile-menu-logo-tagline {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
+}
+
+.mobile-menu-close {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease-swift),
+              transform var(--dur-base) var(--ease-bounce),
+              border-color var(--dur-base) var(--ease-swift);
+}
+
+.mobile-menu-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.06);
+}
+
+.mobile-menu-close:active {
+  transform: scale(0.94);
+}
+
+/* Mobile Drawer Body */
+.mobile-menu-body {
+  padding: 12px 20px 20px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .mobile-nav-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-4) 0;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: var(--size-lg);
+  font-size: 1.1rem;
   font-family: var(--font-heading);
   font-weight: 700;
   color: #FFFFFF;
@@ -486,9 +580,10 @@ body.scrolled-down .navbar {
               padding-left var(--dur-base) var(--ease-swift);
 }
 
-.mobile-nav-link:hover {
-  color: var(--color-copper);
-  padding-left: var(--space-4);
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #38BDF8;
+  padding-left: var(--space-3);
 }
 
 .mobile-nav-sub {
@@ -511,24 +606,25 @@ body.scrolled-down .navbar {
 }
 
 .mobile-nav-sub-link:hover {
-  color: var(--color-copper);
+  color: #38BDF8;
 }
 
+/* Mobile Drawer Footer */
 .mobile-menu-footer {
-  margin-top: var(--space-8);
+  padding: 16px 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
+  flex-shrink: 0;
 }
 
-.mobile-phone-link {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  font-size: var(--size-xl);
-  font-weight: var(--weight-bold);
-  color: var(--color-copper);
-  text-decoration: none;
+.mobile-menu-footer .btn-emergency {
+  width: 100%;
+  justify-content: center;
+  padding: 13px 20px;
+  font-size: 0.95rem;
 }
 
 /* ══════════════════════════════════════════

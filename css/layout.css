@@ -9,9 +9,14 @@
 .grid-3 { grid-template-columns: repeat(3, 1fr); gap: var(--space-8); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); gap: var(--space-6); }
 .grid-5 { grid-template-columns: repeat(5, 1fr); gap: var(--space-5); }
-.grid-auto-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); }
-.grid-auto-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-6); }
-.grid-auto-2 { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: var(--space-8); }
+.grid-auto-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--space-6); }
+.grid-auto-4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-6); }
+.grid-auto-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: var(--space-8); }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; z-index: 1; }
+.article-layout-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--space-12); align-items: start; }
+.legal-layout-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: var(--space-12); align-items: start; }
+.svc-feature-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin-bottom: var(--space-6); }
+.hero-badges { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
 
 /* ── FLEX ── */
 .flex { display: flex; }
@@ -183,7 +188,7 @@
 /* ── WHY CHOOSE US / BENEFIT FEATURE ITEMS (Machined Pod Presentation) ── */
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: var(--space-6);
 }
 
